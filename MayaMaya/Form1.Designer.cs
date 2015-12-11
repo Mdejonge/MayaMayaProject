@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.listviewItems = new System.Windows.Forms.ListView();
             this.Naam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Voorraad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -42,12 +43,11 @@
             this.Voorraad,
             this.Prijs,
             this.BTW});
-            this.listviewItems.Enabled = false;
             this.listviewItems.FullRowSelect = true;
-            this.listviewItems.HoverSelection = true;
+            this.listviewItems.GridLines = true;
             this.listviewItems.Location = new System.Drawing.Point(12, 12);
             this.listviewItems.Name = "listviewItems";
-            this.listviewItems.Size = new System.Drawing.Size(644, 464);
+            this.listviewItems.Size = new System.Drawing.Size(625, 464);
             this.listviewItems.TabIndex = 0;
             this.listviewItems.UseCompatibleStateImageBehavior = false;
             this.listviewItems.View = System.Windows.Forms.View.Details;
@@ -77,8 +77,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(773, 488);
             this.Controls.Add(this.listviewItems);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "MayaMaya Bestelsysteem";
             this.ResumeLayout(false);
 
         }

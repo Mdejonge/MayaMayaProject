@@ -18,10 +18,10 @@ namespace MayaMaya
         {
             InitializeComponent();
 
-            LeesMenu();
+            leesMenuItems();
         }
 
-        public void LeesMenu()
+        public void leesMenuItems()
         {
             //Connect to database
             string connString = ConfigurationManager
