@@ -18,40 +18,7 @@ namespace MayaMaya
         {
             InitializeComponent();
 
-            leesMenuItems();
-        }
-
-        public void leesMenuItems()
-        {
-            //Connect to database
-            string connString = ConfigurationManager
-                .ConnectionStrings["MayaMayaConnectionString"]
-                .ConnectionString;
-            SqlConnection conn = new SqlConnection(connString);
-            conn.Open();
-
-            //Run SQL command
-            SqlCommand command = new SqlCommand("SELECT * FROM Menu_Items", conn);
-            SqlDataReader reader = command.ExecuteReader();
-
-            //Process results(record for record)
-            while (reader.Read())
-            {
-                //Get values form all the fields
-                int item_id = (int)reader["ITEM_ID"];
-                string itemNaam = (string)reader["ITEM_NAAM"];
-                int voorraad = (int)reader["VOORRAAD"];
-                float prijs = (float)(double)reader["PRIJS"];
-                int btw = (int)reader["BTW_HEFFING"];
-
-                //Add items to list
-                ListViewItem menuItems = new ListViewItem(itemNaam);
-                menuItems.SubItems.Add(voorraad.ToString());
-                menuItems.SubItems.Add(prijs.ToString());
-                menuItems.SubItems.Add(btw.ToString());
-                listviewItems.Items.Add(menuItems);
-            }
-
+           
         }
     }
 }
