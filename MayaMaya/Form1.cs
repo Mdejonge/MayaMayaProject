@@ -38,6 +38,7 @@ namespace MayaMaya
             while (reader.Read())
             {
                 //Get values form all the fields
+                int item_id = (int)reader["ITEM_ID"];
                 string itemNaam = (string)reader["ITEM_NAAM"];
                 int voorraad = (int)reader["VOORRAAD"];
                 float prijs = (float)(double)reader["PRIJS"];
