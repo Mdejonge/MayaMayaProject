@@ -25,5 +25,12 @@ namespace MayaMaya
 
             this.Hide();
         }
+
+        private void btn_Terug_Click(object sender, EventArgs e)
+        {
+            TafelOverzicht settingsForm =new TafelOverzicht();
+            settingsForm.Show();
+            this.Hide();
+        }
     }
 }

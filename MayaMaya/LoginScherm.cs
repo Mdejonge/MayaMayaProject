@@ -37,8 +37,9 @@ namespace MayaMaya
             {
                 TafelOverzicht settingsForm = new TafelOverzicht();
                 settingsForm.Show();
-                NaamLabel.ForeColor = Color.Black;
-                WwLabel.ForeColor = Color.Black;
+
+                this.Hide();
+
             }
             else
             {

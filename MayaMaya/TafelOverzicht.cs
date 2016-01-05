@@ -52,5 +52,15 @@ namespace MayaMaya
 
             this.Hide();
         }
+
+        private void HelpButton_Click(object sender, EventArgs e)
+        {
+            string message = "Geel: Lege tafel \nRood: Order in verwerking \nBlauw: Tafel bezet \nGroen: Bestelling gereed voor serveering";
+
+            string caption = "Hulp";
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            DialogResult result;
+            result = MessageBox.Show(message, caption, buttons);
+        }
     }
 }

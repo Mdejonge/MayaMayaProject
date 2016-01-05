@@ -118,6 +118,7 @@
             this.btn_Terug.TabIndex = 5;
             this.btn_Terug.Text = "Terug";
             this.btn_Terug.UseVisualStyleBackColor = true;
+            this.btn_Terug.Click += new System.EventHandler(this.btn_Terug_Click);
             // 
             // Tafel_Geselecteerd_Form
             // 

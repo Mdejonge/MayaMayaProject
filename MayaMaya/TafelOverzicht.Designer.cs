@@ -31,6 +31,8 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.TafelLabel1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Subtext = new System.Windows.Forms.Label();
+            this.Hoofdtext = new System.Windows.Forms.Label();
             this.TafelLabel2 = new System.Windows.Forms.Label();
             this.Tafel1 = new System.Windows.Forms.Button();
             this.Tafel2 = new System.Windows.Forms.Button();
@@ -49,8 +51,6 @@
             this.TafelLabel6 = new System.Windows.Forms.Label();
             this.TafelLabel7 = new System.Windows.Forms.Label();
             this.TafelLabel8 = new System.Windows.Forms.Label();
-            this.Hoofdtext = new System.Windows.Forms.Label();
-            this.Subtext = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,6 +81,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 84);
             this.panel1.TabIndex = 2;
+            // 
+            // Subtext
+            // 
+            this.Subtext.AutoSize = true;
+            this.Subtext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Subtext.Location = new System.Drawing.Point(38, 49);
+            this.Subtext.Name = "Subtext";
+            this.Subtext.Size = new System.Drawing.Size(122, 17);
+            this.Subtext.TabIndex = 1;
+            this.Subtext.Text = "Welkom gebruiker";
+            // 
+            // Hoofdtext
+            // 
+            this.Hoofdtext.AutoSize = true;
+            this.Hoofdtext.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Hoofdtext.Location = new System.Drawing.Point(8, 16);
+            this.Hoofdtext.Margin = new System.Windows.Forms.Padding(8, 0, 3, 0);
+            this.Hoofdtext.Name = "Hoofdtext";
+            this.Hoofdtext.Size = new System.Drawing.Size(179, 24);
+            this.Hoofdtext.TabIndex = 0;
+            this.Hoofdtext.Text = "Overzicht van Tafels";
             // 
             // TafelLabel2
             // 
@@ -181,6 +202,7 @@
             this.HelpButton.TabIndex = 11;
             this.HelpButton.Text = "?";
             this.HelpButton.UseVisualStyleBackColor = true;
+            this.HelpButton.Click += new System.EventHandler(this.HelpButton_Click);
             // 
             // LogoutButton
             // 
@@ -259,27 +281,6 @@
             this.TafelLabel8.Size = new System.Drawing.Size(37, 24);
             this.TafelLabel8.TabIndex = 19;
             this.TafelLabel8.Text = "Vrij";
-            // 
-            // Hoofdtext
-            // 
-            this.Hoofdtext.AutoSize = true;
-            this.Hoofdtext.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Hoofdtext.Location = new System.Drawing.Point(8, 16);
-            this.Hoofdtext.Margin = new System.Windows.Forms.Padding(8, 0, 3, 0);
-            this.Hoofdtext.Name = "Hoofdtext";
-            this.Hoofdtext.Size = new System.Drawing.Size(179, 24);
-            this.Hoofdtext.TabIndex = 0;
-            this.Hoofdtext.Text = "Overzicht van Tafels";
-            // 
-            // Subtext
-            // 
-            this.Subtext.AutoSize = true;
-            this.Subtext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Subtext.Location = new System.Drawing.Point(38, 49);
-            this.Subtext.Name = "Subtext";
-            this.Subtext.Size = new System.Drawing.Size(122, 17);
-            this.Subtext.TabIndex = 1;
-            this.Subtext.Text = "Welkom gebruiker";
             // 
             // TafelOverzicht
             // 
