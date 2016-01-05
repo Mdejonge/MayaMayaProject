@@ -50,9 +50,17 @@ namespace MayaMaya
     {
         public bool wachtwoordcorrect(string username, string password)
         {
-            //Console.WriteLine(username);
-            //Console.WriteLine(password);
-            //test ^^
+            //Connect to database
+            string connString = ConfigurationManager
+                .ConnectionStrings["MayaMayaDatabase"]
+                .ConnectionString;
+            SqlConnection conn = new SqlConnection(connString);
+            conn.Open();
+
+            //Run SQL command
+            SqlCommand command = new SqlCommand("", conn);
+            SqlDataReader reader = command.ExecuteReader();
+
             if (1 == 1/* checken van wachtwoord via database*/)
             {
                 return true;
