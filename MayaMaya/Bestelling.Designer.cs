@@ -34,18 +34,18 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Lunch = new System.Windows.Forms.TabPage();
             this.Diner = new System.Windows.Forms.TabPage();
+            this.ListViewDiner = new System.Windows.Forms.ListView();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Dranken = new System.Windows.Forms.TabPage();
+            this.ListViewDranken = new System.Windows.Forms.ListView();
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ListViewBestellijst = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_TotaalPrijs = new System.Windows.Forms.Label();
-            this.ListViewDiner = new System.Windows.Forms.ListView();
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ListViewDranken = new System.Windows.Forms.ListView();
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.Lunch.SuspendLayout();
             this.Diner.SuspendLayout();
@@ -113,6 +113,33 @@
             this.Diner.Text = "Diner";
             this.Diner.UseVisualStyleBackColor = true;
             // 
+            // ListViewDiner
+            // 
+            this.ListViewDiner.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader5,
+            this.columnHeader6});
+            this.ListViewDiner.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListViewDiner.FullRowSelect = true;
+            this.ListViewDiner.GridLines = true;
+            this.ListViewDiner.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.ListViewDiner.Location = new System.Drawing.Point(0, 0);
+            this.ListViewDiner.Name = "ListViewDiner";
+            this.ListViewDiner.Size = new System.Drawing.Size(719, 436);
+            this.ListViewDiner.TabIndex = 4;
+            this.ListViewDiner.UseCompatibleStateImageBehavior = false;
+            this.ListViewDiner.View = System.Windows.Forms.View.Details;
+            this.ListViewDiner.SelectedIndexChanged += new System.EventHandler(this.ListViewDiner_SelectedIndexChanged);
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Product";
+            this.columnHeader5.Width = 615;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Voorraad";
+            this.columnHeader6.Width = 100;
+            // 
             // Dranken
             // 
             this.Dranken.Controls.Add(this.ListViewDranken);
@@ -123,6 +150,33 @@
             this.Dranken.TabIndex = 2;
             this.Dranken.Text = "Dranken";
             this.Dranken.UseVisualStyleBackColor = true;
+            // 
+            // ListViewDranken
+            // 
+            this.ListViewDranken.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader7,
+            this.columnHeader8});
+            this.ListViewDranken.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListViewDranken.FullRowSelect = true;
+            this.ListViewDranken.GridLines = true;
+            this.ListViewDranken.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.ListViewDranken.Location = new System.Drawing.Point(0, 0);
+            this.ListViewDranken.Name = "ListViewDranken";
+            this.ListViewDranken.Size = new System.Drawing.Size(719, 436);
+            this.ListViewDranken.TabIndex = 4;
+            this.ListViewDranken.UseCompatibleStateImageBehavior = false;
+            this.ListViewDranken.View = System.Windows.Forms.View.Details;
+            this.ListViewDranken.SelectedIndexChanged += new System.EventHandler(this.ListViewDranken_SelectedIndexChanged);
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Product";
+            this.columnHeader7.Width = 615;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Voorraad";
+            this.columnHeader8.Width = 100;
             // 
             // ListViewBestellijst
             // 
@@ -168,58 +222,6 @@
             this.lbl_TotaalPrijs.Size = new System.Drawing.Size(0, 13);
             this.lbl_TotaalPrijs.TabIndex = 3;
             // 
-            // ListViewDiner
-            // 
-            this.ListViewDiner.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader5,
-            this.columnHeader6});
-            this.ListViewDiner.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ListViewDiner.FullRowSelect = true;
-            this.ListViewDiner.GridLines = true;
-            this.ListViewDiner.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.ListViewDiner.Location = new System.Drawing.Point(0, 0);
-            this.ListViewDiner.Name = "ListViewDiner";
-            this.ListViewDiner.Size = new System.Drawing.Size(719, 436);
-            this.ListViewDiner.TabIndex = 4;
-            this.ListViewDiner.UseCompatibleStateImageBehavior = false;
-            this.ListViewDiner.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Product";
-            this.columnHeader5.Width = 615;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Voorraad";
-            this.columnHeader6.Width = 100;
-            // 
-            // ListViewDranken
-            // 
-            this.ListViewDranken.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader7,
-            this.columnHeader8});
-            this.ListViewDranken.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ListViewDranken.FullRowSelect = true;
-            this.ListViewDranken.GridLines = true;
-            this.ListViewDranken.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.ListViewDranken.Location = new System.Drawing.Point(0, 0);
-            this.ListViewDranken.Name = "ListViewDranken";
-            this.ListViewDranken.Size = new System.Drawing.Size(719, 436);
-            this.ListViewDranken.TabIndex = 4;
-            this.ListViewDranken.UseCompatibleStateImageBehavior = false;
-            this.ListViewDranken.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Product";
-            this.columnHeader7.Width = 615;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Voorraad";
-            this.columnHeader8.Width = 100;
-            // 
             // Bestelling
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,6 +233,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "Bestelling";
             this.Text = "Bestelling";
+            this.Load += new System.EventHandler(this.Bestelling_Load);
             this.tabControl1.ResumeLayout(false);
             this.Lunch.ResumeLayout(false);
             this.Diner.ResumeLayout(false);

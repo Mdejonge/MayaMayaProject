@@ -37,8 +37,8 @@ namespace MayaMaya
             conn.Open();
 
             ////Run SQL command
-            //SqlCommand command = new SqlCommand("", conn);
-            //SqlDataReader reader = command.ExecuteReader();
+            SqlCommand command = new SqlCommand("", conn);
+            SqlDataReader reader = command.ExecuteReader();
 
             if (1 == 1/* checken van wachtwoord via database*/)
             {
