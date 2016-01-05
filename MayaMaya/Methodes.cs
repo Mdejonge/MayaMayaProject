@@ -39,7 +39,6 @@ namespace MayaMaya
             SqlConnection conn = new SqlConnection(connString);
             conn.Open();
 
-<<<<<<< HEAD
             SqlCommand command = new SqlCommand("select * from Personeel where NAAM = '" + username + "' and WACHTWOORD = '" + password +"'", conn);
             SqlDataReader reader = command.ExecuteReader();
             int count = 0;
@@ -50,11 +49,9 @@ namespace MayaMaya
                 //string afdeling = (string) reader["AFDELING"];
                 //string naam = (string)reader["NAAM"];
                 //string wachtwoord = (string) reader["WACHTWOORD"];
-=======
             ////Run SQL command
             SqlCommand command = new SqlCommand("", conn);
             SqlDataReader reader = command.ExecuteReader();
->>>>>>> origin/master
 
                 //Werknemer werknemer = new Werknemer(id, afdeling, naam, wachtwoord);
                 //werknemers.add(werknemer);
