@@ -43,9 +43,14 @@ namespace MayaMaya
         {
             int itemAantal = 0;
             ListView.SelectedListViewItemCollection Lunch = this.ListViewLunch.SelectedItems;
-            foreach (ListViewItem item in Lunch)
+
+            foreach(ListViewItem item in Lunch)
             {
-                if (!ListViewBestellijst.Items.ContainsKey(item.Text))
+                if(ListViewBestellijst.Items.Contains(item))
+                {
+                    MessageBox.Show("Bestaat al");
+                }
+                else
                 {
                     ListViewItem Bestellijst = new ListViewItem(item.Text);
                     Bestellijst.SubItems.Add(itemAantal.ToString());
