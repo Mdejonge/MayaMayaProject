@@ -29,13 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.btn_Tafel1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // btn_Tafel1
+            // 
+            this.btn_Tafel1.Location = new System.Drawing.Point(12, 12);
+            this.btn_Tafel1.Name = "btn_Tafel1";
+            this.btn_Tafel1.Size = new System.Drawing.Size(107, 96);
+            this.btn_Tafel1.TabIndex = 0;
+            this.btn_Tafel1.Text = "Tafel 1";
+            this.btn_Tafel1.UseVisualStyleBackColor = true;
+            this.btn_Tafel1.Click += new System.EventHandler(this.btn_Tafel1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(773, 488);
+            this.Controls.Add(this.btn_Tafel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "MayaMaya Bestelsysteem";
@@ -44,6 +56,8 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btn_Tafel1;
     }
 }
 

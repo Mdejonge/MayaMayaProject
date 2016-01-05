@@ -7,25 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using System.Configuration;
 
 namespace MayaMaya
 {
-    public partial class Form1 : Form
+    public partial class Tafel_Geselecteerd_Form : Form
     {
-        public Form1()
+        public Tafel_Geselecteerd_Form()
         {
             InitializeComponent();
-
-           
         }
 
-        private void btn_Tafel1_Click(object sender, EventArgs e)
+        private void btn_Lunch_Click(object sender, EventArgs e)
         {
-            Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form();
+            Bestelling Bestelling = new Bestelling();
 
-            TafelGeselecteerd.Show();
+            Bestelling.Show();
 
             this.Hide();
         }
