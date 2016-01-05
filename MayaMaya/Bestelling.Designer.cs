@@ -136,7 +136,7 @@
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "Aantal";
+            this.columnHeader4.Text = "Prijs";
             this.columnHeader4.Width = 100;
             // 
             // label1

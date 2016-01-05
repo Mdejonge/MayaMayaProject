@@ -56,7 +56,14 @@ namespace MayaMaya
                 string prijsString = item.SubItems[2].Text.ToString().Trim();
                 float prijsFloat = Single.Parse(prijsString);
                 totaalPrijs = totaalPrijs + prijsFloat;
+
+                ListViewItem bestellijst = new ListViewItem(item.Text);
+                bestellijst.SubItems.Add(item.SubItems[2].Text);
+                ListViewBestellijst.Items.Add(bestellijst);
+
             }
+
+
             lbl_TotaalPrijs.Text = Convert.ToString(totaalPrijs);          
         }
     }
