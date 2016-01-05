@@ -98,6 +98,7 @@
             this.btn_Diner.TabIndex = 3;
             this.btn_Diner.Text = "Diner";
             this.btn_Diner.UseVisualStyleBackColor = true;
+            this.btn_Diner.Click += new System.EventHandler(this.btn_Diner_Click);
             // 
             // btn_Dranken
             // 
@@ -108,6 +109,7 @@
             this.btn_Dranken.TabIndex = 4;
             this.btn_Dranken.Text = "Dranken";
             this.btn_Dranken.UseVisualStyleBackColor = true;
+            this.btn_Dranken.Click += new System.EventHandler(this.btn_Dranken_Click);
             // 
             // btn_Terug
             // 
