@@ -41,4 +41,19 @@ namespace MayaMaya
             }
         }
     }
+    class Berkeningen
+    {
+        public bool wachtwoordcorrect(string username, string password)
+        {
+            //Console.WriteLine(username);
+            //Console.WriteLine(password);
+            //test ^^
+            if (1 == 1/* checken van wachtwoord via database*/)
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+    }
 }
