@@ -38,6 +38,8 @@
             this.ListViewBestellijst = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_TotaalPrijs = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.Lunch.SuspendLayout();
             this.SuspendLayout();
@@ -122,7 +124,7 @@
             this.ListViewBestellijst.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.ListViewBestellijst.Location = new System.Drawing.Point(17, 557);
             this.ListViewBestellijst.Name = "ListViewBestellijst";
-            this.ListViewBestellijst.Size = new System.Drawing.Size(719, 177);
+            this.ListViewBestellijst.Size = new System.Drawing.Size(719, 197);
             this.ListViewBestellijst.TabIndex = 1;
             this.ListViewBestellijst.UseCompatibleStateImageBehavior = false;
             this.ListViewBestellijst.View = System.Windows.Forms.View.Details;
@@ -137,11 +139,30 @@
             this.columnHeader4.Text = "Aantal";
             this.columnHeader4.Width = 100;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(575, 757);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Totaalprijs:";
+            // 
+            // lbl_TotaalPrijs
+            // 
+            this.lbl_TotaalPrijs.AutoSize = true;
+            this.lbl_TotaalPrijs.Location = new System.Drawing.Point(648, 757);
+            this.lbl_TotaalPrijs.Name = "lbl_TotaalPrijs";
+            this.lbl_TotaalPrijs.Size = new System.Drawing.Size(0, 13);
+            this.lbl_TotaalPrijs.TabIndex = 3;
+            // 
             // Bestelling
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(752, 985);
+            this.Controls.Add(this.lbl_TotaalPrijs);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.ListViewBestellijst);
             this.Controls.Add(this.tabControl1);
             this.Name = "Bestelling";
@@ -149,6 +170,7 @@
             this.tabControl1.ResumeLayout(false);
             this.Lunch.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -164,5 +186,7 @@
         private System.Windows.Forms.ListView ListViewBestellijst;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_TotaalPrijs;
     }
 }

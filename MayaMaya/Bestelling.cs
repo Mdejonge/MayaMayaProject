@@ -12,16 +12,19 @@ namespace MayaMaya
 {
     public partial class Bestelling : Form
     {
+        public static float totaalPrijs;
         public Bestelling()
         {
             InitializeComponent();
 
             Methodes methode = new Methodes();
 
+            List<int> LunchItemID = new List<int>();
             List<string> LunchItemNaam = new List<string>();
             List<int> LunchItemVoorraad = new List<int>();
+            List<float> LunchItemPrijs = new List<float>();
 
-            methode.getLunchItems(out LunchItemNaam, out LunchItemVoorraad);
+            methode.getLunchItems(out LunchItemID, out LunchItemNaam, out LunchItemVoorraad, out LunchItemPrijs);
 
 
             foreach (string value in LunchItemNaam)
@@ -31,6 +34,11 @@ namespace MayaMaya
                 foreach (int voorraad in LunchItemVoorraad)
                 {
                     Lunch.SubItems.Add(voorraad.ToString());
+
+                    foreach(float prijs in LunchItemPrijs)
+                    {
+                        Lunch.SubItems.Add(prijs.ToString());
+                    }
                 }
 
                 ListViewLunch.Items.Add(Lunch);
@@ -41,22 +49,15 @@ namespace MayaMaya
 
         private void ListViewLunch_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int itemAantal = 0;
             ListView.SelectedListViewItemCollection Lunch = this.ListViewLunch.SelectedItems;
 
             foreach(ListViewItem item in Lunch)
             {
-                if(ListViewBestellijst.Items.Contains(item))
-                {
-                    MessageBox.Show("Bestaat al");
-                }
-                else
-                {
-                    ListViewItem Bestellijst = new ListViewItem(item.Text);
-                    Bestellijst.SubItems.Add(itemAantal.ToString());
-                    ListViewBestellijst.Items.Add(Bestellijst);
-                }
+                string prijsString = item.SubItems[2].Text.ToString().Trim();
+                float prijsFloat = Single.Parse(prijsString);
+                totaalPrijs = totaalPrijs + prijsFloat;
             }
+            lbl_TotaalPrijs.Text = Convert.ToString(totaalPrijs);          
         }
     }
 }
