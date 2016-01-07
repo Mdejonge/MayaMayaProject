@@ -68,5 +68,12 @@ namespace MayaMaya
             Tafelreserveren reserveerform = new Tafelreserveren();
             reserveerform.Show();
         }
+
+        private void LogoutButton_Click(object sender, EventArgs e)
+        {
+            LoginScherm loginform = new LoginScherm();
+            loginform.Show();
+            this.Close();
+        }
     }
 }
