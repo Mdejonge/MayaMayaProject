@@ -49,6 +49,7 @@
             this.TafelSelectBox.Name = "TafelSelectBox";
             this.TafelSelectBox.Size = new System.Drawing.Size(121, 21);
             this.TafelSelectBox.TabIndex = 1;
+            this.TafelSelectBox.SelectedIndexChanged += new System.EventHandler(this.TafelSelectBox_SelectedIndexChanged);
             // 
             // Tafelreserveren
             // 

@@ -68,6 +68,7 @@
     <Compile Include="Personeel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TafelEnum.cs" />
     <Compile Include="TafelOverzicht.cs">
       <SubType>Form</SubType>
     </Compile>

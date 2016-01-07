@@ -17,6 +17,9 @@ namespace MayaMaya
             InitializeComponent();
         }
 
-      
+        private void TafelSelectBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
