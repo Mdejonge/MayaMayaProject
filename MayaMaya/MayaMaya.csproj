@@ -74,6 +74,12 @@
     <Compile Include="TafelOverzicht.Designer.cs">
       <DependentUpon>TafelOverzicht.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tafelreserveren.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tafelreserveren.Designer.cs">
+      <DependentUpon>Tafelreserveren.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tafels.cs" />
     <Compile Include="Tafel_Geselecteerd_Form.cs">
       <SubType>Form</SubType>
@@ -98,6 +104,9 @@
     </Compile>
     <EmbeddedResource Include="TafelOverzicht.resx">
       <DependentUpon>TafelOverzicht.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tafelreserveren.resx">
+      <DependentUpon>Tafelreserveren.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tafel_Geselecteerd_Form.resx">
       <DependentUpon>Tafel_Geselecteerd_Form.cs</DependentUpon>

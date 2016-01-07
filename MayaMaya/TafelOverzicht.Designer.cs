@@ -221,6 +221,7 @@
             this.ReserveerButton.TabIndex = 13;
             this.ReserveerButton.Text = "Tafel Reserveren";
             this.ReserveerButton.UseVisualStyleBackColor = true;
+            this.ReserveerButton.Click += new System.EventHandler(this.ReserveerButton_Click);
             // 
             // TafelLabel3
             // 
@@ -303,11 +304,11 @@
             this.Controls.Add(this.Tafel6);
             this.Controls.Add(this.Tafel5);
             this.Controls.Add(this.Tafel4);
-            this.Controls.Add(this.Tafel3);
             this.Controls.Add(this.Tafel2);
             this.Controls.Add(this.Tafel1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.Tafel3);
             this.Name = "TafelOverzicht";
             this.Text = "TafelOverzicht";
             this.panel1.ResumeLayout(false);

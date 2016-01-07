@@ -62,5 +62,11 @@ namespace MayaMaya
             DialogResult result;
             result = MessageBox.Show(message, caption, buttons);
         }
+
+        private void ReserveerButton_Click(object sender, EventArgs e)
+        {
+            Tafelreserveren reserveerform = new Tafelreserveren();
+            reserveerform.Show();
+        }
     }
 }

@@ -50,8 +50,8 @@ namespace MayaMaya
                 //string naam = (string)reader["NAAM"];
                 //string wachtwoord = (string) reader["WACHTWOORD"];
             ////Run SQL command
-            SqlCommand command = new SqlCommand("", conn);
-            SqlDataReader reader = command.ExecuteReader();
+            //SqlCommand command = new SqlCommand("", conn);
+            //SqlDataReader reader = command.ExecuteReader();
 
                 //Werknemer werknemer = new Werknemer(id, afdeling, naam, wachtwoord);
                 //werknemers.add(werknemer);
