@@ -14,13 +14,24 @@ namespace MayaMaya
         public Methodes()
         {
         }
-        public void getLunchItems(out List<int> LunchItemID, out List<string> LunchItemNaam, out List<int> LunchItemVoorraad, out List<float>LunchItemPrijs)
+        
+        public void ConnectDatabase(out SqlConnection conn)
         {
-            LunchItemID = new List<int>();
-            LunchItemNaam = new List<string>();
-            LunchItemVoorraad = new List<int>();
-            LunchItemPrijs = new List<float>();
-
+            //Connect to database
+            string connString = ConfigurationManager
+                .ConnectionStrings["MayaMayaDatabase"]
+                .ConnectionString;
+            conn = new SqlConnection(connString);
+            conn.Open();
+        }
+    }
+    class Berkeningen
+    {
+        
+        
+        public bool wachtwoordcorrect(string username, string password)
+        {
+            
             //Connect to database
             string connString = ConfigurationManager
                 .ConnectionStrings["MayaMayaDatabase"]
@@ -28,37 +39,41 @@ namespace MayaMaya
             SqlConnection conn = new SqlConnection(connString);
             conn.Open();
 
-            //Run SQL command
-            SqlCommand command = new SqlCommand("SELECT DISTINCT Menu_Items.ITEM_ID, Menu_Items.ITEM_NAAM, Menu_Items.VOORRAAD, Menu_Items.PRIJS FROM Menu_Items INNER JOIN Menu_Categorie ON Menu_Items.CATEGORIE_ID = '1' INNER JOIN Menukaart ON Menu_Categorie.KAART_ID = Menukaart.KAART_ID", conn);
+            SqlCommand command = new SqlCommand("select * from Personeel where NAAM = '" + username + "' and WACHTWOORD = '" + password +"'", conn);
             SqlDataReader reader = command.ExecuteReader();
-
-            //Process results(record for record)
+            int count = 0;
             while (reader.Read())
             {
-                //Get values form all the fields
-                int itemID = (int)reader["ITEM_ID"];
-                string itemNaam = (string)reader["ITEM_NAAM"];
-                LunchItemNaam.Add(itemNaam);
-                int voorraad = (int)reader["VOORRAAD"];
-                LunchItemVoorraad.Add(voorraad);
-                float prijs = (float)(double)reader["PRIJS"];
-                LunchItemPrijs.Add(prijs);
+                count += 1;
+                //int id = (int)reader["id"];
+                //string afdeling = (string) reader["AFDELING"];
+                //string naam = (string)reader["NAAM"];
+                //string wachtwoord = (string) reader["WACHTWOORD"];
+            ////Run SQL command
+            //SqlCommand command = new SqlCommand("", conn);
+            //SqlDataReader reader = command.ExecuteReader();
+
+                //Werknemer werknemer = new Werknemer(id, afdeling, naam, wachtwoord);
+                //werknemers.add(werknemer);
             }
-        }
-    }
-    class Berkeningen
-    {
-        public bool wachtwoordcorrect(string username, string password)
-        {
-            //Console.WriteLine(username);
-            //Console.WriteLine(password);
-            //test ^^
-            if (1 == 1/* checken van wachtwoord via database*/)
+            if (count == 1)
             {
                 return true;
             }
             else
+            {
                 return false;
+            }
+            ////Run SQL command
+            //SqlCommand command = new SqlCommand("", conn);
+            //SqlDataReader reader = command.ExecuteReader();
+
+            //if (1 == 1/* checken van wachtwoord via database*/)
+            //{
+            //    return true;
+            //}
+            //else
+            //    return false;
         }
     }
 }
