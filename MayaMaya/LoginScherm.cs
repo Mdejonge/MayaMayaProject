@@ -32,7 +32,7 @@ namespace MayaMaya
             string password = textboxWw.Text;
 
 
-            Berkeningen berekening = new Berkeningen();
+            Login berekening = new Login();
             if (berekening.wachtwoordcorrect(username, password))
             {
                 TafelOverzicht settingsForm = new TafelOverzicht();
