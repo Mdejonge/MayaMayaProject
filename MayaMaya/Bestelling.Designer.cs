@@ -46,6 +46,7 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_TotaalPrijs = new System.Windows.Forms.Label();
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.Lunch.SuspendLayout();
             this.Diner.SuspendLayout();
@@ -56,7 +57,8 @@
             // 
             this.ListViewLunch.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
-            this.columnHeader2});
+            this.columnHeader2,
+            this.columnHeader9});
             this.ListViewLunch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListViewLunch.FullRowSelect = true;
             this.ListViewLunch.GridLines = true;
@@ -72,7 +74,7 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Product";
-            this.columnHeader1.Width = 615;
+            this.columnHeader1.Width = 555;
             // 
             // columnHeader2
             // 
@@ -222,6 +224,10 @@
             this.lbl_TotaalPrijs.Size = new System.Drawing.Size(0, 13);
             this.lbl_TotaalPrijs.TabIndex = 3;
             // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Prijs";
+            // 
             // Bestelling
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -263,5 +269,6 @@
         private System.Windows.Forms.ListView ListViewDranken;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
     }
 }

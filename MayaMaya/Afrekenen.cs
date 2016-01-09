@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MayaMaya
 {
-    class Menu_Categorie
+    class Afrekenen
     {
     }
 }

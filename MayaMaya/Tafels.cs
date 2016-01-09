@@ -8,5 +8,12 @@ namespace MayaMaya
 {
     class Tafels
     {
+        public enum Status
+        {
+            Vrij,
+            bezig,
+            gereserveert,
+            bezet
+        };
     }
 }
