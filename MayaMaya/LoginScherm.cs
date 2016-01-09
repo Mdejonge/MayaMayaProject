@@ -28,29 +28,49 @@ namespace MayaMaya
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            string username = textboxNaam.Text;
+            
             string password = textboxWw.Text;
 
 
             Login berekening = new Login();
-            if (berekening.wachtwoordcorrect(username, password))
+            if (berekening.wachtwoordcorrect(password)== "1" ) 
             {
+                //Tafel
                 TafelOverzicht settingsForm = new TafelOverzicht();
                 settingsForm.Show();
 
                 this.Hide();
 
             }
+            else if (berekening.wachtwoordcorrect(password) == "2")
+            {
+                //keuken
+                BarOverzicht settingsForm = new BarOverzicht();
+                settingsForm.Show();
+
+                this.Hide();
+
+            }
+            else if (berekening.wachtwoordcorrect(password) == "3")
+            {
+                //bar
+                KeukenOverzicht settingsForm = new KeukenOverzicht();
+                settingsForm.Show();
+
+                this.Hide();
+
+            }
+
             else
             {
-                NaamLabel.ForeColor = Color.Red;
+                
                 WwLabel.ForeColor = Color.Red;
                 string message = "Wachtwoord is incorrect";
                 string caption = "ERROR";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result;
                 result = MessageBox.Show(message, caption, buttons);
-                NaamLabel.ForeColor = Color.Black;
+                
                 WwLabel.ForeColor = Color.Black;
 
             }

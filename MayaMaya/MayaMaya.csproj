@@ -49,6 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Afrekenen.cs" />
+    <Compile Include="BarOverzicht.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BarOverzicht.Designer.cs">
+      <DependentUpon>BarOverzicht.cs</DependentUpon>
+    </Compile>
     <Compile Include="Bestelling.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +63,12 @@
     </Compile>
     <Compile Include="Bestellingen.cs" />
     <Compile Include="Item.cs" />
+    <Compile Include="KeukenOverzicht.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KeukenOverzicht.Designer.cs">
+      <DependentUpon>KeukenOverzicht.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs" />
     <Compile Include="LoginScherm.cs">
       <SubType>Form</SubType>

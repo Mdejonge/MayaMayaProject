@@ -10,7 +10,7 @@ namespace MayaMaya
 {
     class Login
     {
-        public bool wachtwoordcorrect(string username, string password)
+        public string wachtwoordcorrect(string password)
         {
             Methodes methode = new Methodes();
             SqlConnection conn;
@@ -23,14 +23,14 @@ namespace MayaMaya
             conn = new SqlConnection(connString);
             conn.Open();
 
-            SqlCommand command = new SqlCommand("select * from Personeel where NAAM = '" + username + "' and WACHTWOORD = '" + password + "'", conn);
+            SqlCommand command = new SqlCommand("select * from Personeel where WACHTWOORD = '" + password + "'", conn);
             SqlDataReader reader = command.ExecuteReader();
             int count = 0;
             while (reader.Read())
             {
                 count += 1;
                 //int id = (int)reader["id"];
-                //string afdeling = (string) reader["AFDELING"];
+
                 //string naam = (string)reader["NAAM"];
                 //string wachtwoord = (string) reader["WACHTWOORD"];
                 ////Run SQL command
@@ -39,14 +39,25 @@ namespace MayaMaya
 
                 //Werknemer werknemer = new Werknemer(id, afdeling, naam, wachtwoord);
                 //werknemers.add(werknemer);
+
+                //NAAM = '" + username + "' and 
+
             }
-            if (count == 1)
+            if ((count == 1)&&(1==1))//hier straks de afdeling
             {
-                return true;
+                return "1";
+            }
+            else if((count ==1)&&(1==1))
+            {
+                return "2";
+            }
+            else if ((count == 1)&&(1==1))
+            {
+                return "3";
             }
             else
             {
-                return false;
+                return "4";
             }
             ////Run SQL command
             //SqlCommand command = new SqlCommand("", conn);
