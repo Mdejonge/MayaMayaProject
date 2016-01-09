@@ -25,7 +25,7 @@ namespace MayaMaya
             methode.ConnectDatabase(out conn);
 
             //Run SQL command
-            SqlCommand command = new SqlCommand("SELECT Menu_Items.ITEM_ID, KAART_ID, Menu_Items.CATEGORIE_ID, Menu_Items.ITEM_NAAM, Menu_Items.VOORRAAD, Menu_Items.PRIJS, Menu_Items.BTW_HEFFING FROM Menu_Items INNER JOIN Menu_Categorie ON Menu_Items.CATEGORIE_ID = Menu_Categorie.CATEGORIE_ID", conn);
+            SqlCommand command = new SqlCommand("SELECT Menu_Items.ITEM_ID, Menu_Items.CATEGORIE_ID, KAART_ID, Menu_Items.ITEM_NAAM, Menu_Items.VOORRAAD, Menu_Items.PRIJS, Menu_Items.BTW_HEFFING FROM Menu_Items INNER JOIN Menu_Categorie ON Menu_Items.CATEGORIE_ID = Menu_Categorie.CATEGORIE_ID", conn);
             SqlDataReader reader = command.ExecuteReader();
 
             //Process results(record for record)

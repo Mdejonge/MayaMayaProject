@@ -21,12 +21,29 @@ namespace MayaMaya
 
             Bestellingen bestelling = new Bestellingen();
 
+            //Voegt Items aan juiste ViewList toe
             foreach(Item item in bestelling.Items)
             {
-                ListViewItem gerecht = new ListViewItem(item.naam);
-                gerecht.SubItems.Add(item.Voorraad.ToString());
-                gerecht.SubItems.Add(item.Prijs.ToString());
-                ListViewLunch.Items.Add(gerecht);
+                if(item.kaart_id == 1)
+                {
+                    ListViewItem Lunch = new ListViewItem(item.naam);
+                    Lunch.SubItems.Add(item.Voorraad.ToString());
+                    Lunch.SubItems.Add(item.Prijs.ToString());
+                    ListViewLunch.Items.Add(Lunch);
+                } else if (item.kaart_id == 2)
+                {
+                    ListViewItem Diner = new ListViewItem(item.naam);
+                    Diner.SubItems.Add(item.Voorraad.ToString());
+                    Diner.SubItems.Add(item.Prijs.ToString());
+                    ListViewDiner.Items.Add(Diner);
+                }
+                else if(item.kaart_id == 3)
+                {
+                    ListViewItem Dranken = new ListViewItem(item.naam);
+                    Dranken.SubItems.Add(item.Voorraad.ToString());
+                    Dranken.SubItems.Add(item.Prijs.ToString());
+                    ListViewDranken.Items.Add(Dranken);
+                }
             }
         }
 
@@ -85,7 +102,6 @@ namespace MayaMaya
                 //Voegt producten toe aan bestellijst
                 ListViewItem bestellijst = new ListViewItem(item.Text);
                 bestellijst.SubItems.Add(item.SubItems[2]);
-                bestellijst.SubItems.Add(item.SubItems[3]);
                 ListViewBestellijst.Items.Add(bestellijst);
 
 
@@ -108,7 +124,6 @@ namespace MayaMaya
                 //Voegt producten toe aan bestellijst
                 ListViewItem bestellijst = new ListViewItem(item.Text);
                 bestellijst.SubItems.Add(item.SubItems[2]);
-                bestellijst.SubItems.Add(item.SubItems[3]);
                 ListViewBestellijst.Items.Add(bestellijst);
             }
             lbl_TotaalPrijs.Text = Convert.ToString(totaalPrijs);
