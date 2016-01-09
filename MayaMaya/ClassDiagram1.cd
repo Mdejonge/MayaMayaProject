@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <ClassDiagram /> 
 =======
+=======
+>>>>>>> origin/master
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="MayaMaya.Bestelling">
     <Position X="10.5" Y="0.5" Width="1.5" />
@@ -89,5 +92,9 @@
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
+<<<<<<< HEAD
+</ClassDiagram>
+>>>>>>> origin/master
+=======
 </ClassDiagram>
 >>>>>>> origin/master
