@@ -43,7 +43,7 @@ namespace MayaMaya
                 //NAAM = '" + username + "' and 
 
             }
-            if ((count == 1)&&(1==1))//hier straks de afdeling
+            if ((count == 1)&& (1==1))//hier straks de afdeling
             {
                 return "1";
             }
