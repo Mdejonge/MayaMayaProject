@@ -125,6 +125,9 @@
     <EmbeddedResource Include="commentaarscherm.resx">
       <DependentUpon>commentaarscherm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KeukenOverzicht.resx">
+      <DependentUpon>KeukenOverzicht.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginScherm.resx">
       <DependentUpon>LoginScherm.cs</DependentUpon>
     </EmbeddedResource>

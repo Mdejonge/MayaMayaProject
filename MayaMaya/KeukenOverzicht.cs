@@ -16,5 +16,11 @@ namespace MayaMaya
         {
             InitializeComponent();
         }
+
+        private void LoginButton_Click(object sender, EventArgs e)
+        {
+            Form1 afrekeningscherm_salih = new Form1();
+            afrekeningscherm_salih.Show();
+        }
     }
 }
