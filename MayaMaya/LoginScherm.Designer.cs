@@ -60,6 +60,7 @@
             this.textboxWw.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textboxWw.Location = new System.Drawing.Point(347, 439);
             this.textboxWw.Name = "textboxWw";
+            this.textboxWw.PasswordChar = '•';
             this.textboxWw.Size = new System.Drawing.Size(358, 56);
             this.textboxWw.TabIndex = 4;
             // 
