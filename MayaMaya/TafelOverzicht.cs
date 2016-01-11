@@ -31,7 +31,7 @@ namespace MayaMaya
             TafelLabel6.BackColor = Color.Yellow;
             TafelLabel7.BackColor = Color.Yellow;
             TafelLabel8.BackColor = Color.Yellow;
-
+            TafelLabel9
 
 
 

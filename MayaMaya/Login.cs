@@ -23,7 +23,7 @@ namespace MayaMaya
             conn = new SqlConnection(connString);
             conn.Open();
 
-            SqlCommand command = new SqlCommand("select * from Personeel where WACHTWOORD = '" + password + "'", conn);
+            SqlCommand command = new SqlCommand("select afdeling from Personeel where WACHTWOORD = '" + password + "'", conn);
             SqlDataReader reader = command.ExecuteReader();
             int count = 0;
             while (reader.Read())
@@ -43,7 +43,7 @@ namespace MayaMaya
                 //NAAM = '" + username + "' and 
 
             }
-            if ((count == 1)&& (1==1))//hier straks de afdeling
+            if ((count)&& (1==1))//hier straks de afdeling
             {
                 return "1";
             }

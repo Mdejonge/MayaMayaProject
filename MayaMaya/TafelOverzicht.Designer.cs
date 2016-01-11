@@ -51,6 +51,10 @@
             this.TafelLabel6 = new System.Windows.Forms.Label();
             this.TafelLabel7 = new System.Windows.Forms.Label();
             this.TafelLabel8 = new System.Windows.Forms.Label();
+            this.TafelLabel9 = new System.Windows.Forms.Button();
+            this.Tafel10 = new System.Windows.Forms.Button();
+            this.TafelLabel10 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,7 +69,7 @@
             // 
             this.TafelLabel1.AutoSize = true;
             this.TafelLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TafelLabel1.Location = new System.Drawing.Point(215, 240);
+            this.TafelLabel1.Location = new System.Drawing.Point(215, 195);
             this.TafelLabel1.Name = "TafelLabel1";
             this.TafelLabel1.Size = new System.Drawing.Size(37, 24);
             this.TafelLabel1.TabIndex = 1;
@@ -107,7 +111,7 @@
             // 
             this.TafelLabel2.AutoSize = true;
             this.TafelLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TafelLabel2.Location = new System.Drawing.Point(487, 240);
+            this.TafelLabel2.Location = new System.Drawing.Point(487, 195);
             this.TafelLabel2.Name = "TafelLabel2";
             this.TafelLabel2.Size = new System.Drawing.Size(37, 24);
             this.TafelLabel2.TabIndex = 2;
@@ -116,7 +120,7 @@
             // Tafel1
             // 
             this.Tafel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tafel1.Location = new System.Drawing.Point(171, 152);
+            this.Tafel1.Location = new System.Drawing.Point(171, 111);
             this.Tafel1.Name = "Tafel1";
             this.Tafel1.Size = new System.Drawing.Size(136, 138);
             this.Tafel1.TabIndex = 3;
@@ -127,7 +131,7 @@
             // Tafel2
             // 
             this.Tafel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tafel2.Location = new System.Drawing.Point(443, 152);
+            this.Tafel2.Location = new System.Drawing.Point(443, 111);
             this.Tafel2.Name = "Tafel2";
             this.Tafel2.Size = new System.Drawing.Size(136, 138);
             this.Tafel2.TabIndex = 4;
@@ -137,7 +141,7 @@
             // Tafel3
             // 
             this.Tafel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tafel3.Location = new System.Drawing.Point(171, 345);
+            this.Tafel3.Location = new System.Drawing.Point(171, 291);
             this.Tafel3.Name = "Tafel3";
             this.Tafel3.Size = new System.Drawing.Size(136, 137);
             this.Tafel3.TabIndex = 5;
@@ -147,7 +151,7 @@
             // Tafel4
             // 
             this.Tafel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tafel4.Location = new System.Drawing.Point(443, 344);
+            this.Tafel4.Location = new System.Drawing.Point(443, 290);
             this.Tafel4.Name = "Tafel4";
             this.Tafel4.Size = new System.Drawing.Size(136, 138);
             this.Tafel4.TabIndex = 6;
@@ -157,7 +161,7 @@
             // Tafel5
             // 
             this.Tafel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tafel5.Location = new System.Drawing.Point(171, 539);
+            this.Tafel5.Location = new System.Drawing.Point(171, 455);
             this.Tafel5.Name = "Tafel5";
             this.Tafel5.Size = new System.Drawing.Size(136, 138);
             this.Tafel5.TabIndex = 7;
@@ -167,7 +171,7 @@
             // Tafel6
             // 
             this.Tafel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tafel6.Location = new System.Drawing.Point(443, 539);
+            this.Tafel6.Location = new System.Drawing.Point(443, 455);
             this.Tafel6.Name = "Tafel6";
             this.Tafel6.Size = new System.Drawing.Size(136, 138);
             this.Tafel6.TabIndex = 8;
@@ -177,7 +181,7 @@
             // Tafel7
             // 
             this.Tafel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tafel7.Location = new System.Drawing.Point(171, 743);
+            this.Tafel7.Location = new System.Drawing.Point(171, 629);
             this.Tafel7.Name = "Tafel7";
             this.Tafel7.Size = new System.Drawing.Size(136, 138);
             this.Tafel7.TabIndex = 9;
@@ -187,7 +191,7 @@
             // Tafel8
             // 
             this.Tafel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tafel8.Location = new System.Drawing.Point(443, 743);
+            this.Tafel8.Location = new System.Drawing.Point(443, 629);
             this.Tafel8.Name = "Tafel8";
             this.Tafel8.Size = new System.Drawing.Size(136, 138);
             this.Tafel8.TabIndex = 10;
@@ -228,7 +232,7 @@
             // 
             this.TafelLabel3.AutoSize = true;
             this.TafelLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TafelLabel3.Location = new System.Drawing.Point(215, 431);
+            this.TafelLabel3.Location = new System.Drawing.Point(215, 372);
             this.TafelLabel3.Name = "TafelLabel3";
             this.TafelLabel3.Size = new System.Drawing.Size(37, 24);
             this.TafelLabel3.TabIndex = 14;
@@ -238,7 +242,7 @@
             // 
             this.TafelLabel4.AutoSize = true;
             this.TafelLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TafelLabel4.Location = new System.Drawing.Point(487, 431);
+            this.TafelLabel4.Location = new System.Drawing.Point(487, 372);
             this.TafelLabel4.Name = "TafelLabel4";
             this.TafelLabel4.Size = new System.Drawing.Size(37, 24);
             this.TafelLabel4.TabIndex = 15;
@@ -248,7 +252,7 @@
             // 
             this.TafelLabel5.AutoSize = true;
             this.TafelLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TafelLabel5.Location = new System.Drawing.Point(215, 624);
+            this.TafelLabel5.Location = new System.Drawing.Point(215, 544);
             this.TafelLabel5.Name = "TafelLabel5";
             this.TafelLabel5.Size = new System.Drawing.Size(37, 24);
             this.TafelLabel5.TabIndex = 16;
@@ -258,7 +262,7 @@
             // 
             this.TafelLabel6.AutoSize = true;
             this.TafelLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TafelLabel6.Location = new System.Drawing.Point(487, 624);
+            this.TafelLabel6.Location = new System.Drawing.Point(487, 544);
             this.TafelLabel6.Name = "TafelLabel6";
             this.TafelLabel6.Size = new System.Drawing.Size(37, 24);
             this.TafelLabel6.TabIndex = 17;
@@ -268,7 +272,7 @@
             // 
             this.TafelLabel7.AutoSize = true;
             this.TafelLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TafelLabel7.Location = new System.Drawing.Point(215, 832);
+            this.TafelLabel7.Location = new System.Drawing.Point(215, 716);
             this.TafelLabel7.Name = "TafelLabel7";
             this.TafelLabel7.Size = new System.Drawing.Size(37, 24);
             this.TafelLabel7.TabIndex = 18;
@@ -278,17 +282,62 @@
             // 
             this.TafelLabel8.AutoSize = true;
             this.TafelLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TafelLabel8.Location = new System.Drawing.Point(487, 832);
+            this.TafelLabel8.Location = new System.Drawing.Point(487, 716);
             this.TafelLabel8.Name = "TafelLabel8";
             this.TafelLabel8.Size = new System.Drawing.Size(37, 24);
             this.TafelLabel8.TabIndex = 19;
             this.TafelLabel8.Text = "Vrij";
+            // 
+            // TafelLabel9
+            // 
+            this.TafelLabel9.AccessibleDescription = "af";
+            this.TafelLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TafelLabel9.Location = new System.Drawing.Point(171, 806);
+            this.TafelLabel9.Name = "TafelLabel9";
+            this.TafelLabel9.Size = new System.Drawing.Size(136, 138);
+            this.TafelLabel9.TabIndex = 20;
+            this.TafelLabel9.Text = "Tafel 9";
+            this.TafelLabel9.UseVisualStyleBackColor = true;
+            // 
+            // Tafel10
+            // 
+            this.Tafel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tafel10.Location = new System.Drawing.Point(443, 806);
+            this.Tafel10.Name = "Tafel10";
+            this.Tafel10.Size = new System.Drawing.Size(136, 138);
+            this.Tafel10.TabIndex = 21;
+            this.Tafel10.Text = "Tafel 10";
+            this.Tafel10.UseVisualStyleBackColor = true;
+            // 
+            // TafelLabel10
+            // 
+            this.TafelLabel10.AutoSize = true;
+            this.TafelLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TafelLabel10.Location = new System.Drawing.Point(487, 891);
+            this.TafelLabel10.Name = "TafelLabel10";
+            this.TafelLabel10.Size = new System.Drawing.Size(37, 24);
+            this.TafelLabel10.TabIndex = 22;
+            this.TafelLabel10.Text = "Vrij";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(215, 891);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 24);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Vrij";
             // 
             // TafelOverzicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(752, 985);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.TafelLabel10);
+            this.Controls.Add(this.Tafel10);
+            this.Controls.Add(this.TafelLabel9);
             this.Controls.Add(this.TafelLabel8);
             this.Controls.Add(this.TafelLabel7);
             this.Controls.Add(this.TafelLabel6);
@@ -344,5 +393,9 @@
         private System.Windows.Forms.Label TafelLabel6;
         private System.Windows.Forms.Label TafelLabel7;
         private System.Windows.Forms.Label TafelLabel8;
+        private System.Windows.Forms.Button TafelLabel9;
+        private System.Windows.Forms.Button Tafel10;
+        private System.Windows.Forms.Label TafelLabel10;
+        private System.Windows.Forms.Label label2;
     }
 }
