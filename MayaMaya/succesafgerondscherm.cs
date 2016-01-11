@@ -16,5 +16,12 @@ namespace MayaMaya
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TafelOverzicht tafeloverzicht_koos = new TafelOverzicht();
+            tafeloverzicht_koos.Show();
+            this.Close();
+        }
     }
 }

@@ -102,7 +102,7 @@ namespace MayaMaya
         {
             if (total == 0)
             {
-                string message = "You did not enter a server name. Cancel this operation?";
+                string message = "U heeft niks ingevoerd, wilt u de proggama stoppen?";
                 string caption = "Error Detected in Input";
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                 DialogResult result;
@@ -125,6 +125,7 @@ namespace MayaMaya
             {
                 succesafgerondscherm successcherm = new succesafgerondscherm();
                 successcherm.Show();
+                this.Close();
             }
 
         }
@@ -192,6 +193,13 @@ namespace MayaMaya
         private void TabelPrijs_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            TafelOverzicht tafeloverzicht_koos = new TafelOverzicht();
+            tafeloverzicht_koos.Show();
+            this.Close();
         }
     }
 }
