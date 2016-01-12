@@ -51,10 +51,10 @@
             this.TafelLabel6 = new System.Windows.Forms.Label();
             this.TafelLabel7 = new System.Windows.Forms.Label();
             this.TafelLabel8 = new System.Windows.Forms.Label();
-            this.TafelLabel9 = new System.Windows.Forms.Button();
+            this.Tafel9 = new System.Windows.Forms.Button();
             this.Tafel10 = new System.Windows.Forms.Button();
             this.TafelLabel10 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.TafelLabel9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -295,17 +295,17 @@
             this.TafelLabel8.TabIndex = 19;
             this.TafelLabel8.Text = "Vrij";
             // 
-            // TafelLabel9
+            // Tafel9
             // 
-            this.TafelLabel9.AccessibleDescription = "af";
-            this.TafelLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TafelLabel9.Location = new System.Drawing.Point(171, 806);
-            this.TafelLabel9.Name = "TafelLabel9";
-            this.TafelLabel9.Size = new System.Drawing.Size(136, 138);
-            this.TafelLabel9.TabIndex = 20;
-            this.TafelLabel9.Text = "Tafel 9";
-            this.TafelLabel9.UseVisualStyleBackColor = true;
-            this.TafelLabel9.Click += new System.EventHandler(this.TafelLabel9_Click);
+            this.Tafel9.AccessibleDescription = "af";
+            this.Tafel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tafel9.Location = new System.Drawing.Point(171, 806);
+            this.Tafel9.Name = "Tafel9";
+            this.Tafel9.Size = new System.Drawing.Size(136, 138);
+            this.Tafel9.TabIndex = 20;
+            this.Tafel9.Text = "Tafel 9";
+            this.Tafel9.UseVisualStyleBackColor = true;
+            this.Tafel9.Click += new System.EventHandler(this.TafelLabel9_Click);
             // 
             // Tafel10
             // 
@@ -328,25 +328,25 @@
             this.TafelLabel10.TabIndex = 22;
             this.TafelLabel10.Text = "Vrij";
             // 
-            // label2
+            // TafelLabel9
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(215, 891);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 24);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "Vrij";
+            this.TafelLabel9.AutoSize = true;
+            this.TafelLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TafelLabel9.Location = new System.Drawing.Point(215, 891);
+            this.TafelLabel9.Name = "TafelLabel9";
+            this.TafelLabel9.Size = new System.Drawing.Size(37, 24);
+            this.TafelLabel9.TabIndex = 23;
+            this.TafelLabel9.Text = "Vrij";
             // 
             // TafelOverzicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(752, 985);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.TafelLabel9);
             this.Controls.Add(this.TafelLabel10);
             this.Controls.Add(this.Tafel10);
-            this.Controls.Add(this.TafelLabel9);
+            this.Controls.Add(this.Tafel9);
             this.Controls.Add(this.TafelLabel8);
             this.Controls.Add(this.TafelLabel7);
             this.Controls.Add(this.TafelLabel6);
@@ -402,9 +402,9 @@
         private System.Windows.Forms.Label TafelLabel6;
         private System.Windows.Forms.Label TafelLabel7;
         private System.Windows.Forms.Label TafelLabel8;
-        private System.Windows.Forms.Button TafelLabel9;
+        private System.Windows.Forms.Button Tafel9;
         private System.Windows.Forms.Button Tafel10;
         private System.Windows.Forms.Label TafelLabel10;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label TafelLabel9;
     }
 }

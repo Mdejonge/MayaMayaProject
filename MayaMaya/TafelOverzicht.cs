@@ -23,6 +23,8 @@ namespace MayaMaya
             Tafel6.BackColor = Color.Yellow;
             Tafel7.BackColor = Color.Yellow;
             Tafel8.BackColor = Color.Yellow;
+            Tafel9.BackColor = Color.Yellow;
+            Tafel10.BackColor = Color.Yellow;
             TafelLabel1.BackColor = Color.Yellow;
             TafelLabel2.BackColor = Color.Yellow;
             TafelLabel3.BackColor = Color.Yellow;

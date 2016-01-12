@@ -76,9 +76,20 @@ namespace MayaMaya
 
         public void button5_Click(object sender, EventArgs e)
         {
-
+            int invoer_getal=0;
             string invoer = textBox1.Text;
-            int invoer_getal = Int32.Parse(invoer);
+            try {
+                 invoer_getal = Int32.Parse(invoer);
+            }
+            catch(Exception exp)
+            {
+                string message = "De ingevoerde gegevens kloppen niet \nvoer een geldig getal in.";
+                string caption = "ERROR";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                result = MessageBox.Show(message, caption, buttons);
+
+            }
             BedragBerekening.Items.Add("" + invoer_getal.ToString("C2"));
             double fooiEnEind = invoer_getal + total;
             BedragBerekening.Items.Add("" + fooiEnEind.ToString("C2"));
