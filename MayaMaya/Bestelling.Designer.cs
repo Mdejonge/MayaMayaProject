@@ -31,6 +31,7 @@
             this.ListViewLunch = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Lunch = new System.Windows.Forms.TabPage();
             this.Diner = new System.Windows.Forms.TabPage();
@@ -46,11 +47,18 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_TotaalPrijs = new System.Windows.Forms.Label();
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_Tafelnummer = new System.Windows.Forms.Label();
+            this.lbl_BestellingOverzicht = new System.Windows.Forms.Label();
+            this.btn_Opslaan = new System.Windows.Forms.Button();
+            this.lbl_Terug = new System.Windows.Forms.Button();
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.Lunch.SuspendLayout();
             this.Diner.SuspendLayout();
             this.Dranken.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ListViewLunch
@@ -81,13 +89,17 @@
             this.columnHeader2.Text = "Voorraad";
             this.columnHeader2.Width = 100;
             // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Prijs";
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.Lunch);
             this.tabControl1.Controls.Add(this.Diner);
             this.tabControl1.Controls.Add(this.Dranken);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(13, 79);
+            this.tabControl1.Location = new System.Drawing.Point(13, 112);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(727, 472);
@@ -119,7 +131,8 @@
             // 
             this.ListViewDiner.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader5,
-            this.columnHeader6});
+            this.columnHeader6,
+            this.columnHeader10});
             this.ListViewDiner.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListViewDiner.FullRowSelect = true;
             this.ListViewDiner.GridLines = true;
@@ -135,7 +148,7 @@
             // columnHeader5
             // 
             this.columnHeader5.Text = "Product";
-            this.columnHeader5.Width = 615;
+            this.columnHeader5.Width = 555;
             // 
             // columnHeader6
             // 
@@ -157,7 +170,8 @@
             // 
             this.ListViewDranken.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader7,
-            this.columnHeader8});
+            this.columnHeader8,
+            this.columnHeader11});
             this.ListViewDranken.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListViewDranken.FullRowSelect = true;
             this.ListViewDranken.GridLines = true;
@@ -173,7 +187,7 @@
             // columnHeader7
             // 
             this.columnHeader7.Text = "Product";
-            this.columnHeader7.Width = 615;
+            this.columnHeader7.Width = 555;
             // 
             // columnHeader8
             // 
@@ -189,7 +203,7 @@
             this.ListViewBestellijst.FullRowSelect = true;
             this.ListViewBestellijst.GridLines = true;
             this.ListViewBestellijst.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.ListViewBestellijst.Location = new System.Drawing.Point(17, 557);
+            this.ListViewBestellijst.Location = new System.Drawing.Point(17, 586);
             this.ListViewBestellijst.Name = "ListViewBestellijst";
             this.ListViewBestellijst.Size = new System.Drawing.Size(719, 197);
             this.ListViewBestellijst.TabIndex = 1;
@@ -210,29 +224,89 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(575, 757);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(538, 790);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.Size = new System.Drawing.Size(100, 24);
             this.label1.TabIndex = 2;
             this.label1.Text = "Totaalprijs:";
             // 
             // lbl_TotaalPrijs
             // 
             this.lbl_TotaalPrijs.AutoSize = true;
-            this.lbl_TotaalPrijs.Location = new System.Drawing.Point(648, 757);
+            this.lbl_TotaalPrijs.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TotaalPrijs.Location = new System.Drawing.Point(691, 790);
             this.lbl_TotaalPrijs.Name = "lbl_TotaalPrijs";
-            this.lbl_TotaalPrijs.Size = new System.Drawing.Size(0, 13);
+            this.lbl_TotaalPrijs.Size = new System.Drawing.Size(35, 24);
             this.lbl_TotaalPrijs.TabIndex = 3;
+            this.lbl_TotaalPrijs.Text = "0,0";
             // 
-            // columnHeader9
+            // panel1
             // 
-            this.columnHeader9.Text = "Prijs";
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lbl_BestellingOverzicht);
+            this.panel1.Controls.Add(this.lbl_Tafelnummer);
+            this.panel1.Location = new System.Drawing.Point(292, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.TabIndex = 4;
+            // 
+            // lbl_Tafelnummer
+            // 
+            this.lbl_Tafelnummer.AutoSize = true;
+            this.lbl_Tafelnummer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Tafelnummer.Location = new System.Drawing.Point(60, 16);
+            this.lbl_Tafelnummer.Name = "lbl_Tafelnummer";
+            this.lbl_Tafelnummer.Size = new System.Drawing.Size(122, 24);
+            this.lbl_Tafelnummer.TabIndex = 0;
+            this.lbl_Tafelnummer.Text = "Tafelnummer";
+            // 
+            // lbl_BestellingOverzicht
+            // 
+            this.lbl_BestellingOverzicht.AutoSize = true;
+            this.lbl_BestellingOverzicht.Location = new System.Drawing.Point(50, 53);
+            this.lbl_BestellingOverzicht.Name = "lbl_BestellingOverzicht";
+            this.lbl_BestellingOverzicht.Size = new System.Drawing.Size(95, 13);
+            this.lbl_BestellingOverzicht.TabIndex = 1;
+            this.lbl_BestellingOverzicht.Text = "Bestellingoverzicht";
+            // 
+            // btn_Opslaan
+            // 
+            this.btn_Opslaan.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Opslaan.Location = new System.Drawing.Point(559, 843);
+            this.btn_Opslaan.Name = "btn_Opslaan";
+            this.btn_Opslaan.Size = new System.Drawing.Size(177, 63);
+            this.btn_Opslaan.TabIndex = 5;
+            this.btn_Opslaan.Text = "Order Plaatsen";
+            this.btn_Opslaan.UseVisualStyleBackColor = true;
+            // 
+            // lbl_Terug
+            // 
+            this.lbl_Terug.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Terug.Location = new System.Drawing.Point(17, 843);
+            this.lbl_Terug.Name = "lbl_Terug";
+            this.lbl_Terug.Size = new System.Drawing.Size(177, 63);
+            this.lbl_Terug.TabIndex = 6;
+            this.lbl_Terug.Text = "Terug";
+            this.lbl_Terug.UseVisualStyleBackColor = true;
+            this.lbl_Terug.Click += new System.EventHandler(this.lbl_Terug_Click);
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Prijs";
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Prijs";
             // 
             // Bestelling
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(752, 985);
+            this.Controls.Add(this.lbl_Terug);
+            this.Controls.Add(this.btn_Opslaan);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbl_TotaalPrijs);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ListViewBestellijst);
@@ -244,6 +318,8 @@
             this.Lunch.ResumeLayout(false);
             this.Diner.ResumeLayout(false);
             this.Dranken.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,5 +346,12 @@
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lbl_Tafelnummer;
+        private System.Windows.Forms.Label lbl_BestellingOverzicht;
+        private System.Windows.Forms.Button btn_Opslaan;
+        private System.Windows.Forms.Button lbl_Terug;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
     }
 }

@@ -14,15 +14,17 @@ namespace MayaMaya
     {
         public string Soortpublic;
         public static float totaalPrijs;
-        public Bestelling(string Soort)
+        public Bestelling(string Soort, int tafelnummer)
         {
             InitializeComponent();
             Soortpublic = Soort;
 
             Bestellingen bestelling = new Bestellingen();
 
+            lbl_Tafelnummer.Text = "Tafel " + tafelnummer.ToString();
+
             //Voegt Items aan juiste ViewList toe
-            foreach(Item item in bestelling.Items)
+            foreach (Item item in bestelling.Items)
             {
                 if(item.kaart_id == 1)
                 {
@@ -146,6 +148,15 @@ namespace MayaMaya
                 default:
                     break;
             }
+        }
+
+        private void lbl_Terug_Click(object sender, EventArgs e)
+        {
+            Tafel_Geselecteerd_Form tafelGeselecteerd = new Tafel_Geselecteerd_Form(Tafels.tafelnummer);
+
+            tafelGeselecteerd.Show();
+
+            this.Hide();
         }
     }
 }

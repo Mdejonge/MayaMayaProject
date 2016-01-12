@@ -137,6 +137,7 @@
             this.Tafel2.TabIndex = 4;
             this.Tafel2.Text = "Tafel 2";
             this.Tafel2.UseVisualStyleBackColor = true;
+            this.Tafel2.Click += new System.EventHandler(this.Tafel2_Click);
             // 
             // Tafel3
             // 
@@ -147,6 +148,7 @@
             this.Tafel3.TabIndex = 5;
             this.Tafel3.Text = "Tafel 3";
             this.Tafel3.UseVisualStyleBackColor = true;
+            this.Tafel3.Click += new System.EventHandler(this.Tafel3_Click);
             // 
             // Tafel4
             // 
@@ -157,6 +159,7 @@
             this.Tafel4.TabIndex = 6;
             this.Tafel4.Text = "Tafel 4";
             this.Tafel4.UseVisualStyleBackColor = true;
+            this.Tafel4.Click += new System.EventHandler(this.Tafel4_Click);
             // 
             // Tafel5
             // 
@@ -167,6 +170,7 @@
             this.Tafel5.TabIndex = 7;
             this.Tafel5.Text = "Tafel 5";
             this.Tafel5.UseVisualStyleBackColor = true;
+            this.Tafel5.Click += new System.EventHandler(this.Tafel5_Click);
             // 
             // Tafel6
             // 
@@ -177,6 +181,7 @@
             this.Tafel6.TabIndex = 8;
             this.Tafel6.Text = "Tafel 6";
             this.Tafel6.UseVisualStyleBackColor = true;
+            this.Tafel6.Click += new System.EventHandler(this.Tafel6_Click);
             // 
             // Tafel7
             // 
@@ -187,6 +192,7 @@
             this.Tafel7.TabIndex = 9;
             this.Tafel7.Text = "Tafel 7";
             this.Tafel7.UseVisualStyleBackColor = true;
+            this.Tafel7.Click += new System.EventHandler(this.Tafel7_Click);
             // 
             // Tafel8
             // 
@@ -197,6 +203,7 @@
             this.Tafel8.TabIndex = 10;
             this.Tafel8.Text = "Tafel 8";
             this.Tafel8.UseVisualStyleBackColor = true;
+            this.Tafel8.Click += new System.EventHandler(this.Tafel8_Click);
             // 
             // HelpButton
             // 
@@ -298,6 +305,7 @@
             this.TafelLabel9.TabIndex = 20;
             this.TafelLabel9.Text = "Tafel 9";
             this.TafelLabel9.UseVisualStyleBackColor = true;
+            this.TafelLabel9.Click += new System.EventHandler(this.TafelLabel9_Click);
             // 
             // Tafel10
             // 
@@ -308,6 +316,7 @@
             this.Tafel10.TabIndex = 21;
             this.Tafel10.Text = "Tafel 10";
             this.Tafel10.UseVisualStyleBackColor = true;
+            this.Tafel10.Click += new System.EventHandler(this.Tafel10_Click);
             // 
             // TafelLabel10
             // 

@@ -36,6 +36,15 @@ namespace MayaMaya
 
             conn.Close();
         }
+
+        public void SaveBestelling()
+        {
+            SqlConnection conn;
+
+            Methodes methode = new Methodes();
+
+            methode.ConnectDatabase(out conn);
+        }
     }
 
 }

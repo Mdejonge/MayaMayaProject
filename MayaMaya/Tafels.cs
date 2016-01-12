@@ -8,6 +8,8 @@ namespace MayaMaya
 {
     class Tafels
     {
+        public static int tafelnummer;
+
         public enum Status
         {
             Vrij,

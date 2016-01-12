@@ -33,11 +33,6 @@ namespace MayaMaya
             TafelLabel8.BackColor = Color.Yellow;
             TafelLabel9.BackColor = Color.Yellow;
             TafelLabel10.BackColor = Color.Yellow;
-
-
-
-
-
         }
 
         private void TafelLabel1_Click(object sender, EventArgs e)
@@ -47,7 +42,8 @@ namespace MayaMaya
 
         private void Tafel1_Click(object sender, EventArgs e)
         {
-            Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form();
+            
+            Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form(1);
 
             TafelGeselecteerd.Show();
 
@@ -75,6 +71,87 @@ namespace MayaMaya
             LoginScherm loginform = new LoginScherm();
             loginform.Show();
             this.Close();
+        }
+
+        private void Tafel2_Click(object sender, EventArgs e)
+        {
+            Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form(2);
+
+            TafelGeselecteerd.Show();
+
+            this.Hide();
+        }
+
+        private void Tafel3_Click(object sender, EventArgs e)
+        {
+            Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form(3);
+
+            TafelGeselecteerd.Show();
+
+            this.Hide();
+        }
+
+        private void Tafel4_Click(object sender, EventArgs e)
+        {
+            Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form(4);
+
+            TafelGeselecteerd.Show();
+
+            this.Hide();
+        }
+
+        private void Tafel5_Click(object sender, EventArgs e)
+        {
+            Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form(5);
+
+            TafelGeselecteerd.Show();
+
+            this.Hide();
+        }
+
+        private void Tafel6_Click(object sender, EventArgs e)
+        {
+            Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form(6);
+
+            TafelGeselecteerd.Show();
+
+            this.Hide();
+        }
+
+        private void Tafel7_Click(object sender, EventArgs e)
+        {
+            Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form(7);
+
+            TafelGeselecteerd.Show();
+
+            this.Hide();
+        }
+
+        private void Tafel8_Click(object sender, EventArgs e)
+        {
+            Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form(8);
+
+            TafelGeselecteerd.Show();
+
+            this.Hide();
+        }
+
+        private void TafelLabel9_Click(object sender, EventArgs e)
+        {
+            Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form(9);
+
+            TafelGeselecteerd.Show();
+
+            this.Hide();
+        }
+
+        private void Tafel10_Click(object sender, EventArgs e)
+        {
+            Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form(10);
+
+            TafelGeselecteerd.Show();
+
+            this.Hide();
         }
     }
 }
