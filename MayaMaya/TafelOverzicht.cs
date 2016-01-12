@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace MayaMaya
 {
@@ -35,6 +37,51 @@ namespace MayaMaya
             TafelLabel8.BackColor = Color.Yellow;
             TafelLabel9.BackColor = Color.Yellow;
             TafelLabel10.BackColor = Color.Yellow;
+
+
+            Methodes methode = new Methodes();
+            SqlConnection conn;
+
+            methode.ConnectDatabase(out conn);
+            //Connect to database
+            string connString = ConfigurationManager
+                .ConnectionStrings["MayaMayaDatabase"]
+                .ConnectionString;
+            conn = new SqlConnection(connString);
+            conn.Open();
+
+            SqlCommand command = new SqlCommand("select * from Tafels ", conn);
+            SqlDataReader reader = command.ExecuteReader();
+            int tafelstatus = 1;
+            
+            
+            while (reader.Read())
+            {
+                tafelstatus = (int)reader["Beschikbaarheid"];
+            }
+
+
+            if (tafelstatus == 2)//bezet
+            {
+                //kleur naar bezet
+            }
+            else if (tafelstatus == 3)//in verwerking
+            {
+                //kleur naar verwerking
+            }
+            else if (tafelstatus == 4)//klaar voor reservering
+            {
+                //kleur naar reservering
+            }
+            else  //vrij
+            {
+                //kleur naar vrij
+                //BackColor = Color.Yellow;
+            }
+            conn.Close();
+
+
+
         }
 
         private void TafelLabel1_Click(object sender, EventArgs e)
