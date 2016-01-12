@@ -25,27 +25,16 @@ namespace MayaMaya
 
             SqlCommand command = new SqlCommand("select AFDELING from Personeel where WACHTWOORD = '" + password + "'", conn);
             SqlDataReader reader = command.ExecuteReader();
-            int count = 0;
+            
             string afdeling = "4";
             while (reader.Read())
             {
                 afdeling = (string)reader["AFDELING"];
-                //count += 1;
-                //int id = (int)reader["id"];
-
-                //string naam = (string)reader["NAAM"];
-                //string wachtwoord = (string) reader["WACHTWOORD"];
-                ////Run SQL command
-                //SqlCommand command = new SqlCommand("", conn);
-                //SqlDataReader reader = command.ExecuteReader();
-
-                //Werknemer werknemer = new Werknemer(id, afdeling, naam, wachtwoord);
-                //werknemers.add(werknemer);
-
-                //NAAM = '" + username + "' and 
-
+                
             }
-            if (afdeling == "Bediening")//hier straks de afdeling
+            conn.Close();
+
+            if (afdeling == "Bediening")
             {
                 return "1";
             }
@@ -61,18 +50,9 @@ namespace MayaMaya
             {
                 return "4";
             }
-            ////Run SQL command
-            //SqlCommand command = new SqlCommand("", conn);
-            //SqlDataReader reader = command.ExecuteReader();
+            
 
-            //if (1 == 1/* checken van wachtwoord via database*/)
-            //{
-            //    return true;
-            //}
-            //else
-            //    return false;
-
-            conn.Close();
+            
         }
     }
 }

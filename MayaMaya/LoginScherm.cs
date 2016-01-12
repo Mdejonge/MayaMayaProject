@@ -35,7 +35,7 @@ namespace MayaMaya
             Login berekening = new Login();
             if (berekening.wachtwoordcorrect(password)== "1" ) 
             {
-                //Tafel
+                // naar Tafeloverzichtform
                 TafelOverzicht settingsForm = new TafelOverzicht();
                 settingsForm.Show();
 
@@ -44,7 +44,7 @@ namespace MayaMaya
             }
             else if (berekening.wachtwoordcorrect(password) == "2")
             {
-                //keuken
+                //naar keukenoverzichtform
                 BarOverzicht settingsForm = new BarOverzicht();
                 settingsForm.Show();
 
@@ -53,7 +53,7 @@ namespace MayaMaya
             }
             else if (berekening.wachtwoordcorrect(password) == "3")
             {
-                //bar
+                //naar baroverzichtform
                 KeukenOverzicht settingsForm = new KeukenOverzicht();
                 settingsForm.Show();
 
