@@ -25,6 +25,8 @@ namespace MayaMaya
         static double subtotal;
         static double total;
         static double TotaalBTW;
+        static double fooiEnEind;
+        static int invoer_getal;
 
 
 
@@ -76,23 +78,49 @@ namespace MayaMaya
 
         public void button5_Click(object sender, EventArgs e)
         {
-            int invoer_getal=0;
-            string invoer = textBox1.Text;
+            Fooiberekening.Items.Clear();
+            string invoer = fooiBox.Text;
             try {
                  invoer_getal = Int32.Parse(invoer);
             }
             catch(Exception exp)
+
             {
                 string message = "De ingevoerde gegevens kloppen niet \nvoer een geldig getal in.";
                 string caption = "ERROR";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result;
                 result = MessageBox.Show(message, caption, buttons);
+            }
+
+            if (invoer_getal <= 0)
+            {
+                Fooiberekening.Items.Clear();
+                TabelProduct.Items.Clear();
+                TabelPrijs.Items.Clear();
+                BedragBerekening.Items.Clear();
+                subtotal = 0;
+                total = 0;
+                TotaalBTW = 0;
+                string message = "Grapjes, voer een normaal cijfer in!";
+                string caption = "Error Detected in Input";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result;
+
+                result = MessageBox.Show(message, caption, buttons);
+
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+
+                    // Closes the parent form.
+                }
 
             }
-            BedragBerekening.Items.Add("" + invoer_getal.ToString("C2"));
-            double fooiEnEind = invoer_getal + total;
-            BedragBerekening.Items.Add("" + fooiEnEind.ToString("C2"));
+            Fooiberekening.Items.Clear();
+            Fooiberekening.Items.Add("" + invoer_getal.ToString("C2"));
+            fooiEnEind += invoer_getal + total;
+            Fooiberekening.Items.Add("" + fooiEnEind.ToString("C2"));
+            
 
         }
 
@@ -101,9 +129,13 @@ namespace MayaMaya
             TabelProduct.Items.Clear();
             TabelPrijs.Items.Clear();
             BedragBerekening.Items.Clear();
+            Fooiberekening.Items.Clear();
+            fooiBox.Text = "";
             subtotal = 0;
             total = 0;
             TotaalBTW = 0;
+            invoer_getal = 0;
+            fooiEnEind = 0;
 
 
 
@@ -122,15 +154,9 @@ namespace MayaMaya
 
                 if (result == System.Windows.Forms.DialogResult.Yes)
                 {
-
-                    // Closes the parent form.
-
                     this.Close();
-
                 }
 
-                //errorscherm errornoinvoer = new errorscherm();
-                //errornoinvoer.Show();
             }
             else
             {
@@ -140,72 +166,6 @@ namespace MayaMaya
             }
 
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TabelProduct_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BedragBerekening_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TabelPrijs_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TabelPrijs_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click_1(object sender, EventArgs e)
         {
             TafelOverzicht tafeloverzicht_koos = new TafelOverzicht();

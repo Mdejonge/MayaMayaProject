@@ -44,9 +44,10 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.button5 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.fooiBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.Fooiberekening = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // cmbDranken
@@ -151,9 +152,9 @@
             // 
             this.BedragBerekening.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.BedragBerekening.FormattingEnabled = true;
-            this.BedragBerekening.Location = new System.Drawing.Point(298, 288);
+            this.BedragBerekening.Location = new System.Drawing.Point(297, 288);
             this.BedragBerekening.Name = "BedragBerekening";
-            this.BedragBerekening.Size = new System.Drawing.Size(55, 69);
+            this.BedragBerekening.Size = new System.Drawing.Size(55, 43);
             this.BedragBerekening.TabIndex = 8;
             // 
             // label1
@@ -256,19 +257,18 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // textBox1
+            // fooiBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(298, 260);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(55, 20);
-            this.textBox1.TabIndex = 19;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.fooiBox.Location = new System.Drawing.Point(298, 260);
+            this.fooiBox.Name = "fooiBox";
+            this.fooiBox.Size = new System.Drawing.Size(55, 20);
+            this.fooiBox.TabIndex = 19;
             // 
             // label4
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(256, 327);
+            this.label4.Location = new System.Drawing.Point(255, 333);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 20;
@@ -277,20 +277,31 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(197, 340);
+            this.label5.Location = new System.Drawing.Point(195, 346);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 13);
             this.label5.TabIndex = 22;
             this.label5.Text = "Eindbedrag + fooi :";
+            // 
+            // Fooiberekening
+            // 
+            this.Fooiberekening.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.Fooiberekening.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.Fooiberekening.FormattingEnabled = true;
+            this.Fooiberekening.Location = new System.Drawing.Point(297, 333);
+            this.Fooiberekening.Name = "Fooiberekening";
+            this.Fooiberekening.Size = new System.Drawing.Size(55, 30);
+            this.Fooiberekening.TabIndex = 23;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(581, 421);
+            this.Controls.Add(this.Fooiberekening);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.fooiBox);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
@@ -335,8 +346,9 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox fooiBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ListBox Fooiberekening;
     }
 }
