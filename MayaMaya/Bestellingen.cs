@@ -11,6 +11,8 @@ namespace MayaMaya
     class Bestellingen
     {
         public List<Item> Items = new List<Item>();
+        public List<Item> bestellingen = new List<Item>();
+        public List<int> bestelID = new List<int>();
         public Bestellingen()
         {
             getItems();
@@ -37,13 +39,35 @@ namespace MayaMaya
             conn.Close();
         }
 
+        public void addItem(int id, out int count)
+        {
+            count = 0;
+
+            foreach(Item item in Items)
+            {
+                if(id == item.id)
+                {
+                    bestellingen.Add(item);
+                }
+
+                foreach (Item items in bestellingen)
+                {
+                    if (id == item.id)
+                    {
+                        count++;
+                    }
+                }
+            }
+
+            
+        }
+
         public void SaveBestelling()
         {
             SqlConnection conn;
-
             Methodes methode = new Methodes();
-
             methode.ConnectDatabase(out conn);
+            
         }
     }
 
