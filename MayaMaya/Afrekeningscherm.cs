@@ -113,6 +113,16 @@ namespace MayaMaya
                 {
 
                     // Closes the parent form.
+                    TabelProduct.Items.Clear();
+                    TabelPrijs.Items.Clear();
+                    BedragBerekening.Items.Clear();
+                    Fooiberekening.Items.Clear();
+                    fooiBox.Text = "";
+                    subtotal = 0;
+                    total = 0;
+                    TotaalBTW = 0;
+                    invoer_getal = 0;
+                    fooiEnEind = 0;
                 }
 
             }
@@ -162,6 +172,18 @@ namespace MayaMaya
             {
                 succesafgerondscherm successcherm = new succesafgerondscherm();
                 successcherm.Show();
+
+                TabelProduct.Items.Clear();
+                TabelPrijs.Items.Clear();
+                BedragBerekening.Items.Clear();
+                Fooiberekening.Items.Clear();
+                fooiBox.Text = "";
+                subtotal = 0;
+                total = 0;
+                TotaalBTW = 0;
+                invoer_getal = 0;
+                fooiEnEind = 0;
+
                 this.Close();
             }
 
