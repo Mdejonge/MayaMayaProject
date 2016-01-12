@@ -40,20 +40,11 @@
             this.reserveerTafelButton.TabIndex = 0;
             this.reserveerTafelButton.Text = "Reserveer Tafel";
             this.reserveerTafelButton.UseVisualStyleBackColor = true;
+            this.reserveerTafelButton.Click += new System.EventHandler(this.reserveerTafelButton_Click);
             // 
             // TafelSelectBox
             // 
-            this.TafelSelectBox.DisplayMember = "Tafel1";
             this.TafelSelectBox.FormattingEnabled = true;
-            this.TafelSelectBox.Items.AddRange(new object[] {
-            "Tafel1",
-            "Tafel2",
-            "Tafel3",
-            "Tafel4",
-            "Tafel5",
-            "Tafel6",
-            "Tafel7",
-            "Tafel8"});
             this.TafelSelectBox.Location = new System.Drawing.Point(102, 79);
             this.TafelSelectBox.Name = "TafelSelectBox";
             this.TafelSelectBox.Size = new System.Drawing.Size(121, 21);

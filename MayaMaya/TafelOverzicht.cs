@@ -53,31 +53,35 @@ namespace MayaMaya
             SqlCommand command = new SqlCommand("select * from Tafels ", conn);
             SqlDataReader reader = command.ExecuteReader();
             int tafelstatus = 1;
-            
+            int tafelnummer = 0;
             
             while (reader.Read())
             {
                 tafelstatus = (int)reader["Beschikbaarheid"];
+                tafelnummer = (int)reader["TAFELNUMMER"];
             }
+            
 
 
-            if (tafelstatus == 2)//bezet
-            {
-                //kleur naar bezet
-            }
-            else if (tafelstatus == 3)//in verwerking
-            {
-                //kleur naar verwerking
-            }
-            else if (tafelstatus == 4)//klaar voor reservering
-            {
-                //kleur naar reservering
-            }
-            else  //vrij
-            {
-                //kleur naar vrij
-                //BackColor = Color.Yellow;
-            }
+                if (tafelstatus == 2)//bezet
+                {
+                    //kleur naar bezet
+                }
+                else if (tafelstatus == 3)//in verwerking
+                {
+                    //kleur naar verwerking
+                }
+                else if (tafelstatus == 4)//klaar voor reservering
+                {
+                    //kleur naar reservering
+                }
+                else  //vrij
+                {
+                    //kleur naar vrij
+                    //BackColor = Color.Green;
+                }
+                
+            
             conn.Close();
 
 
