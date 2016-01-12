@@ -15,6 +15,9 @@ namespace MayaMaya
         public List<Item> bestelling = new List<Item>();
         public string Soortpublic;
         public static float totaalPrijs;
+        public int aantal;
+
+        Bestellingen tijdelijkebestelling = new Bestellingen();
         public Bestelling(string Soort, int tafelnummer)
         {
             InitializeComponent();
@@ -56,12 +59,17 @@ namespace MayaMaya
 
         private void ListViewLunch_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ListView.SelectedListViewItemCollection Lunch = this.ListViewLunch.SelectedItems;            
+            ListView.SelectedListViewItemCollection Lunch = this.ListViewLunch.SelectedItems;
 
             foreach (ListViewItem item in Lunch)
             {
                 int itemNummer = Convert.ToInt32(item.SubItems[3].Text);
-                
+                aantal = 0;
+
+                tijdelijkebestelling.addItem(itemNummer, out aantal);
+
+                //MessageBox.Show(aantal.ToString());
+
                 //Berekent totaalprijs
                 string prijsString = item.SubItems[2].Text.ToString().Trim();
                 float prijsFloat = Single.Parse(prijsString);
@@ -70,10 +78,12 @@ namespace MayaMaya
                 //Voegt producten toe aan bestellijst
                 ListViewItem bestellijst = new ListViewItem(item.Text);
                 bestellijst.SubItems.Add(item.SubItems[2]);
-                bestellijst.SubItems.Add(item.SubItems[3]);
-                ListViewBestellijst.Items.Add(bestellijst);
-            }
+                bestellijst.SubItems.Add(aantal.ToString());
+                bestellijst.SubItems.Add(itemNummer.ToString());
 
+                ListViewBestellijst.Items.Add(bestellijst);
+
+            }
 
             lbl_TotaalPrijs.Text = Convert.ToString(totaalPrijs);          
         }
@@ -98,8 +108,6 @@ namespace MayaMaya
         private void ListViewDiner_SelectedIndexChanged(object sender, EventArgs e)
         {
             ListView.SelectedListViewItemCollection Diner = this.ListViewDiner.SelectedItems;
-
-            
 
             foreach (ListViewItem item in Diner)
             {
@@ -168,6 +176,12 @@ namespace MayaMaya
             tafelGeselecteerd.Show();
 
             this.Hide();
+        }
+
+        private void btn_Opslaan_Click(object sender, EventArgs e)
+        {
+            tijdelijkebestelling.saveItem(aantal);
+            //tijdelijkebestelling.SaveBestelling(totaalPrijs);
         }
     }
 }

@@ -287,6 +287,7 @@
             this.btn_Opslaan.TabIndex = 5;
             this.btn_Opslaan.Text = "Order Plaatsen";
             this.btn_Opslaan.UseVisualStyleBackColor = true;
+            this.btn_Opslaan.Click += new System.EventHandler(this.btn_Opslaan_Click);
             // 
             // lbl_Terug
             // 
