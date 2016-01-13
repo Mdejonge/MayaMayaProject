@@ -51,17 +51,22 @@ namespace MayaMaya
                     {
                         Tafel1.BackColor = Color.Blue;
                         TafelLabel1.BackColor = Color.Blue;
+                            TafelLabel1.Text = "bezet";
                     }
                     else if (tafelstatus == 3)//in verwerking
                     {
                         Tafel1.BackColor = Color.Red;
                         TafelLabel1.BackColor = Color.Red;
-                    }
+                            TafelLabel1.Text = "";
+
+                        }
                     else if (tafelstatus == 4)//klaar voor servering
                     {
                         Tafel1.BackColor = Color.Green;
                         TafelLabel1.BackColor = Color.Green;
-                    }
+                            TafelLabel1.Text = "gereed";
+
+                        }
                     else  //vrij (1 is vrij)
                     {
                         Tafel1.BackColor = Color.Yellow;
@@ -75,6 +80,7 @@ namespace MayaMaya
                         {
                             Tafel2.BackColor = Color.Blue;
                             TafelLabel2.BackColor = Color.Blue;
+                            TafelLabel2.Text = "bezet";
                         }
                         else if (tafelstatus == 3)//in verwerking
                         {
@@ -85,6 +91,7 @@ namespace MayaMaya
                         {
                             Tafel2.BackColor = Color.Green;
                             TafelLabel2.BackColor = Color.Green;
+                            TafelLabel1.Text = "gereed";
                         }
                         else  //vrij (1 is vrij)
                         {
@@ -99,6 +106,7 @@ namespace MayaMaya
                         {
                             Tafel3.BackColor = Color.Blue;
                             TafelLabel3.BackColor = Color.Blue;
+                            TafelLabel3.Text = "bezet";
                         }
                         else if (tafelstatus == 3)//in verwerking
                         {
@@ -109,6 +117,7 @@ namespace MayaMaya
                         {
                             Tafel3.BackColor = Color.Green;
                             TafelLabel3.BackColor = Color.Green;
+                            TafelLabel1.Text = "gereed";
                         }
                         else  //vrij (1 is vrij)
                         {
@@ -123,6 +132,7 @@ namespace MayaMaya
                         {
                             Tafel4.BackColor = Color.Blue;
                             TafelLabel4.BackColor = Color.Blue;
+                            TafelLabel4.Text = "bezet";
                         }
                         else if (tafelstatus == 3)//in verwerking
                         {
@@ -133,6 +143,7 @@ namespace MayaMaya
                         {
                             Tafel4.BackColor = Color.Green;
                             TafelLabel4.BackColor = Color.Green;
+                            TafelLabel1.Text = "gereed";
                         }
                         else  //vrij (1 is vrij)
                         {
@@ -146,6 +157,7 @@ namespace MayaMaya
                         {
                             Tafel5.BackColor = Color.Blue;
                             TafelLabel5.BackColor = Color.Blue;
+                            TafelLabel5.Text = "bezet";
                         }
                         else if (tafelstatus == 3)//in verwerking
                         {
@@ -156,6 +168,7 @@ namespace MayaMaya
                         {
                             Tafel5.BackColor = Color.Green;
                             TafelLabel5.BackColor = Color.Green;
+                            TafelLabel1.Text = "gereed";
                         }
                         else  //vrij (1 is vrij)
                         {
@@ -170,6 +183,7 @@ namespace MayaMaya
                         {
                             Tafel6.BackColor = Color.Blue;
                             TafelLabel6.BackColor = Color.Blue;
+                            TafelLabel6.Text = "bezet";
                         }
                         else if (tafelstatus == 3)//in verwerking
                         {
@@ -180,6 +194,7 @@ namespace MayaMaya
                         {
                             Tafel6.BackColor = Color.Green;
                             TafelLabel6.BackColor = Color.Green;
+                            TafelLabel6.Text = "gereed";
                         }
                         else  //vrij (1 is vrij)
                         {
@@ -194,6 +209,7 @@ namespace MayaMaya
                         {
                             Tafel7.BackColor = Color.Blue;
                             TafelLabel7.BackColor = Color.Blue;
+                            TafelLabel7.Text = "bezet";
                         }
                         else if (tafelstatus == 3)//in verwerking
                         {
@@ -204,6 +220,7 @@ namespace MayaMaya
                         {
                             Tafel7.BackColor = Color.Green;
                             TafelLabel7.BackColor = Color.Green;
+                            TafelLabel7.Text = "gereed";
                         }
                         else  //vrij (1 is vrij)
                         {
@@ -218,6 +235,7 @@ namespace MayaMaya
                         {
                             Tafel8.BackColor = Color.Blue;
                             TafelLabel8.BackColor = Color.Blue;
+                            TafelLabel8.Text = "bezet";
                         }
                         else if (tafelstatus == 3)//in verwerking
                         {
@@ -228,6 +246,7 @@ namespace MayaMaya
                         {
                             Tafel8.BackColor = Color.Green;
                             TafelLabel8.BackColor = Color.Green;
+                            TafelLabel8.Text = "gereed";
                         }
                         else  //vrij (1 is vrij)
                         {
@@ -242,6 +261,7 @@ namespace MayaMaya
                         {
                             Tafel9.BackColor = Color.Blue;
                             TafelLabel9.BackColor = Color.Blue;
+                            TafelLabel9.Text = "bezet";
                         }
                         else if (tafelstatus == 3)//in verwerking
                         {
@@ -252,6 +272,7 @@ namespace MayaMaya
                         {
                             Tafel9.BackColor = Color.Green;
                             TafelLabel9.BackColor = Color.Green;
+                            TafelLabel9.Text = "gereed";
                         }
                         else  //vrij (1 is vrij)
                         {
@@ -266,6 +287,7 @@ namespace MayaMaya
                         {
                             Tafel10.BackColor = Color.Blue;
                             TafelLabel10.BackColor = Color.Blue;
+                            TafelLabel10.Text = "bezet";
                         }
                         else if (tafelstatus == 3)//in verwerking
                         {
@@ -276,6 +298,7 @@ namespace MayaMaya
                         {
                             Tafel10.BackColor = Color.Green;
                             TafelLabel10.BackColor = Color.Green;
+                            TafelLabel10.Text = "gereed";
                         }
                         else  //vrij (1 is vrij)
                         {

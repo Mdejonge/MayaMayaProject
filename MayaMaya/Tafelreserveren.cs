@@ -134,54 +134,49 @@ namespace MayaMaya
                 SqlCommand command1 = new SqlCommand(sqlcom1, conn1);
                 SqlDataReader reader = command1.ExecuteReader();
                 int tafelstatus = 1;
-                
+
 
                 while (reader.Read())
                 {
                     tafelstatus = (int)reader["Beschikbaarheid"];
-                    
+
                 }
-                if(tafelstatus != 1)
+                if (tafelstatus != 1)
                 {
                     message = selected + " kan niet worden gereserveert\n er zitten hier al mensen";
                 }
-                
+
                 else
                 {
                     message = selected + " is gereserveerd";
-                }
-
-                
-
-                Methodes methode = new Methodes();
-                SqlConnection conn;
-
-                methode.ConnectDatabase(out conn);
-                //Connect to database
-                string connString = ConfigurationManager
-                    .ConnectionStrings["MayaMayaDatabase"]
-                    .ConnectionString;
-                conn = new SqlConnection(connString);
-                conn.Open();
-                string sql = string.Format("UPDATE Tafels SET beschikbaarheid='{0}' WHERE tafelnummer={1}", bezetcode, gekozenTafel);
-
-
-                SqlCommand command = new SqlCommand(sql, conn);
-                int rowsAffected = command.ExecuteNonQuery();
 
 
 
-                if (rowsAffected > 0)
-                {
-                    result = MessageBox.Show(message, caption, buttons);
+
+                    Methodes methode = new Methodes();
+                    SqlConnection conn;
+
+                    methode.ConnectDatabase(out conn);
+                    //Connect to database
+                    string connString = ConfigurationManager
+                        .ConnectionStrings["MayaMayaDatabase"]
+                        .ConnectionString;
+                    conn = new SqlConnection(connString);
+                    conn.Open();
+                    string sql = string.Format("UPDATE Tafels SET beschikbaarheid='{0}' WHERE tafelnummer={1}", bezetcode, gekozenTafel);
+
+
+                    SqlCommand command = new SqlCommand(sql, conn);
+                    int rowsAffected = command.ExecuteNonQuery();
+
+
+
                     
+
                 }
-                conn.Close();
-                TafelOverzicht refreshing = new TafelOverzicht();
-                refreshing.Refresh();
+                result = MessageBox.Show(message, caption, buttons);
+
             }
-
-
 
 
 

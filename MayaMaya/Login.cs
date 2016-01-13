@@ -24,14 +24,14 @@ namespace MayaMaya
             conn = new SqlConnection(connString);
             conn.Open();
 
-            SqlCommand command = new SqlCommand("select AFDELING, persooneel_id from Personeel where WACHTWOORD = '" + password + "'", conn);
+            SqlCommand command = new SqlCommand("select AFDELING, PERSONEEL_ID from Personeel where WACHTWOORD = '" + password + "'", conn);
             SqlDataReader reader = command.ExecuteReader();
             
             string afdeling = "4";
             while (reader.Read())
             {
                 afdeling = (string)reader["AFDELING"];
-                personeel_id = (int)reader["persooneel_id"];
+                personeel_id = (int)reader["personeel_id"];
             }
             conn.Close();
 
