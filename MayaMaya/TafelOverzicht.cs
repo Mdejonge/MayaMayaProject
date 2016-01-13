@@ -61,7 +61,7 @@ namespace MayaMaya
                 tafelnummer = (int)reader["TAFELNUMMER"];
             }
             
-
+            
 
                 if (tafelstatus == 2)//bezet
                 {
