@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace MayaMaya
 {
@@ -34,55 +36,167 @@ namespace MayaMaya
 
         private void reserveerTafelButton_Click(object sender, EventArgs e)
         {
-            string selected = TafelSelectBox.SelectedItem.ToString();
-            string message = selected+"is gereserveerd";
+
+
+            string selected = "";
+            try
+            {
+                selected = TafelSelectBox.SelectedItem.ToString();
+            }
+            catch (Exception exp)
+
+            {
+                string errormessage = "je moet wel een tafel aanklikken als je op reserveren drukt";
+                string errorcaption = "ERROR";
+                MessageBoxButtons errorbuttons = MessageBoxButtons.OK;
+                DialogResult errorresult;
+                errorresult = MessageBox.Show(errormessage, errorcaption, errorbuttons);
+            }
+            
+            string message = selected+" is gereserveerd";
             string caption = "Reservering";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             DialogResult result;
-
+            int gekozenTafel = 0;
+            int bezetcode = 2;
             switch (selected)
             {
                 case "Tafel1":
-                    result = MessageBox.Show(message, caption, buttons);
+                    gekozenTafel = 1;
                     break;
+
 
                 case "Tafel2":
-                    result = MessageBox.Show(message, caption, buttons);
+                    gekozenTafel = 2;
                     break;
+
 
                 case "Tafel3":
-                    result = MessageBox.Show(message, caption, buttons);
+                    gekozenTafel = 3;
                     break;
+
 
                 case "Tafel4":
-                    result = MessageBox.Show(message, caption, buttons);
+                    gekozenTafel = 4;
                     break;
+
 
                 case "Tafel5":
-                    result = MessageBox.Show(message, caption, buttons);
+                    gekozenTafel = 5;
                     break;
+
 
                 case "Tafel6":
-                    result = MessageBox.Show(message, caption, buttons);
+                    gekozenTafel = 6;
                     break;
+
 
                 case "Tafel7":
-                    result = MessageBox.Show(message, caption, buttons);
+                    gekozenTafel = 7;
                     break;
+
 
                 case "Tafel8":
-                    result = MessageBox.Show(message, caption, buttons);
+                    gekozenTafel = 8;
                     break;
+
 
                 case "Tafel9":
-                    result = MessageBox.Show(message, caption, buttons);
+                    gekozenTafel = 9;
                     break;
+
 
                 case "Tafel10":
-                    result = MessageBox.Show(message, caption, buttons);
+                    gekozenTafel = 10;
                     break;
 
+
+                default:
+                    gekozenTafel = 0;
+                    break;
+
+                  
             }
+            if (gekozenTafel != 0)
+            {
+                Methodes methode1 = new Methodes();
+                SqlConnection conn1;
+
+                methode1.ConnectDatabase(out conn1);
+                //Connect to database
+                string connString1 = ConfigurationManager
+                    .ConnectionStrings["MayaMayaDatabase"]
+                    .ConnectionString;
+                conn1 = new SqlConnection(connString1);
+                conn1.Open();
+                string sqlcom1 = string.Format("SELECT Beschikbaarheid FROM Tafels WHERE tafelnummer={0}", gekozenTafel);
+
+                SqlCommand command1 = new SqlCommand(sqlcom1, conn1);
+                SqlDataReader reader = command1.ExecuteReader();
+                int tafelstatus = 1;
+                
+
+                while (reader.Read())
+                {
+                    tafelstatus = (int)reader["Beschikbaarheid"];
+                    
+                }
+                if(tafelstatus != 1)
+                {
+                    message = selected + " kan niet worden gereserveert\n er zitten hier al mensen";
+                }
+                
+                else
+                {
+                    message = selected + " is gereserveerd";
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Methodes methode = new Methodes();
+                SqlConnection conn;
+
+                methode.ConnectDatabase(out conn);
+                //Connect to database
+                string connString = ConfigurationManager
+                    .ConnectionStrings["MayaMayaDatabase"]
+                    .ConnectionString;
+                conn = new SqlConnection(connString);
+                conn.Open();
+                string sql = string.Format("UPDATE Tafels SET beschikbaarheid='{0}' WHERE tafelnummer={1}", bezetcode, gekozenTafel);
+
+
+                SqlCommand command = new SqlCommand(sql, conn);
+                int rowsAffected = command.ExecuteNonQuery();
+
+
+
+                if (rowsAffected > 0)
+                {
+                    result = MessageBox.Show(message, caption, buttons);
+
+                }
+                conn.Close();
+
+            }
+
+
+
+
+
+
         }
     }
 }

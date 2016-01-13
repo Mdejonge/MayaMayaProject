@@ -75,10 +75,10 @@ namespace MayaMaya
                 {
                     //kleur naar reservering
                 }
-                else  //vrij
+                else  //vrij (1 is vrij)
                 {
                     //kleur naar vrij
-                    //BackColor = Color.Green;
+                    
                 }
                 
             
