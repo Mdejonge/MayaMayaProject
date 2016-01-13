@@ -28,12 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cmbDranken = new System.Windows.Forms.ComboBox();
-            this.cmbDiner = new System.Windows.Forms.ComboBox();
-            this.cmbLunch = new System.Windows.Forms.ComboBox();
             this.afrondenbutton = new System.Windows.Forms.Button();
-            this.TabelProduct = new System.Windows.Forms.ListBox();
-            this.TabelPrijs = new System.Windows.Forms.ListBox();
             this.BedragBerekening = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,73 +43,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.Fooiberekening = new System.Windows.Forms.ListBox();
+            this.ListViewAfrekenen = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
-            // 
-            // cmbDranken
-            // 
-            this.cmbDranken.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbDranken.FormattingEnabled = true;
-            this.cmbDranken.Items.AddRange(new object[] {
-            "Glas Frisdrank €2,50",
-            "Hertog Jan €3 ",
-            "Whiskey €5",
-            "Mineral Water €2,95",
-            "Melk €1,50"});
-            this.cmbDranken.Location = new System.Drawing.Point(8, 12);
-            this.cmbDranken.Name = "cmbDranken";
-            this.cmbDranken.Size = new System.Drawing.Size(272, 21);
-            this.cmbDranken.TabIndex = 0;
-            this.cmbDranken.Text = "Dranken";
-            this.cmbDranken.SelectedIndexChanged += new System.EventHandler(this.changingDropdown);
-            // 
-            // cmbDiner
-            // 
-            this.cmbDiner.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbDiner.FormattingEnabled = true;
-            this.cmbDiner.Items.AddRange(new object[] {
-            "Paté van fazant met Monegaskische uitjes € 8,50",
-            "Krab-zalm\tkoekjes met zoetzure-chilisaus € 9,-",
-            "Chicken Alfredo €13,95",
-            "Chicken Picatta €13,95",
-            "Turkey Club €11,95",
-            "Prime Rib €20,95",
-            "Shrimp Scampi €18,95",
-            "Turkey Dinner €13,95",
-            "Stuffed Chicken €14,95",
-            "Seafood Alfredo €15,95"});
-            this.cmbDiner.Location = new System.Drawing.Point(298, 12);
-            this.cmbDiner.Name = "cmbDiner";
-            this.cmbDiner.Size = new System.Drawing.Size(259, 21);
-            this.cmbDiner.TabIndex = 1;
-            this.cmbDiner.Text = "Diner";
-            this.cmbDiner.SelectedIndexChanged += new System.EventHandler(this.changingDropdown);
-            // 
-            // cmbLunch
-            // 
-            this.cmbLunch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbLunch.FormattingEnabled = true;
-            this.cmbLunch.Items.AddRange(new object[] {
-            "Steak tartaar, truffelmayonaisse €7,50",
-            "Paté van fazant, monegaskische uitjes €8,50",
-            "Buffalo Wings €5,95",
-            "Buffalo Fingers €6,95",
-            "Potato Skins €8,95 ",
-            "Nachos €8,95",
-            "Mushroom Caps €10,95",
-            "Shrimp Cocktail €12,95",
-            "Chips and Salsa €6,95"});
-            this.cmbLunch.Location = new System.Drawing.Point(8, 48);
-            this.cmbLunch.Name = "cmbLunch";
-            this.cmbLunch.Size = new System.Drawing.Size(272, 21);
-            this.cmbLunch.TabIndex = 3;
-            this.cmbLunch.Text = "Lunch";
-            this.cmbLunch.SelectedIndexChanged += new System.EventHandler(this.changingDropdown);
             // 
             // afrondenbutton
             // 
@@ -126,27 +59,6 @@
             this.afrondenbutton.Text = "Afrekenen";
             this.afrondenbutton.UseVisualStyleBackColor = true;
             this.afrondenbutton.Click += new System.EventHandler(this.afrondenbutton_Click);
-            // 
-            // TabelProduct
-            // 
-            this.TabelProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TabelProduct.FormattingEnabled = true;
-            this.TabelProduct.Location = new System.Drawing.Point(8, 92);
-            this.TabelProduct.Name = "TabelProduct";
-            this.TabelProduct.Size = new System.Drawing.Size(272, 160);
-            this.TabelProduct.TabIndex = 5;
-            // 
-            // TabelPrijs
-            // 
-            this.TabelPrijs.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TabelPrijs.FormattingEnabled = true;
-            this.TabelPrijs.Location = new System.Drawing.Point(298, 92);
-            this.TabelPrijs.Name = "TabelPrijs";
-            this.TabelPrijs.Size = new System.Drawing.Size(55, 160);
-            this.TabelPrijs.TabIndex = 6;
             // 
             // BedragBerekening
             // 
@@ -293,11 +205,39 @@
             this.Fooiberekening.Size = new System.Drawing.Size(55, 30);
             this.Fooiberekening.TabIndex = 23;
             // 
+            // ListViewAfrekenen
+            // 
+            this.ListViewAfrekenen.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.ListViewAfrekenen.GridLines = true;
+            this.ListViewAfrekenen.Location = new System.Drawing.Point(12, 12);
+            this.ListViewAfrekenen.Name = "ListViewAfrekenen";
+            this.ListViewAfrekenen.Size = new System.Drawing.Size(545, 240);
+            this.ListViewAfrekenen.TabIndex = 24;
+            this.ListViewAfrekenen.UseCompatibleStateImageBehavior = false;
+            this.ListViewAfrekenen.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Naam";
+            this.columnHeader1.Width = 414;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Aantal";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Prijs";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(581, 420);
+            this.ClientSize = new System.Drawing.Size(581, 421);
+            this.Controls.Add(this.ListViewAfrekenen);
             this.Controls.Add(this.Fooiberekening);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -312,12 +252,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BedragBerekening);
-            this.Controls.Add(this.TabelPrijs);
-            this.Controls.Add(this.TabelProduct);
             this.Controls.Add(this.afrondenbutton);
-            this.Controls.Add(this.cmbDiner);
-            this.Controls.Add(this.cmbDranken);
-            this.Controls.Add(this.cmbLunch);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(597, 459);
             this.MinimumSize = new System.Drawing.Size(597, 459);
@@ -331,12 +266,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox cmbDranken;
-        private System.Windows.Forms.ComboBox cmbDiner;
-        private System.Windows.Forms.ComboBox cmbLunch;
         private System.Windows.Forms.Button afrondenbutton;
-        private System.Windows.Forms.ListBox TabelProduct;
-        private System.Windows.Forms.ListBox TabelPrijs;
         private System.Windows.Forms.ListBox BedragBerekening;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -351,5 +281,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListBox Fooiberekening;
+        private System.Windows.Forms.ListView ListViewAfrekenen;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
     }
 }

@@ -61,6 +61,7 @@
     <Compile Include="BarOverzicht.Designer.cs">
       <DependentUpon>BarOverzicht.cs</DependentUpon>
     </Compile>
+    <Compile Include="BesteldeItems.cs" />
     <Compile Include="Bestelling.cs">
       <SubType>Form</SubType>
     </Compile>

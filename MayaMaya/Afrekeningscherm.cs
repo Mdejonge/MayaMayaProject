@@ -29,46 +29,51 @@ namespace MayaMaya
         static double TotaalBTW;
         static double fooiEnEind;
         static int invoer_getal;
+        public List<BesteldeItems>bestelItems = new List<BesteldeItems>();
 
 
-
-        public Form1()
+        public Form1(int tafelnummer)
         {
             InitializeComponent();
+
+            Tafels.tafelnummer = tafelnummer;
+
+            getItems();
+            toonItems();
         }
 
 
-        private void Databinnenhallen(string custOrder)
-        {
-            bestelling.product = custOrder.Split('€')[0];
-            bestelling.prijs = Convert.ToDouble(custOrder.Split('€')[1]);
-            TabelPrijs.Items.Add(bestelling.prijs);
-            Afrekening = bestelling.product;
-            updatederekening();
-        }
+        //private void Databinnenhallen(string custOrder)
+        //{
+           // bestelling.product = custOrder.Split('€')[0];
+           // bestelling.prijs = Convert.ToDouble(custOrder.Split('€')[1]);
+           // ListViewAfrekenen.Items.Add(bestelling.prijs);
+           // Afrekening = bestelling.product;
+           // updatederekening();
+        //}
 
-        public void updatederekening()
-        {
-            subtotal += bestelling.prijs;
-            total += bestelling.prijs + (bestelling.prijs * BTW);
-            TotaalBTW += bestelling.prijs * BTW;
-            BedragBerekening.Items.Clear();
-            TabelProduct.Items.AddRange(Afrekening.Split('\n'));
-            BedragBerekening.Items.Add("" + subtotal.ToString("C2"));
-            BedragBerekening.Items.Add("" + TotaalBTW.ToString("C2"));
-            BedragBerekening.Items.Add("" + total.ToString("C2"));
+        //public void updatederekening()
+        //{
+        //    subtotal += bestelling.prijs;
+        //    total += bestelling.prijs + (bestelling.prijs * BTW);
+        //    TotaalBTW += bestelling.prijs * BTW;
+        //    BedragBerekening.Items.Clear();
+        //    ListViewAfrekenen.Items.AddRange(Afrekening.Split('\n'));
+        //    BedragBerekening.Items.Add("" + subtotal.ToString("C2"));
+        //    BedragBerekening.Items.Add("" + TotaalBTW.ToString("C2"));
+        //    BedragBerekening.Items.Add("" + total.ToString("C2"));
 
-        }
+        //}
 
-        private void changingDropdown(object gemaaktekeuze, EventArgs e)
-        {
-            if (gemaaktekeuze == cmbDranken)
-                Databinnenhallen(cmbDranken.SelectedItem.ToString());
-            else if (gemaaktekeuze == cmbDiner)
-                Databinnenhallen(cmbDiner.SelectedItem.ToString());
-            else if (gemaaktekeuze == cmbLunch)
-                Databinnenhallen(cmbLunch.SelectedItem.ToString());
-        }
+        //private void changingDropdown(object gemaaktekeuze, EventArgs e)
+        //{
+        //    if (gemaaktekeuze == cmbDranken)
+        //        Databinnenhallen(cmbDranken.SelectedItem.ToString());
+        //    else if (gemaaktekeuze == cmbDiner)
+        //        Databinnenhallen(cmbDiner.SelectedItem.ToString());
+        //    else if (gemaaktekeuze == cmbLunch)
+        //        Databinnenhallen(cmbLunch.SelectedItem.ToString());
+        //}
 
 
 
@@ -98,8 +103,7 @@ namespace MayaMaya
             if (invoer_getal <= 0)
             {
                 Fooiberekening.Items.Clear();
-                TabelProduct.Items.Clear();
-                TabelPrijs.Items.Clear();
+                ListViewAfrekenen.Items.Clear();
                 BedragBerekening.Items.Clear();
                 subtotal = 0;
                 total = 0;
@@ -115,8 +119,7 @@ namespace MayaMaya
                 {
 
                     // Closes the parent form.
-                    TabelProduct.Items.Clear();
-                    TabelPrijs.Items.Clear();
+                    ListViewAfrekenen.Items.Clear();
                     BedragBerekening.Items.Clear();
                     Fooiberekening.Items.Clear();
                     fooiBox.Text = "";
@@ -138,8 +141,7 @@ namespace MayaMaya
 
         public void wisitemsbutton_Click(object sender, EventArgs e) // Bij het drukken van CLEAR!
         {
-            TabelProduct.Items.Clear();
-            TabelPrijs.Items.Clear();
+            ListViewAfrekenen.Items.Clear();
             BedragBerekening.Items.Clear();
             Fooiberekening.Items.Clear();
             fooiBox.Text = "";
@@ -198,8 +200,7 @@ namespace MayaMaya
                 succesafgerondscherm successcherm = new succesafgerondscherm();
                 successcherm.Show();
 
-                TabelProduct.Items.Clear();
-                TabelPrijs.Items.Clear();
+                ListViewAfrekenen.Items.Clear();
                 BedragBerekening.Items.Clear();
                 Fooiberekening.Items.Clear();
                 fooiBox.Text = "";
@@ -220,9 +221,41 @@ namespace MayaMaya
             this.Close();
         }
 
+        public void getItems()
+        {
+            Methodes methode = new Methodes();
+            SqlConnection conn;
+
+            methode.ConnectDatabase(out conn);
+
+            string sql = string.Format("SELECT Menu_Items.Item_ID, Menu_Items.ITEM_NAAM, Menu_Items.PRIJS, Menu_Items.BTW_HEFFING, Bestellingen.STATUS, Bestelling_Items.AANTAL, Bestellingen.BESTEL_ID, Bestellingen.BETAALWIJZE, Bestellingen.BESTELTOTAAL, Bestellingen.BETAALD_BEDRAG From Bestellingen INNER JOIN Bestelling_Items ON Bestellingen.BESTEL_ID=Bestelling_Items.BESTEL_ID INNER JOIN Menu_Items ON Bestelling_Items.ITEM_ID=Menu_Items.ITEM_ID WHERE TAFELNUMMER ={0} AND STATUS = 0", Tafels.tafelnummer, conn);
+            SqlCommand command = new SqlCommand(sql, conn);
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                bestelItems.Add(new BesteldeItems(reader.GetInt32(0), reader.GetString(1), reader.GetDouble(2), reader.GetInt32(3), reader.GetInt32(4), reader.GetInt32(5), reader.GetInt32(6), reader.GetString(7), reader.GetDouble(8), reader.GetDouble(9)));
+            }
+        }
+
+        public void toonItems() 
+        {
+
+            foreach (BesteldeItems item in bestelItems)
+            {
+                double itemPrijsTotaal = item.aantal * item.prijs;
+                ListViewItem items = new ListViewItem(item.naam);
+                items.SubItems.Add(item.aantal.ToString());
+                items.SubItems.Add(itemPrijsTotaal.ToString());
+                ListViewAfrekenen.Items.Add(items);
+            }
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(251, 250, 240);
+
+            
         }
     }
 }

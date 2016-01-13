@@ -348,7 +348,7 @@ namespace MayaMaya
             }
             else
             {
-                Form1 afrekeningscherm_salih = new Form1();
+                Form1 afrekeningscherm_salih = new Form1(Tafels.tafelnummer);
                 afrekeningscherm_salih.Show();
                 this.Hide();
             }
@@ -390,7 +390,7 @@ namespace MayaMaya
             }
             else
             {
-                Form1 afrekeningscherm_salih = new Form1();
+                Form1 afrekeningscherm_salih = new Form1(Tafels.tafelnummer);
                 afrekeningscherm_salih.Show();
                 this.Hide();
             }
@@ -408,7 +408,7 @@ namespace MayaMaya
             }
             else
             {
-                Form1 afrekeningscherm_salih = new Form1();
+                Form1 afrekeningscherm_salih = new Form1(Tafels.tafelnummer);
                 afrekeningscherm_salih.Show();
                 this.Hide();
             }
@@ -426,7 +426,7 @@ namespace MayaMaya
             }
             else
             {
-                Form1 afrekeningscherm_salih = new Form1();
+                Form1 afrekeningscherm_salih = new Form1(Tafels.tafelnummer);
                 afrekeningscherm_salih.Show();
                 this.Hide();
             }
@@ -444,7 +444,7 @@ namespace MayaMaya
             }
             else
             {
-                Form1 afrekeningscherm_salih = new Form1();
+                Form1 afrekeningscherm_salih = new Form1(Tafels.tafelnummer);
                 afrekeningscherm_salih.Show();
                 this.Hide();
             }
@@ -462,7 +462,7 @@ namespace MayaMaya
             }
             else
             {
-                Form1 afrekeningscherm_salih = new Form1();
+                Form1 afrekeningscherm_salih = new Form1(Tafels.tafelnummer);
                 afrekeningscherm_salih.Show();
                 this.Hide();
             }
@@ -480,7 +480,7 @@ namespace MayaMaya
             }
             else
             {
-                Form1 afrekeningscherm_salih = new Form1();
+                Form1 afrekeningscherm_salih = new Form1(Tafels.tafelnummer);
                 afrekeningscherm_salih.Show();
                 this.Hide();
             }
@@ -498,7 +498,7 @@ namespace MayaMaya
             }
             else
             {
-                Form1 afrekeningscherm_salih = new Form1();
+                Form1 afrekeningscherm_salih = new Form1(Tafels.tafelnummer);
                 afrekeningscherm_salih.Show();
                 this.Hide();
             }
@@ -516,7 +516,7 @@ namespace MayaMaya
             }
             else
             {
-                Form1 afrekeningscherm_salih = new Form1();
+                Form1 afrekeningscherm_salih = new Form1(Tafels.tafelnummer);
                 afrekeningscherm_salih.Show();
                 this.Hide();
             }
@@ -534,7 +534,7 @@ namespace MayaMaya
             }
             else
             {
-                Form1 afrekeningscherm_salih = new Form1();
+                Form1 afrekeningscherm_salih = new Form1(Tafels.tafelnummer);
                 afrekeningscherm_salih.Show();
                 this.Hide();
             }

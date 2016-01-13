@@ -19,7 +19,7 @@ namespace MayaMaya
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            Form1 afrekeningscherm_salih = new Form1();
+            Form1 afrekeningscherm_salih = new Form1(Tafels.tafelnummer);
             afrekeningscherm_salih.Show();
         }
 

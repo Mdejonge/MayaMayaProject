@@ -15,6 +15,7 @@ namespace MayaMaya
         public List<Item> bestelling = new List<Item>();
         public string Soortpublic;
         public static float totaalPrijs;
+        public int tafelnummer;
 
         Bestellingen tijdelijkeBestelling = new Bestellingen();
         public Bestelling(string Soort, int tafelnummer)
@@ -199,7 +200,7 @@ namespace MayaMaya
         private void btn_Opslaan_Click(object sender, EventArgs e)
         {
             tijdelijkeBestelling.SaveBestelling();
-            Form1 afrekenscherm = new Form1();
+            Form1 afrekenscherm = new Form1(Tafels.tafelnummer);
 
             afrekenscherm.Show();
             this.Hide();
