@@ -24,12 +24,20 @@ namespace MayaMaya
 
         private void btn_Lunch_Click(object sender, EventArgs e)
         {
-            Bestelling Bestelling = new Bestelling("Lunch", Tafels.tafelnummer);
+            DateTime Lunch = new DateTime(2015, 01, 01, 12, 00, 00);
+            DateTime Diner = new DateTime(2015, 01, 01, 18, 00, 00);
+            DateTime Nu = new DateTime(2015, 01, 01, 14, 00, 00);
+            if (DateTime.Now >= Lunch && DateTime.Now <= Diner) {
+                Bestelling Bestelling = new Bestelling("Lunch", Tafels.tafelnummer);
 
+                Bestelling.Show();
 
-            Bestelling.Show();
-
-            this.Hide();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Lunch kan alleen besteld worden tussen 12:00 en 18:00");
+            }
         }
 
         private void btn_Terug_Click(object sender, EventArgs e)
@@ -41,9 +49,19 @@ namespace MayaMaya
 
         private void btn_Diner_Click(object sender, EventArgs e)
         {
-            Bestelling Bestelling = new Bestelling("Diner", Tafels.tafelnummer);
-            Bestelling.Show();
-            this.Hide();
+            DateTime Lunch = new DateTime(2015, 01, 01, 12, 00, 00);
+            DateTime Diner = new DateTime(2015, 01, 01, 18, 00, 00);
+            DateTime Nu = new DateTime(2015, 01, 01, 14, 00, 00);
+            if (DateTime.Now >= Diner)
+            {
+                Bestelling Bestelling = new Bestelling("Diner", Tafels.tafelnummer);
+                Bestelling.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Diner kan alleen besteld worden na 18:00");
+            }
         }
 
         private void btn_Dranken_Click(object sender, EventArgs e)

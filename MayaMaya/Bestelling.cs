@@ -156,6 +156,17 @@ namespace MayaMaya
         //Form bestelling laden en selecteerd juiste tab aan de hand van keuze vorig form
         private void Bestelling_Load(object sender, EventArgs e)
         {
+            DateTime LunchDate = new DateTime(2015, 01, 01, 12, 00, 00);
+            DateTime DinerDate = new DateTime(2015, 01, 01, 18, 00, 00);
+            DateTime Nu = new DateTime(2015, 01, 01, 14, 00, 00);
+            if (DateTime.Now >= DinerDate)
+            {
+                (tabControl1.TabPages[0] as Control).Enabled = false;
+            }
+            else
+            {
+                (tabControl1.TabPages[1] as Control).Enabled = false;
+            }
             switch (this.Soortpublic)
             {
                 case "Lunch":
