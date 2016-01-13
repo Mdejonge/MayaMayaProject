@@ -10,7 +10,7 @@ namespace MayaMaya
 {
     class Login
     {
-        public static int personeel_id = 0;
+        public static int personeel_id;
         public string wachtwoordcorrect(string password)
         {
             Methodes methode = new Methodes();
@@ -31,7 +31,7 @@ namespace MayaMaya
             while (reader.Read())
             {
                 afdeling = (string)reader["AFDELING"];
-                personeel_id = (int)reader["personeel_id"];
+                personeel_id = (int)reader["PERSONEEL_ID"];
             }
             conn.Close();
 

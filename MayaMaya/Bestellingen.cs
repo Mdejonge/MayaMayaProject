@@ -18,6 +18,7 @@ namespace MayaMaya
             getItems();
         }
 
+        //Haalt Menu Items op uit database
         public void getItems()
         {
             SqlConnection conn;
@@ -39,6 +40,7 @@ namespace MayaMaya
             conn.Close();
         }
 
+        //Voegt Menu Item van bestellijst toe aan dictionary (id, aantal)
         public void addItem(int id)
         {
             if (dictionary.ContainsKey(id))
@@ -51,6 +53,7 @@ namespace MayaMaya
             }
         }
 
+        //Verwijderd menu Item van verwijderde bestellijst uit dictionary
         public void removeItem(int id)
         {
             if (dictionary.ContainsKey(id))
@@ -63,8 +66,6 @@ namespace MayaMaya
             }
         }
 
-
-
         //Slaat bestelling op in database
         public void SaveBestelling()
         {
@@ -76,7 +77,7 @@ namespace MayaMaya
 
             command.Parameters.AddWithValue("@datum_tijd", DateTime.Now);
             command.Parameters.AddWithValue("@tafelnummer", Tafels.tafelnummer);
-            command.Parameters.AddWithValue("@personeel_id", 7);
+            command.Parameters.AddWithValue("@personeel_id", Login.personeel_id);
             command.Parameters.AddWithValue("@betaald_bedrag", 0);
             command.Parameters.AddWithValue("@besteltotaal", Bestelling.totaalPrijs);
             command.Parameters.AddWithValue("@betaalwijze", "pin");
@@ -112,6 +113,12 @@ namespace MayaMaya
             }
             conn.Close();
 
+            conn.Open();
+            string tafelBezet = string.Format("UPDATE Tafels SET BESCHIKBAARHEID='{0}' WHERE TAFELNUMMER={1}", 3, Tafels.tafelnummer);
+
+            SqlCommand TafelBezet = new SqlCommand(tafelBezet, conn);
+            TafelBezet.ExecuteNonQuery();
+            conn.Close();
         }
     }
 

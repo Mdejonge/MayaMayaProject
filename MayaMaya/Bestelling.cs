@@ -15,9 +15,8 @@ namespace MayaMaya
         public List<Item> bestelling = new List<Item>();
         public string Soortpublic;
         public static float totaalPrijs;
-        public int aantal;
 
-        Bestellingen tijdelijkebestelling = new Bestellingen();
+        Bestellingen tijdelijkeBestelling = new Bestellingen();
         public Bestelling(string Soort, int tafelnummer)
         {
             InitializeComponent();
@@ -30,7 +29,7 @@ namespace MayaMaya
             //Voegt Items aan juiste ViewList toe
             foreach (Item item in producten.Items)
             {
-                if(item.kaart_id == 1)
+                if (item.kaart_id == 1)
                 {
                     ListViewItem Lunch = new ListViewItem(item.naam);
                     Lunch.SubItems.Add(item.Voorraad.ToString());
@@ -38,7 +37,8 @@ namespace MayaMaya
                     Lunch.SubItems.Add(item.id.ToString());
                     Lunch.SubItems.Add("1");
                     ListViewLunch.Items.Add(Lunch);
-                } else if (item.kaart_id == 2)
+                }
+                else if (item.kaart_id == 2)
                 {
                     ListViewItem Diner = new ListViewItem(item.naam);
                     Diner.SubItems.Add(item.Voorraad.ToString());
@@ -46,7 +46,7 @@ namespace MayaMaya
                     Diner.SubItems.Add(item.id.ToString());
                     ListViewDiner.Items.Add(Diner);
                 }
-                else if(item.kaart_id == 3)
+                else if (item.kaart_id == 3)
                 {
                     ListViewItem Dranken = new ListViewItem(item.naam);
                     Dranken.SubItems.Add(item.Voorraad.ToString());
@@ -57,6 +57,7 @@ namespace MayaMaya
             }
         }
 
+        //Klik op item in List View Lunch -- voegt item toe aan bestellijst
         private void ListViewLunch_SelectedIndexChanged(object sender, EventArgs e)
         {
             ListView.SelectedListViewItemCollection Lunch = this.ListViewLunch.SelectedItems;
@@ -64,7 +65,8 @@ namespace MayaMaya
             foreach (ListViewItem item in Lunch)
             {
                 int itemNummer = Convert.ToInt32(item.SubItems[3].Text);
-                tijdelijkebestelling.addItem(itemNummer);
+
+                tijdelijkeBestelling.addItem(itemNummer);
 
                 //Berekent totaalprijs
                 string prijsString = item.SubItems[2].Text.ToString().Trim();
@@ -74,43 +76,42 @@ namespace MayaMaya
                 //Voegt producten toe aan bestellijst
                 ListViewItem bestellijst = new ListViewItem(item.Text);
                 bestellijst.SubItems.Add(item.SubItems[2]);
-                bestellijst.SubItems.Add(aantal.ToString());
-                bestellijst.SubItems.Add(itemNummer.ToString());
-
+                bestellijst.SubItems.Add(item.SubItems[3]);
                 ListViewBestellijst.Items.Add(bestellijst);
-
             }
-
-            lbl_TotaalPrijs.Text = Convert.ToString(totaalPrijs);          
+            lbl_TotaalPrijs.Text = Convert.ToString(totaalPrijs);
         }
 
+        //Klik op item in List View Bestellijst -- verwijderd item van bestellijst
         private void ListViewBestellijst_SelectedIndexChanged(object sender, EventArgs e)
         {
             foreach (ListViewItem item in ListViewBestellijst.SelectedItems)
             {
                 int itemNummer = Convert.ToInt32(item.SubItems[3].Text);
-                tijdelijkebestelling.removeItem(itemNummer);
+
                 //Verwijderd item
+                tijdelijkeBestelling.removeItem(itemNummer);
                 ListViewBestellijst.Items.Remove(item);
 
                 //Berekent totaalprijs - van verdwijderd item
                 string prijsString = item.SubItems[1].Text.ToString().Trim();
                 float prijsFloat = Single.Parse(prijsString);
                 totaalPrijs = totaalPrijs - prijsFloat;
-
-                //DIT IS ITEM ID -- item.SubItems[2]
             }
             lbl_TotaalPrijs.Text = Convert.ToString(totaalPrijs);
         }
 
+        //Klik op item  in List View Diner -- voegt item toe aan bestellijst
         private void ListViewDiner_SelectedIndexChanged(object sender, EventArgs e)
         {
             ListView.SelectedListViewItemCollection Diner = this.ListViewDiner.SelectedItems;
 
             foreach (ListViewItem item in Diner)
             {
+                //Voegt item + aantal aan dictionary
                 int itemNummer = Convert.ToInt32(item.SubItems[3].Text);
-                tijdelijkebestelling.addItem(itemNummer);
+                tijdelijkeBestelling.addItem(itemNummer);
+
                 //Berekent totaalprijs
                 string prijsString = item.SubItems[2].Text.ToString().Trim();
                 float prijsFloat = Single.Parse(prijsString);
@@ -120,13 +121,12 @@ namespace MayaMaya
                 ListViewItem bestellijst = new ListViewItem(item.Text);
                 bestellijst.SubItems.Add(item.SubItems[2]);
                 ListViewBestellijst.Items.Add(bestellijst);
-
-                
             }
             lbl_TotaalPrijs.Text = Convert.ToString(totaalPrijs);
 
         }
 
+        //Klik op item in List View Dranken -- voegt item toe aan bestellijst
         private void ListViewDranken_SelectedIndexChanged(object sender, EventArgs e)
         {
             ListView.SelectedListViewItemCollection Dranken = this.ListViewDranken.SelectedItems;
@@ -135,8 +135,11 @@ namespace MayaMaya
 
             foreach (ListViewItem item in Dranken)
             {
+                //Voegt item + aantal aan dictionary
                 int itemNummer = Convert.ToInt32(item.SubItems[3].Text);
-                tijdelijkebestelling.addItem(itemNummer);
+                tijdelijkeBestelling.addItem(itemNummer);
+
+                //Berekent totaalprijs
                 string prijsString = item.SubItems[2].Text.ToString().Trim();
                 float prijsFloat = Single.Parse(prijsString);
                 totaalPrijs = totaalPrijs + prijsFloat;
@@ -145,16 +148,15 @@ namespace MayaMaya
                 ListViewItem bestellijst = new ListViewItem(item.Text);
                 bestellijst.SubItems.Add(item.SubItems[2]);
                 ListViewBestellijst.Items.Add(bestellijst);
-
-
             }
             lbl_TotaalPrijs.Text = Convert.ToString(totaalPrijs);
 
         }
 
+        //Form bestelling laden en selecteerd juiste tab aan de hand van keuze vorig form
         private void Bestelling_Load(object sender, EventArgs e)
         {
-            switch(this.Soortpublic)
+            switch (this.Soortpublic)
             {
                 case "Lunch":
                     tabControl1.SelectTab(Lunch);
@@ -170,19 +172,24 @@ namespace MayaMaya
             }
         }
 
+        //Knop terug, totaalprijs reset, opent form Tafel Geselecteerd
         private void lbl_Terug_Click(object sender, EventArgs e)
         {
             totaalPrijs = 0;
             Tafel_Geselecteerd_Form tafelGeselecteerd = new Tafel_Geselecteerd_Form(Tafels.tafelnummer);
 
             tafelGeselecteerd.Show();
-
             this.Hide();
         }
 
+        //Slaat de bestelling op in de database
         private void btn_Opslaan_Click(object sender, EventArgs e)
         {
-            tijdelijkebestelling.SaveBestelling();
+            tijdelijkeBestelling.SaveBestelling();
+            Form1 afrekenscherm = new Form1();
+
+            afrekenscherm.Show();
+            this.Hide();
         }
     }
 }
