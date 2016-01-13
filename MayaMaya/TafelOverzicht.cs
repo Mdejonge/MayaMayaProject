@@ -17,26 +17,7 @@ namespace MayaMaya
         public TafelOverzicht()
         {
             InitializeComponent();
-            Tafel1.BackColor = Color.Yellow;
-            Tafel2.BackColor = Color.Yellow;
-            Tafel3.BackColor = Color.Yellow;
-            Tafel4.BackColor = Color.Yellow;
-            Tafel5.BackColor = Color.Yellow;
-            Tafel6.BackColor = Color.Yellow;
-            Tafel7.BackColor = Color.Yellow;
-            Tafel8.BackColor = Color.Yellow;
-            Tafel9.BackColor = Color.Yellow;
-            Tafel10.BackColor = Color.Yellow;
-            TafelLabel1.BackColor = Color.Yellow;
-            TafelLabel2.BackColor = Color.Yellow;
-            TafelLabel3.BackColor = Color.Yellow;
-            TafelLabel4.BackColor = Color.Yellow;
-            TafelLabel5.BackColor = Color.Yellow;
-            TafelLabel6.BackColor = Color.Yellow;
-            TafelLabel7.BackColor = Color.Yellow;
-            TafelLabel8.BackColor = Color.Yellow;
-            TafelLabel9.BackColor = Color.Yellow;
-            TafelLabel10.BackColor = Color.Yellow;
+
 
 
             Methodes methode = new Methodes();
@@ -52,36 +33,264 @@ namespace MayaMaya
 
             SqlCommand command = new SqlCommand("select * from Tafels ", conn);
             SqlDataReader reader = command.ExecuteReader();
-            int tafelstatus = 1;
-            int tafelnummer = 0;
-            
+            int tafelstatus = 2;
+            int tafelnummer = 1;
+
             while (reader.Read())
             {
                 tafelstatus = (int)reader["Beschikbaarheid"];
                 tafelnummer = (int)reader["TAFELNUMMER"];
-            }
-            
-            
 
-                if (tafelstatus == 2)//bezet
+
+
+                switch(tafelnummer)
                 {
-                    //kleur naar bezet
+
+                    case 1:
+                    if (tafelstatus == 2)//bezet
+                    {
+                        Tafel1.BackColor = Color.Blue;
+                        TafelLabel1.BackColor = Color.Blue;
+                    }
+                    else if (tafelstatus == 3)//in verwerking
+                    {
+                        Tafel1.BackColor = Color.Red;
+                        TafelLabel1.BackColor = Color.Red;
+                    }
+                    else if (tafelstatus == 4)//klaar voor reservering
+                    {
+                        Tafel1.BackColor = Color.Green;
+                        TafelLabel1.BackColor = Color.Green;
+                    }
+                    else  //vrij (1 is vrij)
+                    {
+                        Tafel1.BackColor = Color.Yellow;
+                        TafelLabel1.BackColor = Color.Yellow;
+
+                    }
+                        break;
+
+                    case 2:
+                        if (tafelstatus == 2)//bezet
+                        {
+                            Tafel2.BackColor = Color.Blue;
+                            TafelLabel2.BackColor = Color.Blue;
+                        }
+                        else if (tafelstatus == 3)//in verwerking
+                        {
+                            Tafel2.BackColor = Color.Red;
+                            TafelLabel2.BackColor = Color.Red;
+                        }
+                        else if (tafelstatus == 4)//klaar voor reservering
+                        {
+                            Tafel2.BackColor = Color.Green;
+                            TafelLabel2.BackColor = Color.Green;
+                        }
+                        else  //vrij (1 is vrij)
+                        {
+                            Tafel2.BackColor = Color.Yellow;
+                            TafelLabel2.BackColor = Color.Yellow;
+
+                        }
+                        break;
+
+                    case 3:
+                        if (tafelstatus == 2)//bezet
+                        {
+                            Tafel3.BackColor = Color.Blue;
+                            TafelLabel3.BackColor = Color.Blue;
+                        }
+                        else if (tafelstatus == 3)//in verwerking
+                        {
+                            Tafel3.BackColor = Color.Red;
+                            TafelLabel3.BackColor = Color.Red;
+                        }
+                        else if (tafelstatus == 4)//klaar voor reservering
+                        {
+                            Tafel3.BackColor = Color.Green;
+                            TafelLabel3.BackColor = Color.Green;
+                        }
+                        else  //vrij (1 is vrij)
+                        {
+                            Tafel3.BackColor = Color.Yellow;
+                            TafelLabel3.BackColor = Color.Yellow;
+
+                        }
+                        break;
+
+                    case 4:
+                        if (tafelstatus == 2)//bezet
+                        {
+                            Tafel4.BackColor = Color.Blue;
+                            TafelLabel4.BackColor = Color.Blue;
+                        }
+                        else if (tafelstatus == 3)//in verwerking
+                        {
+                            Tafel4.BackColor = Color.Red;
+                            TafelLabel4.BackColor = Color.Red;
+                        }
+                        else if (tafelstatus == 4)//klaar voor reservering
+                        {
+                            Tafel4.BackColor = Color.Green;
+                            TafelLabel4.BackColor = Color.Green;
+                        }
+                        else  //vrij (1 is vrij)
+                        {
+                            Tafel4.BackColor = Color.Yellow;
+                            TafelLabel4.BackColor = Color.Yellow;
+
+                        }
+                        break;
+                    case 5:
+                        if (tafelstatus == 2)//bezet
+                        {
+                            Tafel5.BackColor = Color.Blue;
+                            TafelLabel5.BackColor = Color.Blue;
+                        }
+                        else if (tafelstatus == 3)//in verwerking
+                        {
+                            Tafel5.BackColor = Color.Red;
+                            TafelLabel5.BackColor = Color.Red;
+                        }
+                        else if (tafelstatus == 4)//klaar voor reservering
+                        {
+                            Tafel5.BackColor = Color.Green;
+                            TafelLabel5.BackColor = Color.Green;
+                        }
+                        else  //vrij (1 is vrij)
+                        {
+                            Tafel5.BackColor = Color.Yellow;
+                            TafelLabel5.BackColor = Color.Yellow;
+
+                        }
+                        break;
+
+                    case 6:
+                        if (tafelstatus == 2)//bezet
+                        {
+                            Tafel6.BackColor = Color.Blue;
+                            TafelLabel6.BackColor = Color.Blue;
+                        }
+                        else if (tafelstatus == 3)//in verwerking
+                        {
+                            Tafel6.BackColor = Color.Red;
+                            TafelLabel6.BackColor = Color.Red;
+                        }
+                        else if (tafelstatus == 4)//klaar voor reservering
+                        {
+                            Tafel6.BackColor = Color.Green;
+                            TafelLabel6.BackColor = Color.Green;
+                        }
+                        else  //vrij (1 is vrij)
+                        {
+                            Tafel6.BackColor = Color.Yellow;
+                            TafelLabel6.BackColor = Color.Yellow;
+
+                        }
+                        break;
+
+                    case 7:
+                        if (tafelstatus == 2)//bezet
+                        {
+                            Tafel7.BackColor = Color.Blue;
+                            TafelLabel7.BackColor = Color.Blue;
+                        }
+                        else if (tafelstatus == 3)//in verwerking
+                        {
+                            Tafel7.BackColor = Color.Red;
+                            TafelLabel7.BackColor = Color.Red;
+                        }
+                        else if (tafelstatus == 4)//klaar voor reservering
+                        {
+                            Tafel7.BackColor = Color.Green;
+                            TafelLabel7.BackColor = Color.Green;
+                        }
+                        else  //vrij (1 is vrij)
+                        {
+                            Tafel7.BackColor = Color.Yellow;
+                            TafelLabel7.BackColor = Color.Yellow;
+
+                        }
+                        break;
+
+                    case 8:
+                        if (tafelstatus == 2)//bezet
+                        {
+                            Tafel8.BackColor = Color.Blue;
+                            TafelLabel8.BackColor = Color.Blue;
+                        }
+                        else if (tafelstatus == 3)//in verwerking
+                        {
+                            Tafel8.BackColor = Color.Red;
+                            TafelLabel8.BackColor = Color.Red;
+                        }
+                        else if (tafelstatus == 4)//klaar voor reservering
+                        {
+                            Tafel8.BackColor = Color.Green;
+                            TafelLabel8.BackColor = Color.Green;
+                        }
+                        else  //vrij (1 is vrij)
+                        {
+                            Tafel8.BackColor = Color.Yellow;
+                            TafelLabel8.BackColor = Color.Yellow;
+
+                        }
+                        break;
+
+                    case 9:
+                        if (tafelstatus == 2)//bezet
+                        {
+                            Tafel9.BackColor = Color.Blue;
+                            TafelLabel9.BackColor = Color.Blue;
+                        }
+                        else if (tafelstatus == 3)//in verwerking
+                        {
+                            Tafel9.BackColor = Color.Red;
+                            TafelLabel9.BackColor = Color.Red;
+                        }
+                        else if (tafelstatus == 4)//klaar voor reservering
+                        {
+                            Tafel9.BackColor = Color.Green;
+                            TafelLabel9.BackColor = Color.Green;
+                        }
+                        else  //vrij (1 is vrij)
+                        {
+                            Tafel9.BackColor = Color.Yellow;
+                            TafelLabel9.BackColor = Color.Yellow;
+
+                        }
+                        break;
+
+                    case 10:
+                        if (tafelstatus == 2)//bezet
+                        {
+                            Tafel10.BackColor = Color.Blue;
+                            TafelLabel10.BackColor = Color.Blue;
+                        }
+                        else if (tafelstatus == 3)//in verwerking
+                        {
+                            Tafel10.BackColor = Color.Red;
+                            TafelLabel10.BackColor = Color.Red;
+                        }
+                        else if (tafelstatus == 4)//klaar voor reservering
+                        {
+                            Tafel10.BackColor = Color.Green;
+                            TafelLabel10.BackColor = Color.Green;
+                        }
+                        else  //vrij (1 is vrij)
+                        {
+                            Tafel10.BackColor = Color.Yellow;
+                            TafelLabel10.BackColor = Color.Yellow;
+
+                        }
+                        break;
                 }
-                else if (tafelstatus == 3)//in verwerking
-                {
-                    //kleur naar verwerking
-                }
-                else if (tafelstatus == 4)//klaar voor reservering
-                {
-                    //kleur naar reservering
-                }
-                else  //vrij (1 is vrij)
-                {
-                    //kleur naar vrij
-                    
-                }
-                
-            
+
+
+
+
+
+            }
             conn.Close();
 
 

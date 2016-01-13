@@ -151,19 +151,7 @@ namespace MayaMaya
                     message = selected + " is gereserveerd";
                 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+                
 
                 Methodes methode = new Methodes();
                 SqlConnection conn;
@@ -186,10 +174,11 @@ namespace MayaMaya
                 if (rowsAffected > 0)
                 {
                     result = MessageBox.Show(message, caption, buttons);
-
+                    
                 }
                 conn.Close();
-
+                TafelOverzicht refreshing = new TafelOverzicht();
+                refreshing.Refresh();
             }
 
 
