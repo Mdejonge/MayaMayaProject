@@ -52,8 +52,8 @@ namespace MayaMaya
                 DialogResult errorresult;
                 errorresult = MessageBox.Show(errormessage, errorcaption, errorbuttons);
             }
-            
-            string message = selected+" is gereserveerd";
+
+            string message = selected + " is gereserveerd";
             string caption = "Reservering";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             DialogResult result;
@@ -115,7 +115,7 @@ namespace MayaMaya
                     gekozenTafel = 0;
                     break;
 
-                  
+
             }
             if (gekozenTafel != 0)
             {
@@ -167,11 +167,11 @@ namespace MayaMaya
 
 
                     SqlCommand command = new SqlCommand(sql, conn);
-                    int rowsAffected = command.ExecuteNonQuery();
+                    command.ExecuteNonQuery();
 
 
 
-                    
+
 
                 }
                 result = MessageBox.Show(message, caption, buttons);
@@ -181,6 +181,14 @@ namespace MayaMaya
 
 
 
+        }
+
+        private void terugButton_Click(object sender, EventArgs e)
+        {
+            TafelOverzicht settingsForm = new TafelOverzicht();
+            settingsForm.Show();
+
+            this.Hide();
         }
     }
 }

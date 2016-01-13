@@ -358,6 +358,7 @@ namespace MayaMaya
         {
             Tafelreserveren reserveerform = new Tafelreserveren();
             reserveerform.Show();
+            this.Close();
         }
 
         private void LogoutButton_Click(object sender, EventArgs e)
