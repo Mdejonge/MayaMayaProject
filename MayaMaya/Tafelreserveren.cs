@@ -43,7 +43,7 @@ namespace MayaMaya
             {
                 selected = TafelSelectBox.SelectedItem.ToString();
             }
-            catch (Exception exp)
+            catch 
 
             {
                 string errormessage = "je moet wel een tafel aanklikken als je op reserveren drukt";

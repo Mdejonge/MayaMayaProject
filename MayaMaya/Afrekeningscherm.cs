@@ -85,7 +85,7 @@ namespace MayaMaya
             try {
                  invoer_getal = Int32.Parse(invoer);
             }
-            catch(Exception exp)
+            catch
 
             {
                 string message = "De ingevoerde gegevens kloppen niet \nvoer een geldig getal in.";
@@ -169,8 +169,16 @@ namespace MayaMaya
                 {
                     this.Close();
                 }
-                
+   
             }
+
+            else if (!radioButton1.Checked && !radioButton2.Checked)
+            {
+                MessageBox.Show("Selecteer een betaalwijze");
+            }
+
+
+
             else
             {
                 Methodes methode = new Methodes();

@@ -21,7 +21,14 @@ namespace MayaMaya
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string connString =
+                ConfigurationManager
+                .ConnectionStrings["MayaMayaDatabase"]
+                .ConnectionString;
+            SqlConnection conn = new SqlConnection(connString);
+            conn.Open();
 
+            string sql = string.Format("UPDATE ");
         }
     }
 }
