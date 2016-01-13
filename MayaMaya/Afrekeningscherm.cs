@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace MayaMaya
 {
@@ -70,13 +72,13 @@ namespace MayaMaya
 
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void commentaarbutton_Click(object sender, EventArgs e) // Bij het drukken op de knop COMMENTAAR!
         {
             commentaarscherm commentaar = new commentaarscherm();
             commentaar.Show();
         }
 
-        public void button5_Click(object sender, EventArgs e)
+        public void button5_Click(object sender, EventArgs e)  // Bij het drukken op de knop FOOI TOEVOEGEN!
         {
             Fooiberekening.Items.Clear();
             string invoer = fooiBox.Text;
@@ -126,7 +128,7 @@ namespace MayaMaya
                 }
 
             }
-            Fooiberekening.Items.Clear();
+            Fooiberekening.Items.Clear();                                   //Berekening FOOI!
             Fooiberekening.Items.Add("" + invoer_getal.ToString("C2"));
             fooiEnEind += invoer_getal + total;
             Fooiberekening.Items.Add("" + fooiEnEind.ToString("C2"));
@@ -134,7 +136,7 @@ namespace MayaMaya
 
         }
 
-        public void button3_Click(object sender, EventArgs e)
+        public void wisitemsbutton_Click(object sender, EventArgs e) // Bij het drukken van CLEAR!
         {
             TabelProduct.Items.Clear();
             TabelPrijs.Items.Clear();
@@ -151,8 +153,9 @@ namespace MayaMaya
 
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private void afrondenbutton_Click(object sender, EventArgs e) // bij het drukken van AFREKENEN! 
         {
+            int onbezetcode = 1;
             if (total == 0)
             {
                 string message = "U heeft niks ingevoerd, wilt u de proggama stoppen?";
@@ -166,10 +169,24 @@ namespace MayaMaya
                 {
                     this.Close();
                 }
-
+                
             }
             else
             {
+                Methodes methode = new Methodes();
+                SqlConnection conn;
+
+                methode.ConnectDatabase(out conn);
+                // connect to database
+                string connString = ConfigurationManager
+                    .ConnectionStrings["MayaMayaDatabase"]
+                    .ConnectionString;
+                conn = new SqlConnection(connString);
+                conn.Open();
+                string sql = string.Format("UPDATE Tafels SET beschikbaarheid= '{0}' WHERE tafelnummer={1}",  onbezetcode, Tafels.tafelnummer);
+                SqlCommand command = new SqlCommand(sql, conn);
+                int rowsAffected = command.ExecuteNonQuery();
+
                 succesafgerondscherm successcherm = new succesafgerondscherm();
                 successcherm.Show();
 
@@ -188,7 +205,7 @@ namespace MayaMaya
             }
 
         }
-        private void button2_Click_1(object sender, EventArgs e)
+        private void terugbuttonAS_Click_1(object sender, EventArgs e)  //Bij het drukken van de knop TERUG!
         {
             TafelOverzicht tafeloverzicht_koos = new TafelOverzicht();
             tafeloverzicht_koos.Show();

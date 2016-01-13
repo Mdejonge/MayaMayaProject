@@ -31,16 +31,16 @@
             this.cmbDranken = new System.Windows.Forms.ComboBox();
             this.cmbDiner = new System.Windows.Forms.ComboBox();
             this.cmbLunch = new System.Windows.Forms.ComboBox();
-            this.btnClear = new System.Windows.Forms.Button();
+            this.afrondenbutton = new System.Windows.Forms.Button();
             this.TabelProduct = new System.Windows.Forms.ListBox();
             this.TabelPrijs = new System.Windows.Forms.ListBox();
             this.BedragBerekening = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.commentaarbutton = new System.Windows.Forms.Button();
+            this.terugbuttonAS = new System.Windows.Forms.Button();
+            this.wisitemsbutton = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.button5 = new System.Windows.Forms.Button();
@@ -116,16 +116,16 @@
             this.cmbLunch.Text = "Lunch";
             this.cmbLunch.SelectedIndexChanged += new System.EventHandler(this.changingDropdown);
             // 
-            // btnClear
+            // afrondenbutton
             // 
-            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClear.Location = new System.Drawing.Point(435, 378);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(134, 35);
-            this.btnClear.TabIndex = 4;
-            this.btnClear.Text = "Afrekenen";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            this.afrondenbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.afrondenbutton.Location = new System.Drawing.Point(435, 378);
+            this.afrondenbutton.Name = "afrondenbutton";
+            this.afrondenbutton.Size = new System.Drawing.Size(134, 35);
+            this.afrondenbutton.TabIndex = 4;
+            this.afrondenbutton.Text = "Afrekenen";
+            this.afrondenbutton.UseVisualStyleBackColor = true;
+            this.afrondenbutton.Click += new System.EventHandler(this.afrondenbutton_Click);
             // 
             // TabelProduct
             // 
@@ -187,38 +187,38 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "TotaalBedrag : ";
             // 
-            // button1
+            // commentaarbutton
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(435, 337);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 35);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Comentaar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.commentaarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.commentaarbutton.Location = new System.Drawing.Point(435, 337);
+            this.commentaarbutton.Name = "commentaarbutton";
+            this.commentaarbutton.Size = new System.Drawing.Size(134, 35);
+            this.commentaarbutton.TabIndex = 12;
+            this.commentaarbutton.Text = "Comentaar";
+            this.commentaarbutton.UseVisualStyleBackColor = true;
+            this.commentaarbutton.Click += new System.EventHandler(this.commentaarbutton_Click);
             // 
-            // button2
+            // terugbuttonAS
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button2.Location = new System.Drawing.Point(12, 378);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(134, 35);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Terug";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.terugbuttonAS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.terugbuttonAS.Location = new System.Drawing.Point(12, 378);
+            this.terugbuttonAS.Name = "terugbuttonAS";
+            this.terugbuttonAS.Size = new System.Drawing.Size(134, 35);
+            this.terugbuttonAS.TabIndex = 13;
+            this.terugbuttonAS.Text = "Terug";
+            this.terugbuttonAS.UseVisualStyleBackColor = true;
+            this.terugbuttonAS.Click += new System.EventHandler(this.terugbuttonAS_Click_1);
             // 
-            // button3
+            // wisitemsbutton
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button3.Location = new System.Drawing.Point(12, 337);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(134, 35);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "Clear";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.wisitemsbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.wisitemsbutton.Location = new System.Drawing.Point(12, 337);
+            this.wisitemsbutton.Name = "wisitemsbutton";
+            this.wisitemsbutton.Size = new System.Drawing.Size(134, 35);
+            this.wisitemsbutton.TabIndex = 14;
+            this.wisitemsbutton.Text = "Clear";
+            this.wisitemsbutton.UseVisualStyleBackColor = true;
+            this.wisitemsbutton.Click += new System.EventHandler(this.wisitemsbutton_Click);
             // 
             // radioButton1
             // 
@@ -305,16 +305,16 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.wisitemsbutton);
+            this.Controls.Add(this.terugbuttonAS);
+            this.Controls.Add(this.commentaarbutton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BedragBerekening);
             this.Controls.Add(this.TabelPrijs);
             this.Controls.Add(this.TabelProduct);
-            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.afrondenbutton);
             this.Controls.Add(this.cmbDiner);
             this.Controls.Add(this.cmbDranken);
             this.Controls.Add(this.cmbLunch);
@@ -333,16 +333,16 @@
         private System.Windows.Forms.ComboBox cmbDranken;
         private System.Windows.Forms.ComboBox cmbDiner;
         private System.Windows.Forms.ComboBox cmbLunch;
-        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button afrondenbutton;
         private System.Windows.Forms.ListBox TabelProduct;
         private System.Windows.Forms.ListBox TabelPrijs;
         private System.Windows.Forms.ListBox BedragBerekening;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button commentaarbutton;
+        private System.Windows.Forms.Button terugbuttonAS;
+        private System.Windows.Forms.Button wisitemsbutton;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Button button5;
