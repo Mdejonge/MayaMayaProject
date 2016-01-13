@@ -39,91 +39,79 @@ namespace MayaMaya
             conn.Close();
         }
 
-        public void addItem(int id, out int aantal)
+        public void addItem(int id)
         {
-            aantal = 1;
-
-            foreach (Item item in bestellingen)
+            if (dictionary.ContainsKey(id))
             {
-                if (id == item.id)
-                {
-                    aantal++;
-                }
+                dictionary[id]++;
             }
-
-            dictionary.Add(id, aantal);
-
-            foreach (Item item in Items)
+            else
             {
-                if(id == item.id)
-                {
-                    bestellingen.Add(item);
-                    break;
-                }
+                dictionary.Add(id, 1);
             }
         }
 
-        public void saveItem(int aantal)
+        public void removeItem(int id)
         {
-            SqlConnection conn;
-            Methodes methode = new Methodes();
-            int bestel_id = 0;
-
-            //Database Connection
-            methode.ConnectDatabase(out conn);
-
-            //Run SQL command
-            SqlCommand command = new SqlCommand("SELECT MAX(BESTEL_ID) FROM Bestellingen", conn);
-            SqlDataReader reader = command.ExecuteReader();
-
-            while (reader.Read())
+            if (dictionary.ContainsKey(id))
             {
-                bestel_id = reader.GetInt32(0);
+                dictionary[id]--;
             }
-            conn.Close();
-
-            //Database Connection
-            methode.ConnectDatabase(out conn);
-
-            foreach (var pair in dictionary)
+            else
             {
-                var key = pair.Key;
-                var value = pair.Value;
+                dictionary.Remove(id);
             }
-
-            foreach (Item item in bestellingen)
-            {
-                //Run SQL command
-                command = new SqlCommand("INSERT INTO Bestel_Items(BESTEL_ID, ITEM_ID, AANTAL) VALUES(@bestel_id, @item_id, @aantal)", conn);
-                command.Parameters.AddWithValue("@bestel_id", bestel_id);
-                command.Parameters.AddWithValue("@item_id", item.id);
-                command.Parameters.AddWithValue("@aantal", aantal);
-                command.Connection = conn;
-                command.ExecuteNonQuery();
-            }
-            
-
-            conn.Close();
         }
 
-        public void SaveBestelling(float totaalprijs)
+
+
+        //Slaat bestelling op in database
+        public void SaveBestelling()
         {
             SqlConnection conn;
             Methodes methode = new Methodes();
             methode.ConnectDatabase(out conn);
 
             SqlCommand command = new SqlCommand("INSERT INTO Bestellingen(DATUM_TIJD, TAFELNUMMER, PERSONEEL_ID, BETAALD_BEDRAG, BESTELTOTAAL, BETAALWIJZE, STATUS) VALUES(@datum_tijd, @tafelnummer, @personeel_id, @betaald_bedrag, @besteltotaal, @betaalwijze, @status)", conn);
+
             command.Parameters.AddWithValue("@datum_tijd", DateTime.Now);
             command.Parameters.AddWithValue("@tafelnummer", Tafels.tafelnummer);
-            command.Parameters.AddWithValue("@personeel_id", 6);
+            command.Parameters.AddWithValue("@personeel_id", 7);
             command.Parameters.AddWithValue("@betaald_bedrag", 0);
-            command.Parameters.AddWithValue("@besteltotaal", totaalprijs);
+            command.Parameters.AddWithValue("@besteltotaal", Bestelling.totaalPrijs);
             command.Parameters.AddWithValue("@betaalwijze", "pin");
             command.Parameters.AddWithValue("@status", 0);
             command.Connection = conn;
             command.ExecuteNonQuery();
-
             conn.Close();
+
+            int bestelid = 0;
+
+            conn.Open();
+            SqlCommand getBestelID = new SqlCommand("SELECT MAX(BESTEL_ID) FROM Bestellingen", conn);
+
+            SqlDataReader reader = getBestelID.ExecuteReader();
+
+            while (reader.Read())
+            {
+                bestelid = reader.GetInt32(0);
+            }
+            conn.Close();
+
+            conn.Open();
+            SqlCommand command2 = new SqlCommand("INSERT INTO Bestelling_Items(BESTEL_ID, ITEM_ID, AANTAL) VALUES(@bestel_id, @item_id, @aantal)");
+
+            foreach (KeyValuePair<int, int> item in dictionary)
+            {
+                command2.Parameters.Clear();
+                command2.Parameters.AddWithValue("@bestel_id", bestelid);
+                command2.Parameters.AddWithValue("@item_id", item.Key);
+                command2.Parameters.AddWithValue("@aantal", item.Value);
+                command2.Connection = conn;
+                command2.ExecuteNonQuery();
+            }
+            conn.Close();
+
         }
     }
 

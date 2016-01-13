@@ -64,11 +64,7 @@ namespace MayaMaya
             foreach (ListViewItem item in Lunch)
             {
                 int itemNummer = Convert.ToInt32(item.SubItems[3].Text);
-                aantal = 0;
-
-                tijdelijkebestelling.addItem(itemNummer, out aantal);
-
-                //MessageBox.Show(aantal.ToString());
+                tijdelijkebestelling.addItem(itemNummer);
 
                 //Berekent totaalprijs
                 string prijsString = item.SubItems[2].Text.ToString().Trim();
@@ -92,6 +88,8 @@ namespace MayaMaya
         {
             foreach (ListViewItem item in ListViewBestellijst.SelectedItems)
             {
+                int itemNummer = Convert.ToInt32(item.SubItems[3].Text);
+                tijdelijkebestelling.removeItem(itemNummer);
                 //Verwijderd item
                 ListViewBestellijst.Items.Remove(item);
 
@@ -111,6 +109,8 @@ namespace MayaMaya
 
             foreach (ListViewItem item in Diner)
             {
+                int itemNummer = Convert.ToInt32(item.SubItems[3].Text);
+                tijdelijkebestelling.addItem(itemNummer);
                 //Berekent totaalprijs
                 string prijsString = item.SubItems[2].Text.ToString().Trim();
                 float prijsFloat = Single.Parse(prijsString);
@@ -135,6 +135,8 @@ namespace MayaMaya
 
             foreach (ListViewItem item in Dranken)
             {
+                int itemNummer = Convert.ToInt32(item.SubItems[3].Text);
+                tijdelijkebestelling.addItem(itemNummer);
                 string prijsString = item.SubItems[2].Text.ToString().Trim();
                 float prijsFloat = Single.Parse(prijsString);
                 totaalPrijs = totaalPrijs + prijsFloat;
@@ -180,8 +182,7 @@ namespace MayaMaya
 
         private void btn_Opslaan_Click(object sender, EventArgs e)
         {
-            tijdelijkebestelling.saveItem(aantal);
-            //tijdelijkebestelling.SaveBestelling(totaalPrijs);
+            tijdelijkebestelling.SaveBestelling();
         }
     }
 }
