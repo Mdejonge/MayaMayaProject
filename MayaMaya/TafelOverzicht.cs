@@ -107,19 +107,19 @@ namespace MayaMaya
                         {
                             Tafel3.BackColor = Color.Blue;
                             TafelLabel3.BackColor = Color.Blue;
-                            TafelLabel3.Text = "bezet";
+                            TafelLabel3.Text = "Bezet";
                         }
                         else if (tafelstatus == 3)//in verwerking
                         {
                             Tafel3.BackColor = Color.Red;
                             TafelLabel3.BackColor = Color.Red;
-                            TafelLabel3.Text = "Verwerking";
+                            TafelLabel3.Text = "Bezig";
                         }
                         else if (tafelstatus == 4)//klaar voor reservering
                         {
                             Tafel3.BackColor = Color.Green;
                             TafelLabel3.BackColor = Color.Green;
-                            TafelLabel3.Text = "gereed";
+                            TafelLabel3.Text = "Gereed";
                         }
                         else  //vrij (1 is vrij)
                         {
@@ -134,19 +134,19 @@ namespace MayaMaya
                         {
                             Tafel4.BackColor = Color.Blue;
                             TafelLabel4.BackColor = Color.Blue;
-                            TafelLabel4.Text = "bezet";
+                            TafelLabel4.Text = "Bezet";
                         }
                         else if (tafelstatus == 3)//in verwerking
                         {
                             Tafel4.BackColor = Color.Red;
                             TafelLabel4.BackColor = Color.Red;
-                            TafelLabel4.Text = "Verwerking";
+                            TafelLabel4.Text = "Bezig";
                         }
                         else if (tafelstatus == 4)//klaar voor reservering
                         {
                             Tafel4.BackColor = Color.Green;
                             TafelLabel4.BackColor = Color.Green;
-                            TafelLabel4.Text = "gereed";
+                            TafelLabel4.Text = "Gereed";
                         }
                         else  //vrij (1 is vrij)
                         {
@@ -160,19 +160,19 @@ namespace MayaMaya
                         {
                             Tafel5.BackColor = Color.Blue;
                             TafelLabel5.BackColor = Color.Blue;
-                            TafelLabel5.Text = "bezet";
+                            TafelLabel5.Text = "Bezet";
                         }
                         else if (tafelstatus == 3)//in verwerking
                         {
                             Tafel5.BackColor = Color.Red;
                             TafelLabel5.BackColor = Color.Red;
-                            TafelLabel5.Text = "Verwerking";
+                            TafelLabel5.Text = "Bezig";
                         }
                         else if (tafelstatus == 4)//klaar voor reservering
                         {
                             Tafel5.BackColor = Color.Green;
                             TafelLabel5.BackColor = Color.Green;
-                            TafelLabel5.Text = "gereed";
+                            TafelLabel5.Text = "Gereed";
                         }
                         else  //vrij (1 is vrij)
                         {
@@ -187,19 +187,19 @@ namespace MayaMaya
                         {
                             Tafel6.BackColor = Color.Blue;
                             TafelLabel6.BackColor = Color.Blue;
-                            TafelLabel6.Text = "bezet";
+                            TafelLabel6.Text = "Bezet";
                         }
                         else if (tafelstatus == 3)//in verwerking
                         {
                             Tafel6.BackColor = Color.Red;
                             TafelLabel6.BackColor = Color.Red;
-                            TafelLabel6.Text = "Verwerking";
+                            TafelLabel6.Text = "Bezig";
                         }
                         else if (tafelstatus == 4)//klaar voor reservering
                         {
                             Tafel6.BackColor = Color.Green;
                             TafelLabel6.BackColor = Color.Green;
-                            TafelLabel6.Text = "gereed";
+                            TafelLabel6.Text = "Gereed";
                         }
                         else  //vrij (1 is vrij)
                         {
@@ -214,19 +214,19 @@ namespace MayaMaya
                         {
                             Tafel7.BackColor = Color.Blue;
                             TafelLabel7.BackColor = Color.Blue;
-                            TafelLabel7.Text = "bezet";
+                            TafelLabel7.Text = "Bezet";
                         }
                         else if (tafelstatus == 3)//in verwerking
                         {
                             Tafel7.BackColor = Color.Red;
                             TafelLabel7.BackColor = Color.Red;
-                            TafelLabel7.Text = "Verwerking";
+                            TafelLabel7.Text = "Bezig";
                         }
                         else if (tafelstatus == 4)//klaar voor reservering
                         {
                             Tafel7.BackColor = Color.Green;
                             TafelLabel7.BackColor = Color.Green;
-                            TafelLabel7.Text = "gereed";
+                            TafelLabel7.Text = "Gereed";
                         }
                         else  //vrij (1 is vrij)
                         {
@@ -241,19 +241,19 @@ namespace MayaMaya
                         {
                             Tafel8.BackColor = Color.Blue;
                             TafelLabel8.BackColor = Color.Blue;
-                            TafelLabel8.Text = "bezet";
+                            TafelLabel8.Text = "Bezet";
                         }
                         else if (tafelstatus == 3)//in verwerking
                         {
                             Tafel8.BackColor = Color.Red;
                             TafelLabel8.BackColor = Color.Red;
-                            TafelLabel8.Text = "Verwerking";
+                            TafelLabel8.Text = "Bezig";
                         }
                         else if (tafelstatus == 4)//klaar voor reservering
                         {
                             Tafel8.BackColor = Color.Green;
                             TafelLabel8.BackColor = Color.Green;
-                            TafelLabel8.Text = "gereed";
+                            TafelLabel8.Text = "Gereed";
                         }
                         else  //vrij (1 is vrij)
                         {
@@ -268,19 +268,19 @@ namespace MayaMaya
                         {
                             Tafel9.BackColor = Color.Blue;
                             TafelLabel9.BackColor = Color.Blue;
-                            TafelLabel9.Text = "bezet";
+                            TafelLabel9.Text = "Bezet";
                         }
                         else if (tafelstatus == 3)//in verwerking
                         {
                             Tafel9.BackColor = Color.Red;
                             TafelLabel9.BackColor = Color.Red;
-                            TafelLabel9.Text = "Verwerking";
+                            TafelLabel9.Text = "Bezig";
                         }
                         else if (tafelstatus == 4)//klaar voor reservering
                         {
                             Tafel9.BackColor = Color.Green;
                             TafelLabel9.BackColor = Color.Green;
-                            TafelLabel9.Text = "gereed";
+                            TafelLabel9.Text = "Gereed";
                         }
                         else  //vrij (1 is vrij)
                         {
@@ -295,19 +295,19 @@ namespace MayaMaya
                         {
                             Tafel10.BackColor = Color.Blue;
                             TafelLabel10.BackColor = Color.Blue;
-                            TafelLabel10.Text = "bezet";
+                            TafelLabel10.Text = "Bezet";
                         }
                         else if (tafelstatus == 3)//in verwerking
                         {
                             Tafel10.BackColor = Color.Red;
                             TafelLabel10.BackColor = Color.Red;
-                            TafelLabel10.Text = "Verwerking";
+                            TafelLabel10.Text = "Bezig";
                         }
                         else if (tafelstatus == 4)//klaar voor reservering
                         {
                             Tafel10.BackColor = Color.Green;
                             TafelLabel10.BackColor = Color.Green;
-                            TafelLabel10.Text = "gereed";
+                            TafelLabel10.Text = "Gereed";
                         }
                         else  //vrij (1 is vrij)
                         {
