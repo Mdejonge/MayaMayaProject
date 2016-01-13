@@ -11,6 +11,8 @@ namespace MayaMaya
     class Login
     {
         public static int personeel_id;
+        public static string persoon = "";
+        
         public string wachtwoordcorrect(string password)
         {
             Methodes methode = new Methodes();
@@ -24,7 +26,7 @@ namespace MayaMaya
             conn = new SqlConnection(connString);
             conn.Open();
 
-            SqlCommand command = new SqlCommand("select AFDELING, PERSONEEL_ID from Personeel where WACHTWOORD = '" + password + "'", conn);
+            SqlCommand command = new SqlCommand("select AFDELING, PERSONEEL_ID, NAAM from Personeel where WACHTWOORD = '" + password + "'", conn);
             SqlDataReader reader = command.ExecuteReader();
             
             string afdeling = "4";
@@ -32,6 +34,7 @@ namespace MayaMaya
             {
                 afdeling = (string)reader["AFDELING"];
                 personeel_id = (int)reader["PERSONEEL_ID"];
+                persoon = (string)reader["NAAM"];
             }
             conn.Close();
 

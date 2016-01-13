@@ -14,11 +14,12 @@ namespace MayaMaya
 {
     public partial class TafelOverzicht : Form
     {
-        
+       
+
         public TafelOverzicht()
         {
             InitializeComponent();
-
+            Subtext.Text = "Welkom "+ Login.persoon;
 
 
             Methodes methode = new Methodes();
