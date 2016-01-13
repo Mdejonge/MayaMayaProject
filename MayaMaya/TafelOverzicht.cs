@@ -14,6 +14,7 @@ namespace MayaMaya
 {
     public partial class TafelOverzicht : Form
     {
+        
         public TafelOverzicht()
         {
             InitializeComponent();
@@ -35,7 +36,7 @@ namespace MayaMaya
             SqlDataReader reader = command.ExecuteReader();
             int tafelstatus = 2;
             int tafelnummer = 1;
-
+            
             while (reader.Read())
             {
                 tafelstatus = (int)reader["Beschikbaarheid"];
@@ -57,7 +58,7 @@ namespace MayaMaya
                     {
                         Tafel1.BackColor = Color.Red;
                         TafelLabel1.BackColor = Color.Red;
-                        TafelLabel1.Text = "Verwerking";
+                        TafelLabel1.Text = "Bezig";
 
                         }
                     else if (tafelstatus == 4)//klaar voor servering
@@ -86,7 +87,7 @@ namespace MayaMaya
                         {
                             Tafel2.BackColor = Color.Red;
                             TafelLabel2.BackColor = Color.Red;
-                            TafelLabel2.Text = "Verwerking";
+                            TafelLabel2.Text = "Bezig";
                         }
                         else if (tafelstatus == 4)//klaar voor reservering
                         {
@@ -336,12 +337,20 @@ namespace MayaMaya
 
         private void Tafel1_Click(object sender, EventArgs e)
         {
-            
-            Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form(1);
+            if ((Tafel1.BackColor == Color.Yellow)||(Tafel1.BackColor==Color.Blue))
+            {
+                Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form(1);
 
-            TafelGeselecteerd.Show();
+                TafelGeselecteerd.Show();
 
-            this.Hide();
+                this.Hide();
+            }
+            else
+            {
+                Form1 afrekeningscherm_salih = new Form1();
+                afrekeningscherm_salih.Show();
+                this.Hide();
+            }
         }
 
         private void HelpButton_Click(object sender, EventArgs e)
@@ -370,83 +379,164 @@ namespace MayaMaya
 
         private void Tafel2_Click(object sender, EventArgs e)
         {
-            Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form(2);
+            if ((Tafel2.BackColor == Color.Yellow) || (Tafel2.BackColor == Color.Blue))
+            {
+                Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form(2);
 
             TafelGeselecteerd.Show();
 
             this.Hide();
+            }
+            else
+            {
+                Form1 afrekeningscherm_salih = new Form1();
+                afrekeningscherm_salih.Show();
+                this.Hide();
+            }
         }
 
         private void Tafel3_Click(object sender, EventArgs e)
         {
-            Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form(3);
+            if ((Tafel3.BackColor == Color.Yellow) || (Tafel3.BackColor == Color.Blue))
+            {
+                Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form(3);
 
             TafelGeselecteerd.Show();
 
             this.Hide();
+            }
+            else
+            {
+                Form1 afrekeningscherm_salih = new Form1();
+                afrekeningscherm_salih.Show();
+                this.Hide();
+            }
         }
 
         private void Tafel4_Click(object sender, EventArgs e)
         {
-            Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form(4);
+            if ((Tafel4.BackColor == Color.Yellow) || (Tafel4.BackColor == Color.Blue))
+            {
+                Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form(4);
 
             TafelGeselecteerd.Show();
 
             this.Hide();
+            }
+            else
+            {
+                Form1 afrekeningscherm_salih = new Form1();
+                afrekeningscherm_salih.Show();
+                this.Hide();
+            }
         }
 
         private void Tafel5_Click(object sender, EventArgs e)
         {
-            Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form(5);
+            if ((Tafel5.BackColor == Color.Yellow) || (Tafel5.BackColor == Color.Blue))
+            {
+                Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form(5);
 
             TafelGeselecteerd.Show();
 
             this.Hide();
+            }
+            else
+            {
+                Form1 afrekeningscherm_salih = new Form1();
+                afrekeningscherm_salih.Show();
+                this.Hide();
+            }
         }
 
         private void Tafel6_Click(object sender, EventArgs e)
         {
-            Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form(6);
+            if ((Tafel6.BackColor == Color.Yellow) || (Tafel6.BackColor == Color.Blue))
+            {
+                Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form(6);
 
             TafelGeselecteerd.Show();
 
             this.Hide();
+            }
+            else
+            {
+                Form1 afrekeningscherm_salih = new Form1();
+                afrekeningscherm_salih.Show();
+                this.Hide();
+            }
         }
 
         private void Tafel7_Click(object sender, EventArgs e)
         {
-            Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form(7);
+            if ((Tafel7.BackColor == Color.Yellow) || (Tafel7.BackColor == Color.Blue))
+            {
+                Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form(7);
 
             TafelGeselecteerd.Show();
 
             this.Hide();
+            }
+            else
+            {
+                Form1 afrekeningscherm_salih = new Form1();
+                afrekeningscherm_salih.Show();
+                this.Hide();
+            }
         }
 
         private void Tafel8_Click(object sender, EventArgs e)
         {
-            Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form(8);
+            if ((Tafel8.BackColor == Color.Yellow) || (Tafel8.BackColor == Color.Blue))
+            {
+                Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form(8);
 
             TafelGeselecteerd.Show();
 
             this.Hide();
+            }
+            else
+            {
+                Form1 afrekeningscherm_salih = new Form1();
+                afrekeningscherm_salih.Show();
+                this.Hide();
+            }
         }
 
         private void TafelLabel9_Click(object sender, EventArgs e)
         {
-            Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form(9);
+            if ((Tafel9.BackColor == Color.Yellow) || (Tafel9.BackColor == Color.Blue))
+            {
+                Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form(9);
 
             TafelGeselecteerd.Show();
 
             this.Hide();
+            }
+            else
+            {
+                Form1 afrekeningscherm_salih = new Form1();
+                afrekeningscherm_salih.Show();
+                this.Hide();
+            }
         }
 
         private void Tafel10_Click(object sender, EventArgs e)
         {
-            Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form(10);
+            if ((Tafel9.BackColor == Color.Yellow) || (Tafel9.BackColor == Color.Blue))
+            {
+                Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form(10);
 
             TafelGeselecteerd.Show();
 
             this.Hide();
+            }
+            else
+            {
+                Form1 afrekeningscherm_salih = new Form1();
+                afrekeningscherm_salih.Show();
+                this.Hide();
+            }
         }
     }
 }
