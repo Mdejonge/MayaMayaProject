@@ -370,6 +370,7 @@
             this.Controls.Add(this.Tafel3);
             this.Name = "TafelOverzicht";
             this.Text = "TafelOverzicht";
+            this.Load += new System.EventHandler(this.TafelOverzicht_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

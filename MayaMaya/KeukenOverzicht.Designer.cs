@@ -50,6 +50,7 @@
             this.Controls.Add(this.LoginButton);
             this.Name = "KeukenOverzicht";
             this.Text = "KeukenOverzicht";
+            this.Load += new System.EventHandler(this.KeukenOverzicht_Load);
             this.ResumeLayout(false);
 
         }

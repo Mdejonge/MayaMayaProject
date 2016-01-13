@@ -70,5 +70,10 @@ namespace MayaMaya
             Bestelling.Show();
             this.Hide();
         }
+
+        private void Tafel_Geselecteerd_Form_Load(object sender, EventArgs e)
+        {
+            this.BackColor = Color.FromArgb(251, 250, 240);
+        }
     }
 }

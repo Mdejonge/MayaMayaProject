@@ -190,6 +190,11 @@ namespace MayaMaya
 
             this.Hide();
         }
+
+        private void Tafelreserveren_Load(object sender, EventArgs e)
+        {
+            this.BackColor = Color.FromArgb(251, 250, 240);
+        }
     }
 }
 

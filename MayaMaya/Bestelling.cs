@@ -156,6 +156,8 @@ namespace MayaMaya
         //Form bestelling laden en selecteerd juiste tab aan de hand van keuze vorig form
         private void Bestelling_Load(object sender, EventArgs e)
         {
+            this.BackColor = Color.FromArgb(251, 250, 240);
+
             DateTime LunchDate = new DateTime(2015, 01, 01, 12, 00, 00);
             DateTime DinerDate = new DateTime(2015, 01, 01, 18, 00, 00);
             DateTime Nu = new DateTime(2015, 01, 01, 14, 00, 00);

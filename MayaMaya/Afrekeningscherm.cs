@@ -219,6 +219,11 @@ namespace MayaMaya
             tafeloverzicht_koos.Show();
             this.Close();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.BackColor = Color.FromArgb(251, 250, 240);
+        }
     }
 }
     

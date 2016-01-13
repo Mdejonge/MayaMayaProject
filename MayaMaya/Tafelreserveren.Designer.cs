@@ -74,6 +74,7 @@
             this.Controls.Add(this.reserveerTafelButton);
             this.Name = "Tafelreserveren";
             this.Text = "Tafelreserveren";
+            this.Load += new System.EventHandler(this.Tafelreserveren_Load);
             this.ResumeLayout(false);
 
         }

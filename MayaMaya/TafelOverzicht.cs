@@ -538,5 +538,10 @@ namespace MayaMaya
                 this.Hide();
             }
         }
+
+        private void TafelOverzicht_Load(object sender, EventArgs e)
+        {
+            this.BackColor = Color.FromArgb(251, 250, 240);
+        }
     }
 }

@@ -222,7 +222,7 @@
             // columnHeader3
             // 
             this.columnHeader3.Text = "Product";
-            this.columnHeader3.Width = 551;
+            this.columnHeader3.Width = 615;
             // 
             // columnHeader4
             // 

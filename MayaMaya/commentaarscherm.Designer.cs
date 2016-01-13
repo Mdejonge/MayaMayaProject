@@ -70,6 +70,7 @@
             this.Controls.Add(this.richTextBox1);
             this.Name = "commentaarscherm";
             this.Text = "commentaarscherm";
+            this.Load += new System.EventHandler(this.commentaarscherm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

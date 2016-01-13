@@ -60,6 +60,7 @@
             this.Controls.Add(this.button1);
             this.Name = "succesafgerondscherm";
             this.Text = "succesafgerondscherm";
+            this.Load += new System.EventHandler(this.succesafgerondscherm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

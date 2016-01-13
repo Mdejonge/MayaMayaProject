@@ -135,6 +135,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Tafel_Geselecteerd_Form";
             this.Text = "Tafel_Geselecteerd_Form";
+            this.Load += new System.EventHandler(this.Tafel_Geselecteerd_Form_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

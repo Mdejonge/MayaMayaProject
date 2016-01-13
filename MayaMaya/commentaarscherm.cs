@@ -30,5 +30,10 @@ namespace MayaMaya
 
             string sql = string.Format("UPDATE ");
         }
+
+        private void commentaarscherm_Load(object sender, EventArgs e)
+        {
+            this.BackColor = Color.FromArgb(251, 250, 240);
+        }
     }
 }

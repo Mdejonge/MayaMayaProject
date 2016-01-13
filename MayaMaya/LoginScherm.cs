@@ -75,5 +75,10 @@ namespace MayaMaya
 
             }
         }
+
+        private void LoginScherm_Load(object sender, EventArgs e)
+        {
+            this.BackColor = Color.FromArgb(251, 250, 240);
+        }
     }
 }

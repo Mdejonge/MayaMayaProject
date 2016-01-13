@@ -16,5 +16,10 @@ namespace MayaMaya
         {
             InitializeComponent();
         }
+
+        private void BarOverzicht_Load(object sender, EventArgs e)
+        {
+            this.BackColor = Color.FromArgb(251, 250, 240);
+        }
     }
 }

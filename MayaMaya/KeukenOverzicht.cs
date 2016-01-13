@@ -22,5 +22,10 @@ namespace MayaMaya
             Form1 afrekeningscherm_salih = new Form1();
             afrekeningscherm_salih.Show();
         }
+
+        private void KeukenOverzicht_Load(object sender, EventArgs e)
+        {
+            this.BackColor = Color.FromArgb(251, 250, 240);
+        }
     }
 }
