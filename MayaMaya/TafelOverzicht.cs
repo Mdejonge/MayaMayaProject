@@ -523,7 +523,7 @@ namespace MayaMaya
 
         private void Tafel10_Click(object sender, EventArgs e)
         {
-            if ((Tafel9.BackColor == Color.Yellow) || (Tafel9.BackColor == Color.Blue))
+            if ((Tafel10.BackColor == Color.Yellow) || (Tafel10.BackColor == Color.Blue))
             {
                 Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form(10);
 
