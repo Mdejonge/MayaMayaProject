@@ -57,7 +57,7 @@ namespace MayaMaya
                         Tafel1.BackColor = Color.Red;
                         TafelLabel1.BackColor = Color.Red;
                     }
-                    else if (tafelstatus == 4)//klaar voor reservering
+                    else if (tafelstatus == 4)//klaar voor servering
                     {
                         Tafel1.BackColor = Color.Green;
                         TafelLabel1.BackColor = Color.Green;
