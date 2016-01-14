@@ -95,7 +95,7 @@ namespace MayaMaya
         {
             foreach (ListViewItem item in ListViewBestellijst.SelectedItems)
             {
-                int itemNummer = Convert.ToInt32(item.SubItems[3].Text);
+                int itemNummer = Convert.ToInt32(item.SubItems[2].Text);
 
                 //Verwijderd item
                 tijdelijkeBestelling.removeItem(itemNummer);
@@ -128,6 +128,7 @@ namespace MayaMaya
                 //Voegt producten toe aan bestellijst
                 ListViewItem bestellijst = new ListViewItem(item.Text);
                 bestellijst.SubItems.Add(item.SubItems[2]);
+                bestellijst.SubItems.Add(item.SubItems[3]);
                 ListViewBestellijst.Items.Add(bestellijst);
             }
             lbl_TotaalPrijs.Text = Convert.ToString(totaalPrijs);
@@ -155,6 +156,7 @@ namespace MayaMaya
                 //Voegt producten toe aan bestellijst
                 ListViewItem bestellijst = new ListViewItem(item.Text);
                 bestellijst.SubItems.Add(item.SubItems[2]);
+                bestellijst.SubItems.Add(item.SubItems[3]);
                 ListViewBestellijst.Items.Add(bestellijst);
             }
             lbl_TotaalPrijs.Text = Convert.ToString(totaalPrijs);
