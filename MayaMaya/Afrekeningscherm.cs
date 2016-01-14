@@ -197,9 +197,14 @@ namespace MayaMaya
         }
         private void terugbuttonAS_Click_1(object sender, EventArgs e)  //Bij het drukken van de knop TERUG!
         {
+            fooiBox.Text = "";
+            subtotal = 0;
+            invoer_getal = 0;
+            fooiEnEind = 0;
             TafelOverzicht tafeloverzicht_koos = new TafelOverzicht();
             tafeloverzicht_koos.Show();
             this.Close();
+            
         }
 
         public void getItems()
