@@ -67,18 +67,25 @@ namespace MayaMaya
             {
                 int itemNummer = Convert.ToInt32(item.SubItems[3].Text);
 
-                tijdelijkeBestelling.addItem(itemNummer);
+                if(Int32.Parse(item.SubItems[1].Text) <= 10)
+                {
+                    MessageBox.Show("Kan niet besteld worden, te weinig op voorraad");
+                }
+                else
+                {
+                    tijdelijkeBestelling.addItem(itemNummer);
 
-                //Berekent totaalprijs
-                string prijsString = item.SubItems[2].Text.ToString().Trim();
-                float prijsFloat = Single.Parse(prijsString);
-                totaalPrijs = totaalPrijs + prijsFloat;
+                    //Berekent totaalprijs
+                    string prijsString = item.SubItems[2].Text.ToString().Trim();
+                    float prijsFloat = Single.Parse(prijsString);
+                    totaalPrijs = totaalPrijs + prijsFloat;
 
-                //Voegt producten toe aan bestellijst
-                ListViewItem bestellijst = new ListViewItem(item.Text);
-                bestellijst.SubItems.Add(item.SubItems[2]);
-                bestellijst.SubItems.Add(item.SubItems[3]);
-                ListViewBestellijst.Items.Add(bestellijst);
+                    //Voegt producten toe aan bestellijst
+                    ListViewItem bestellijst = new ListViewItem(item.Text);
+                    bestellijst.SubItems.Add(item.SubItems[2]);
+                    bestellijst.SubItems.Add(item.SubItems[3]);
+                    ListViewBestellijst.Items.Add(bestellijst);
+                }
             }
             lbl_TotaalPrijs.Text = Convert.ToString(totaalPrijs);
         }
@@ -193,17 +200,24 @@ namespace MayaMaya
             Tafel_Geselecteerd_Form tafelGeselecteerd = new Tafel_Geselecteerd_Form(Tafels.tafelnummer);
 
             tafelGeselecteerd.Show();
-            this.Hide();
+            this.Close();
         }
 
         //Slaat de bestelling op in de database
         private void btn_Opslaan_Click(object sender, EventArgs e)
         {
-            tijdelijkeBestelling.SaveBestelling();
-            Form1 afrekenscherm = new Form1(Tafels.tafelnummer);
-
-            afrekenscherm.Show();
-            this.Hide();
+            if (totaalPrijs != 0)
+            {
+                tijdelijkeBestelling.SaveBestelling();
+                totaalPrijs = 0;
+                Form1 afrekenscherm = new Form1(Tafels.tafelnummer);
+                afrekenscherm.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Je moet wel wat bestellen");
+            }
         }
     }
 }

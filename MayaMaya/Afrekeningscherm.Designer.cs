@@ -35,7 +35,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.commentaarbutton = new System.Windows.Forms.Button();
             this.terugbuttonAS = new System.Windows.Forms.Button();
-            this.wisitemsbutton = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.button5 = new System.Windows.Forms.Button();
@@ -120,17 +119,6 @@
             this.terugbuttonAS.Text = "Terug";
             this.terugbuttonAS.UseVisualStyleBackColor = true;
             this.terugbuttonAS.Click += new System.EventHandler(this.terugbuttonAS_Click_1);
-            // 
-            // wisitemsbutton
-            // 
-            this.wisitemsbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.wisitemsbutton.Location = new System.Drawing.Point(12, 337);
-            this.wisitemsbutton.Name = "wisitemsbutton";
-            this.wisitemsbutton.Size = new System.Drawing.Size(134, 35);
-            this.wisitemsbutton.TabIndex = 14;
-            this.wisitemsbutton.Text = "Clear";
-            this.wisitemsbutton.UseVisualStyleBackColor = true;
-            this.wisitemsbutton.Click += new System.EventHandler(this.wisitemsbutton_Click);
             // 
             // radioButton1
             // 
@@ -236,7 +224,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(581, 421);
+            this.ClientSize = new System.Drawing.Size(581, 420);
             this.Controls.Add(this.ListViewAfrekenen);
             this.Controls.Add(this.Fooiberekening);
             this.Controls.Add(this.label5);
@@ -245,7 +233,6 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.wisitemsbutton);
             this.Controls.Add(this.terugbuttonAS);
             this.Controls.Add(this.commentaarbutton);
             this.Controls.Add(this.label3);
@@ -273,7 +260,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button commentaarbutton;
         private System.Windows.Forms.Button terugbuttonAS;
-        private System.Windows.Forms.Button wisitemsbutton;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Button button5;

@@ -23,12 +23,14 @@ namespace MayaMaya
         }
         const double BTW = 0.21; //21% BTW
         Bestellingen bestelling = new Bestellingen();
-        string Afrekening;
         static double subtotal;
         static double total;
-        static double TotaalBTW;
         static double fooiEnEind;
+        static double totaalexcl;
+        static double totaalbtw;
         static int invoer_getal;
+        static double prijsTotaal = 0;
+        static double bestelID;
         public List<BesteldeItems>bestelItems = new List<BesteldeItems>();
 
 
@@ -40,42 +42,25 @@ namespace MayaMaya
 
             getItems();
             toonItems();
+            updatederekening();
         }
 
+        public void updatederekening()
+        {
+            foreach(BesteldeItems items in bestelItems)
+            {
+                subtotal += items.prijs;
+                totaalbtw += items.prijs / 100 * items.btw;
+                prijsTotaal = items.bestelTotaal;
+                bestelID = items.bestel_id;
+            }
 
-        //private void Databinnenhallen(string custOrder)
-        //{
-           // bestelling.product = custOrder.Split('€')[0];
-           // bestelling.prijs = Convert.ToDouble(custOrder.Split('€')[1]);
-           // ListViewAfrekenen.Items.Add(bestelling.prijs);
-           // Afrekening = bestelling.product;
-           // updatederekening();
-        //}
+            totaalexcl = subtotal - totaalbtw;
 
-        //public void updatederekening()
-        //{
-        //    subtotal += bestelling.prijs;
-        //    total += bestelling.prijs + (bestelling.prijs * BTW);
-        //    TotaalBTW += bestelling.prijs * BTW;
-        //    BedragBerekening.Items.Clear();
-        //    ListViewAfrekenen.Items.AddRange(Afrekening.Split('\n'));
-        //    BedragBerekening.Items.Add("" + subtotal.ToString("C2"));
-        //    BedragBerekening.Items.Add("" + TotaalBTW.ToString("C2"));
-        //    BedragBerekening.Items.Add("" + total.ToString("C2"));
-
-        //}
-
-        //private void changingDropdown(object gemaaktekeuze, EventArgs e)
-        //{
-        //    if (gemaaktekeuze == cmbDranken)
-        //        Databinnenhallen(cmbDranken.SelectedItem.ToString());
-        //    else if (gemaaktekeuze == cmbDiner)
-        //        Databinnenhallen(cmbDiner.SelectedItem.ToString());
-        //    else if (gemaaktekeuze == cmbLunch)
-        //        Databinnenhallen(cmbLunch.SelectedItem.ToString());
-        //}
-
-
+            BedragBerekening.Items.Add(totaalexcl.ToString("C2"));
+            BedragBerekening.Items.Add(totaalbtw.ToString("C2"));
+            BedragBerekening.Items.Add(subtotal.ToString("C2"));
+        }
 
         private void commentaarbutton_Click(object sender, EventArgs e) // Bij het drukken op de knop COMMENTAAR!
         {
@@ -106,8 +91,6 @@ namespace MayaMaya
                 ListViewAfrekenen.Items.Clear();
                 BedragBerekening.Items.Clear();
                 subtotal = 0;
-                total = 0;
-                TotaalBTW = 0;
                 string message = "Grapjes, voer een normaal cijfer in!";
                 string caption = "Error Detected in Input";
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
@@ -124,8 +107,6 @@ namespace MayaMaya
                     Fooiberekening.Items.Clear();
                     fooiBox.Text = "";
                     subtotal = 0;
-                    total = 0;
-                    TotaalBTW = 0;
                     invoer_getal = 0;
                     fooiEnEind = 0;
                 }
@@ -133,32 +114,17 @@ namespace MayaMaya
             }
             Fooiberekening.Items.Clear();                                   //Berekening FOOI!
             Fooiberekening.Items.Add("" + invoer_getal.ToString("C2"));
-            fooiEnEind += invoer_getal + total;
+            fooiEnEind += invoer_getal + prijsTotaal;
             Fooiberekening.Items.Add("" + fooiEnEind.ToString("C2"));
             
 
         }
 
-        public void wisitemsbutton_Click(object sender, EventArgs e) // Bij het drukken van CLEAR!
-        {
-            ListViewAfrekenen.Items.Clear();
-            BedragBerekening.Items.Clear();
-            Fooiberekening.Items.Clear();
-            fooiBox.Text = "";
-            subtotal = 0;
-            total = 0;
-            TotaalBTW = 0;
-            invoer_getal = 0;
-            fooiEnEind = 0;
-
-
-
-        }
 
         private void afrondenbutton_Click(object sender, EventArgs e) // bij het drukken van AFREKENEN! 
         {
             int onbezetcode = 1;
-            if (total == 0)
+            if (subtotal == 0)
             {
                 string message = "U heeft niks ingevoerd, wilt u de proggama stoppen?";
                 string caption = "Error Detected in Input";
@@ -178,9 +144,6 @@ namespace MayaMaya
             {
                 MessageBox.Show("Selecteer een betaalwijze");
             }
-
-
-
             else
             {
                 Methodes methode = new Methodes();
@@ -196,6 +159,26 @@ namespace MayaMaya
                 string sql = string.Format("UPDATE Tafels SET beschikbaarheid= '{0}' WHERE tafelnummer={1}",  onbezetcode, Tafels.tafelnummer);
                 SqlCommand command = new SqlCommand(sql, conn);
                 int rowsAffected = command.ExecuteNonQuery();
+                conn.Close();
+
+                conn.Open();
+                string betaalwijze = "";
+                bool isChecked = radioButton1.Checked;
+                if (isChecked)
+                {
+                    betaalwijze = "contant";
+                }
+                else
+                {
+                    betaalwijze = "pin";
+                }
+
+                methode.ConnectDatabase(out conn);
+                string insert = string.Format("UPDATE Bestellingen SET BETAALD_BEDRAG='{0}', BETAALWIJZE='{1}', STATUS='1' WHERE BESTEL_ID='{2}'", subtotal, betaalwijze, bestelID, conn);
+                SqlCommand update = new SqlCommand(insert, conn);
+                update.ExecuteNonQuery();
+                conn.Close();
+
 
                 succesafgerondscherm successcherm = new succesafgerondscherm();
                 successcherm.Show();
@@ -205,8 +188,6 @@ namespace MayaMaya
                 Fooiberekening.Items.Clear();
                 fooiBox.Text = "";
                 subtotal = 0;
-                total = 0;
-                TotaalBTW = 0;
                 invoer_getal = 0;
                 fooiEnEind = 0;
 
