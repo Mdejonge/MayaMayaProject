@@ -91,7 +91,7 @@ namespace MayaMaya
                 ListViewAfrekenen.Items.Clear();
                 BedragBerekening.Items.Clear();
                 subtotal = 0;
-                string message = "Grapjes, voer een normaal cijfer in!";
+                string message = "Voer een normaal cijfer in!";
                 string caption = "Error Detected in Input";
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                 DialogResult result;
@@ -114,7 +114,7 @@ namespace MayaMaya
             }
             Fooiberekening.Items.Clear();                                   //Berekening FOOI!
             Fooiberekening.Items.Add("" + invoer_getal.ToString("C2"));
-            fooiEnEind += invoer_getal + prijsTotaal;
+            fooiEnEind = invoer_getal + subtotal;
             Fooiberekening.Items.Add("" + fooiEnEind.ToString("C2"));
             
 
