@@ -14,7 +14,7 @@ namespace MayaMaya
 
 
         public int tafelnummers { get; internal set; }
-        public int tafelstatus { get; internal set; }
+        public int tafelstatus { get; internal set; }//internal iedereen kan het lezen maar alleen in eigen class kan veranderen
 
         public static int reserveering(int gekozenTafel,out int tafelstatus)
         {
@@ -45,16 +45,8 @@ namespace MayaMaya
                     tafelstatus = (int)reader["Beschikbaarheid"];
 
                 }
-
-                
                     return tafelstatus;
                     
-                    
-                
-
-                
-               
-
             }
 
             return tafelstatus;

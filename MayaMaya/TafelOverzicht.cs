@@ -19,6 +19,7 @@ namespace MayaMaya
         public TafelOverzicht()
         {
             InitializeComponent();
+            //vertelt welke persoon er is ingelogd
             Subtext.Text = "Welkom "+ Login.persoon;
             List<Tafels> tafels = new List<Tafels>();
 
@@ -35,7 +36,7 @@ namespace MayaMaya
 
             SqlCommand command = new SqlCommand("select * from Tafels ", conn);
             SqlDataReader reader = command.ExecuteReader();
-            //int tafelstatus = 2;
+            //int tafelstatus = 2; oude code
             //int tafelnummer = 1;
 
             while (reader.Read())
@@ -48,9 +49,8 @@ namespace MayaMaya
 
 
             }
-
+            //ga alle tafels en kijk welke welke status heeft
             foreach (Tafels tafel in tafels)
-
                 if (tafel.tafelstatus == 2)//bezet
                 {
                     Control table = Controls["Tafel" + tafel.tafelnummers];
@@ -66,8 +66,6 @@ namespace MayaMaya
                     Control lable = Controls["TafelLabel" + tafel.tafelnummers];
                     lable.BackColor = Color.Red;
                     lable.Text = "Bezig";
-
-
                 }
                 else if (tafel.tafelstatus == 4)//klaar voor servering
                 {
@@ -76,8 +74,6 @@ namespace MayaMaya
                     Control lable = Controls["TafelLabel" + tafel.tafelnummers];
                     lable.BackColor = Color.Green;
                     lable.Text = "Gereed";
-
-
                 }
                 else  //vrij (1 is vrij)
                 {
@@ -86,11 +82,10 @@ namespace MayaMaya
                     Control lable = Controls["TafelLabel" + tafel.tafelnummers];
                     lable.BackColor = Color.Yellow;
                     lable.Text = "Vrij";
-
                 }
 
 
-            /**
+            /** oude code was voor als verbeteringen niet werken dan had ik toch nog wat
             tafelstatus = (int)reader["Beschikbaarheid"];
             tafelnummer = (int)reader["TAFELNUMMER"];
 
@@ -390,6 +385,8 @@ namespace MayaMaya
 
         private void Tafel1_Click(object sender, EventArgs e)
         {
+            //hier ga je meteen door naar afrekenen of naar bestellen door te kijken welke status de tafel heeft
+            //de status van de tafel is af te lezen aan welke kleur hij is
             if ((Tafel1.BackColor == Color.Yellow)||(Tafel1.BackColor==Color.Blue))
             {
                 Tafel_Geselecteerd_Form TafelGeselecteerd = new Tafel_Geselecteerd_Form(1);

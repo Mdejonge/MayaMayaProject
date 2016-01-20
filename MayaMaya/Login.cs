@@ -25,7 +25,7 @@ namespace MayaMaya
                 .ConnectionString;
             conn = new SqlConnection(connString);
             conn.Open();
-
+            //kijk of ww in database staat
             SqlCommand command = new SqlCommand("select AFDELING, PERSONEEL_ID, NAAM from Personeel where WACHTWOORD = '" + password + "'", conn);
             SqlDataReader reader = command.ExecuteReader();
             
@@ -37,18 +37,19 @@ namespace MayaMaya
                 persoon = (string)reader["NAAM"];
             }
             conn.Close();
-
+            //^^als ww er instaat word via je ww je persso_id,naam en afdeling binnen gehaald
+            //vver wordt terug gegeven weleke afdeling straks bij forms gegeven moet worden. 4 is als ww fout is je doet er niks mee maar je moet iets terug geven 
             if (afdeling == "Bediening")
             {
-                return "1";
+                return "Bediening";
             }
             else if(afdeling == "Bar")
             {
-                return "2";
+                return "Bar";
             }
             else if (afdeling == "Keuken")
             {
-                return "3";
+                return "Keuken";
             }
             else
             {

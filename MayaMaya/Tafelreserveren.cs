@@ -131,22 +131,12 @@ namespace MayaMaya
 
             else
             {
-                
-
-
-
-
                 message = selected + " is gereserveerd";
-
-
                 Tafels.reserveeringDeel2(gekozenTafel);
-
-
-
 
             }
             result = MessageBox.Show(message, caption, buttons);
-
+            //the message word in de code samen gezet en het eind resultaat word hier getoond
         }
 
 

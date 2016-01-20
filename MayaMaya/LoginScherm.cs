@@ -33,7 +33,7 @@ namespace MayaMaya
 
 
             Login berekening = new Login();
-            if (berekening.wachtwoordcorrect(password)== "1" ) 
+            if (berekening.wachtwoordcorrect(password)== "Bediening" ) 
             {
                 // naar Tafeloverzichtform
                 TafelOverzicht settingsForm = new TafelOverzicht();
@@ -42,7 +42,7 @@ namespace MayaMaya
                 this.Hide();
 
             }
-            else if (berekening.wachtwoordcorrect(password) == "2")
+            else if (berekening.wachtwoordcorrect(password) == "Bar")
             {
                 //naar keukenoverzichtform
                 BarOverzicht settingsForm = new BarOverzicht();
@@ -51,7 +51,7 @@ namespace MayaMaya
                 this.Hide();
 
             }
-            else if (berekening.wachtwoordcorrect(password) == "3")
+            else if (berekening.wachtwoordcorrect(password) == "Keuken")
             {
                 //naar baroverzichtform
                 KeukenOverzicht settingsForm = new KeukenOverzicht();
@@ -63,7 +63,7 @@ namespace MayaMaya
 
             else
             {
-                
+                //als je ww niet klopt
                 WwLabel.ForeColor = Color.Red;
                 string message = "Wachtwoord is incorrect";
                 string caption = "ERROR";
