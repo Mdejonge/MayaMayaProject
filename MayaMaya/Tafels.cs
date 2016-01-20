@@ -10,6 +10,10 @@ namespace MayaMaya
     {
         public static int tafelnummer;
 
+
+        public int tafelnummers { get; internal set; }
+        public int tafelstatus { get; internal set; }
+
         public enum Status
         {
             Vrij,
