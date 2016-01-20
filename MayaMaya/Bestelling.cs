@@ -118,18 +118,26 @@ namespace MayaMaya
             {
                 //Voegt item + aantal aan dictionary
                 int itemNummer = Convert.ToInt32(item.SubItems[3].Text);
-                tijdelijkeBestelling.addItem(itemNummer);
+                if (Int32.Parse(item.SubItems[1].Text) <= 10)
+                {
+                    MessageBox.Show("Kan niet besteld worden, te weinig op voorraad");
+                }
+                else
+                {
+                    tijdelijkeBestelling.addItem(itemNummer);
 
-                //Berekent totaalprijs
-                string prijsString = item.SubItems[2].Text.ToString().Trim();
-                float prijsFloat = Single.Parse(prijsString);
-                totaalPrijs = totaalPrijs + prijsFloat;
+                    //Berekent totaalprijs
+                    string prijsString = item.SubItems[2].Text.ToString().Trim();
+                    float prijsFloat = Single.Parse(prijsString);
+                    totaalPrijs = totaalPrijs + prijsFloat;
 
-                //Voegt producten toe aan bestellijst
-                ListViewItem bestellijst = new ListViewItem(item.Text);
-                bestellijst.SubItems.Add(item.SubItems[2]);
-                bestellijst.SubItems.Add(item.SubItems[3]);
-                ListViewBestellijst.Items.Add(bestellijst);
+                    //Voegt producten toe aan bestellijst
+                    ListViewItem bestellijst = new ListViewItem(item.Text);
+                    bestellijst.SubItems.Add(item.SubItems[2]);
+                    bestellijst.SubItems.Add(item.SubItems[3]);
+                    ListViewBestellijst.Items.Add(bestellijst);
+                }
+               
             }
             lbl_TotaalPrijs.Text = Convert.ToString(totaalPrijs);
 
@@ -146,18 +154,25 @@ namespace MayaMaya
             {
                 //Voegt item + aantal aan dictionary
                 int itemNummer = Convert.ToInt32(item.SubItems[3].Text);
-                tijdelijkeBestelling.addItem(itemNummer);
+                if (Int32.Parse(item.SubItems[1].Text) <= 10)
+                {
+                    MessageBox.Show("Kan niet besteld worden, te weinig op voorraad");
+                }
+                else
+                {
+                    tijdelijkeBestelling.addItem(itemNummer);
 
-                //Berekent totaalprijs
-                string prijsString = item.SubItems[2].Text.ToString().Trim();
-                float prijsFloat = Single.Parse(prijsString);
-                totaalPrijs = totaalPrijs + prijsFloat;
+                    //Berekent totaalprijs
+                    string prijsString = item.SubItems[2].Text.ToString().Trim();
+                    float prijsFloat = Single.Parse(prijsString);
+                    totaalPrijs = totaalPrijs + prijsFloat;
 
-                //Voegt producten toe aan bestellijst
-                ListViewItem bestellijst = new ListViewItem(item.Text);
-                bestellijst.SubItems.Add(item.SubItems[2]);
-                bestellijst.SubItems.Add(item.SubItems[3]);
-                ListViewBestellijst.Items.Add(bestellijst);
+                    //Voegt producten toe aan bestellijst
+                    ListViewItem bestellijst = new ListViewItem(item.Text);
+                    bestellijst.SubItems.Add(item.SubItems[2]);
+                    bestellijst.SubItems.Add(item.SubItems[3]);
+                    ListViewBestellijst.Items.Add(bestellijst);
+                }
             }
             lbl_TotaalPrijs.Text = Convert.ToString(totaalPrijs);
 

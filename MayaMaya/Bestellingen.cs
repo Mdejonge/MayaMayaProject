@@ -11,7 +11,6 @@ namespace MayaMaya
     class Bestellingen
     {
         public List<Item> Items = new List<Item>();
-        public List<Item> bestellingen = new List<Item>();
         public Dictionary<int, int> dictionary = new Dictionary<int, int>();
         public Bestellingen()
         {
